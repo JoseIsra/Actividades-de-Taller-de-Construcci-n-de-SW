@@ -9,6 +9,14 @@ function App() {
     <p>asdfasdfasdfasdfasdfasdfasdfasdf</p>
     <h4>SAD PET</h4>
     <p>lorem asdfasdfasdfasdfasdfasdfasdfasdfaasdfasdfasdfsdfasdfasdf</p>
+
+      <div className="secciones">
+        <form>
+        <input />
+<button></button>
+        </form>
+      </div>
+
     </div>
   );
 }
