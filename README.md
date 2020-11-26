@@ -1,5 +1,4 @@
-# tallersw-happypet
-curso de Taller de Construcción de SW-UNMSM
+# Proyecto de taller de construcción de software
 
-#PROYECTO DE CURSO-- Página de venta de productos y  accesorios para mascotas y
-que brinda servicios básicos de higiene, alimentación, entrenamiento y salud
+#Página de venta de productos para mascotas y que
+brinda servicios básicos para la higiene, salud, entrenamiento y alimentación para la mascota
