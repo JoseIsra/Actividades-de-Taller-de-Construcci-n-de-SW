@@ -18,21 +18,7 @@ function App() {
       </div>
 
 
-    <div className="seccion2">
-      <form>
-        <label>entrada apellido</label>
-        <ul>
-          <li>1</li>
-          <li>1</li>
-          <li>1</li>
-          <li>1</li>
-          <li>1</li>
-          <li>1</li>
-          <li>1</li>
-        </ul>
-      </form>
-    </div>
-
+    
     </div>
   );
 }
