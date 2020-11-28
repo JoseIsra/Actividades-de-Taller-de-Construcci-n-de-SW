@@ -1,0 +1,65 @@
+
+.register
+{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+
+.register__card
+{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position:relative;
+    width:370px;
+    height:495px;
+    border:1px solid black;
+    border-radius: 20px;
+}
+
+.register__card > h2
+{
+    font-size:1.5rem;
+    letter-spacing: 4px;
+    border-bottom:4px solid black;
+}
+
+
+.register__content > form
+{
+ 
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width:100%;
+}
+
+.register__content input{
+    margin:20px 10px;
+    width:calc(100% - 20px);
+    font-size:1.2rem;
+    border:1px solid gray;
+    border-radius:15px;
+    padding:5px;
+
+    outline:none;
+}
+
+.btn-register
+{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:10px;
+    width:150px;
+    font-size:15px;
+    border: 1px solid black;
+    border-radius:15px;
+    outline:none;
+    cursor:pointer;
+}
