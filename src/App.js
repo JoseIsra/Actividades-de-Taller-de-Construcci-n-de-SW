@@ -6,7 +6,7 @@ import { Register } from './components/register/Register';
 function App() {
   //estructura por el momento
   return (
-<<<<<<< HEAD
+
 
     <div className="app">
       <Router>
