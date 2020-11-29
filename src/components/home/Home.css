@@ -1,9 +1,52 @@
 .section {
-  padding: 2rem;
   text-align: center;
   min-height: 100vh;
-  padding-top: 6rem;
 }
 html {
   scroll-behavior: smooth;
+}
+.Inicio {
+  background-image: url("../../images/puppy-1187267_1280.jpg");
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.texto {
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+  position: absolute;
+  right: 0;
+}
+.texto h2 {
+  padding-top: 6rem;
+  padding-right: 1rem;
+  color: white;
+}
+.texto button {
+  margin-top: 3rem;
+}
+.AboutUs h2 {
+  color: black;
+  padding-top: 6rem;
+  padding-bottom: 3rem;
+}
+.AboutUs {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.AboutUs2 {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: row;
+}
+.mision,
+.vision,
+.metas,
+.proveedores {
+  width: 25%;
 }

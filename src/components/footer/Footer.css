@@ -35,7 +35,8 @@
   color: white;
   font-weight: lighter;
 }
-p {
+.aboutUs p,
+.comunidad p {
   color: white;
   padding-left: 1rem;
   padding-top: 1rem;
