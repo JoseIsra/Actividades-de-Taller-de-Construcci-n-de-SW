@@ -1,12 +1,9 @@
 import './App.css';
-<<<<<<< HEAD
 import React, {BrowserRouter as Router,Link, Route, Switch} from 'react-router-dom';
 import {Register} from './components/register/Register';
 import {Login} from './components/login/Login';
-=======
-import React, { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom';
-import { Register } from './components/register/Register';
->>>>>>> israel
+import {Home} from './components/home/Home';
+
 
 
 function App() {
@@ -15,7 +12,6 @@ function App() {
 
 
     <div className="app">
-<<<<<<< HEAD
     <Router>  
       {/* momentaneo */}
       <Switch>
@@ -32,26 +28,13 @@ function App() {
           <Login />
           
         </Route>
- 
+ <Route exact path="/home">
+<Home/>
+ </Route>
         
       </Switch>
     </Router>  
-=======
-      <Router>
-        {/* momentaneo */}
-        <Switch>
-          <Router exact path="/" >
-            <h1>CUERPO DE INTRODUCCION</h1>
-          </Router>
 
-          <Route exact path="/register">
-            <Register />
-          </Route>
-
-
-        </Switch>
-      </Router>
->>>>>>> israel
 
     </div>
 
