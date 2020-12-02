@@ -1,10 +1,11 @@
-
 import React from "react";
 import "./Home.css";
 import {Header} from "../header/Header";
 import {Footer} from "../footer/Footer";
-import imagen1 from "../../images/fondo-inicio.png";
-import imagen2 from "../../images/fondo-productos.png";
+import imagen3 from "../../images/fondo-alimentos.png";
+import fondoToys from "../../images/fondo-juguetes.png";
+import fondoDrugs from "../../images/fondo-medicina.png";
+import "bootstrap/dist/js/bootstrap";
 
 
 
@@ -57,13 +58,28 @@ export const Home=()=>{
             
   <div className="carousel-inner">
     <div className="carousel-item active">
-      <img className="d-block w-100" src={imagen1} alt="First slide"/>
+      <img className="d-block w-100" src={imagen3} alt="First slide"/>
+      <div className="carousel-caption d-none d-md-block">
+          <button className="btn-alimentos">Ver productos</button>
+    <h5>Alimentos</h5>
+    <p>Variedad de productos y precios</p>
+  </div>
     </div>
-    <div className="carousel-item active">
-      <img className="d-block w-100" src={imagen2} alt="Second slide"/>
+    <div className="carousel-item ">
+      <img className="d-block w-100" src={fondoToys} alt="Second slide"/>
+       <div className="carousel-caption d-none d-md-block">
+           <button className="btn-alimentos">Ver accesorios</button>
+    <h5>Accesorios</h5>
+    <p>Productos de entretenimiento para tus mascotas</p>
+  </div>
     </div>
-    <div className="carousel-item">
-      <img className="d-block w-100" src={imagen1} alt="Third slide"/>
+    <div className="carousel-item ">
+      <img className="d-block w-100" src={fondoDrugs} alt="Third slide"/>
+       <div className="carousel-caption d-none d-md-block">
+           <button className="btn-alimentos">Ver medicamentos</button>
+    <h5>Medicamentos</h5>
+    <p>Muy recomendado si tu mascota presenta algun tipo de deficiencia</p>
+  </div>
     </div>
     <ol className="carousel-indicators">
     <li data-target="#carouselExampleIndicators" data-slide-to="0" className="active"></li>
