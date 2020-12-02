@@ -1,20 +1,36 @@
 const {Sequelize} = require('sequelize');
 const petModel = require('../models/pet');
 const categoryModel = require('../models/category');
+const clientModel = require('../models/client');
+const productModel = require('../models/product');
+const saleModel = require('../models/sale');
+const saleDetailModel = require('../models/sale_detail');
+const serviceModel = require('../models/service');
+const serviceTypeModel = require('../models/service_type');
+const subCategoryModel = require('../models/sub_category');
 
-//const db = {};
+//credentials
+const DB =require('../DBcredentials');
+//const db = {}; para las fututras sentencias
 
 const sequelize = new Sequelize( 
-    'happypet',
-    'root',
-    '54321', 
+    DB.database,
+    DB.user,
+    DB.password, 
     {
-    host: 'localhost',
+    host: DB.host,
     dialect:'mysql'
 });
 
 const Pet = petModel(sequelize,Sequelize);
 const Category = categoryModel (sequelize,Sequelize);
+const Client = clientModel (sequelize,Sequelize);
+const Product = productModel (sequelize,Sequelize);
+const Sale = saleModel (sequelize,Sequelize);
+const SaleDetail = saleDetailModel (sequelize,Sequelize);
+const Service = serviceModel (sequelize,Sequelize);
+const ServiceType = serviceTypeModel (sequelize,Sequelize);
+const SubCategory = subCategoryModel (sequelize,Sequelize);
 
 
 sequelize.sync({force:false})
@@ -27,5 +43,12 @@ sequelize.sync({force:false})
 
 module.exports={
 Pet,
-Category
+Category,
+Service,
+ServiceType,
+Client,
+Product,
+Sale,
+SaleDetail,
+SubCategory
 }
