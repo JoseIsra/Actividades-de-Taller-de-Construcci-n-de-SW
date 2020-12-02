@@ -12,6 +12,7 @@ h1 {
   color: white;
   width: 15%;
   text-align: center;
+  font-family: "Quicksand";
 }
 button {
   border-radius: 25%;
@@ -31,7 +32,23 @@ button {
   font-family: sans-serif;
   color: white;
   transition: all 0.3 ease;
-  padding: 2rem;
+  padding: 0.5rem;
+  position: relative;
+}
+.menu a:after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 3px;
+  background: white;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transition: all 0.3s;
+}
+.menu a:hover:after {
+  left: 37.5%;
+  width: 25%;
 }
 .menu a:hover {
   font-weight: bold;
@@ -44,4 +61,15 @@ button {
   flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  width: 15%;
+  height: auto;
+  justify-content: center;
+}
+.imagenLogo {
+  width: 70%;
+  height: auto;
 }

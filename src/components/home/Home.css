@@ -2,11 +2,22 @@
   text-align: center;
   min-height: 100vh;
 }
+.productos {
+  display: grid;
+  background-image: url("../../images/fondo-servicios.png");
+  grid-template-columns: 100%;
+  grid-template-rows: 4rem auto;
+  grid-template-areas: "titulo" "slider";
+  justify-items: center;
+}
+.productos h2 {
+  color: white;
+}
 html {
   scroll-behavior: smooth;
 }
 .Inicio {
-  background-image: url("../../images/puppy-1187267_1280.jpg");
+  background-image: url("../../images/fondo-inicio.png");
   display: flex;
   width: 100%;
   min-height: 100vh;
@@ -18,6 +29,7 @@ html {
   width: 25%;
   position: absolute;
   right: 0;
+  padding-right: 2rem;
 }
 .texto h2 {
   padding-top: 6rem;
@@ -28,7 +40,7 @@ html {
   margin-top: 3rem;
 }
 .AboutUs h2 {
-  color: black;
+  color: white;
   padding-top: 6rem;
   padding-bottom: 3rem;
 }
@@ -37,16 +49,30 @@ html {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  background-image: url("../../images/fondo-productos.png");
 }
 .AboutUs2 {
   width: 100%;
-  min-height: 100vh;
   display: flex;
   flex-direction: row;
+}
+.AboutUs2 p,
+.AboutUs2 h4 {
+  color: white;
 }
 .mision,
 .vision,
 .metas,
 .proveedores {
   width: 25%;
+  padding: 1rem;
+}
+.slide {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  grid-area: "slider";
+}
+.productos h2 {
+  grid-area: "titulo";
 }

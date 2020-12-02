@@ -26,8 +26,12 @@ export const Footer=()=>{
 <hr/>
 <nav className="deepFooter">
     <nav className="terminos">
+        <p>© 2020 HappyPet, Inc. All rights reserved</p>
+        <br/>
         <a href="">Privacidad</a>
+        <span className="separador">·</span>
     <a href="">Términos</a>
+    <span className="separador">·</span>
     <a href="">Mapa del sitio</a>
     </nav>
     <nav className="redesSociales">
