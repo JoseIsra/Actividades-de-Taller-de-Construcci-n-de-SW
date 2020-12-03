@@ -33,3 +33,18 @@
     outline:none;
     cursor:pointer;
 }
+
+input,Link{
+    margin:5px 10px;
+    width:calc(100% - 20px);
+    font-size:1.2rem;
+    border:1px solid gray;
+    border-radius:15px;
+    padding:5px;
+    outline:none;
+}
+
+.linkreg{
+    display:flex;
+    align-content: center;
+}
