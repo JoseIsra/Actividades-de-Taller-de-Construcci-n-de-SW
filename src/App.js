@@ -1,9 +1,7 @@
 import './App.css';
 
-import React, {BrowserRouter as Router,Link, Route, Switch} from 'react-router-dom';
-import {Register} from './components/register/Register';
-import {Login} from './components/login/Login';
-import {Home} from './components/home/Home';
+import React, { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import {routes} from './routes';
 
 
 
@@ -14,28 +12,15 @@ function App() {
 
 
     <div className="app">
-    <Router>  
-      {/* momentaneo */}
-      <Switch>
-        <Router exact path="/" > 
-        <h1>CUERPO DE INTRODUCCION</h1> 
-        </Router>
-        
-        <Route exact path ="/register">
-          <Register />
-          
-        </Route>
+      <Router>
+        {/* momentaneo */}
+        <Switch>
+        {routes.map((route) => {
+          return <Route {...route} />
+        })}
 
-        <Route exact path ="/login">
-          <Login />
-          
-        </Route>
- <Route exact path="/home">
-<Home/>
- </Route>
-        
-      </Switch>
-    </Router>  
+        </Switch>
+      </Router>
 
 
     </div>
