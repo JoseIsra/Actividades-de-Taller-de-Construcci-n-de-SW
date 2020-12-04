@@ -1,0 +1,81 @@
+.slide {
+  width: 60%;
+  height: 70%;
+  left: 20%;
+  bottom: 10%;
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin-top: 4rem;
+}
+
+.carousel-inner {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+  justify-items: auto;
+  border-radius: 10%;
+}
+.w-100 {
+  border-radius: 10%;
+}
+.contLink {
+  display: flex;
+  justify-content: center;
+}
+.btn-animado {
+  background: none;
+  display: flex;
+  justify-content: center;
+  color: black;
+  text-decoration: none;
+  border: 2px solid black;
+  font-size: 28px;
+  padding: 0.5rem 2rem;
+  margin-bottom: 2rem;
+  transition: color 0.4s;
+  position: relative;
+  overflow: hidden;
+  letter-spacing: -1px;
+  width: 350px;
+}
+.btn-animado:hover {
+  text-decoration: none;
+  color: white;
+  letter-spacing: 5px;
+}
+.btn-animado:before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: black;
+  transform: translateY(-100%);
+  transition: transform 0.4s;
+  z-index: -1;
+}
+.btn-animado:hover:before {
+  transform: translateY(0);
+}
+/* ------------- */
+.homeProductos {
+  display: flex;
+  flex-direction: column;
+}
+.title h2 {
+  font-size: 50px;
+  height: 20%;
+  color: white;
+  font-family: "Quicksand";
+  letter-spacing: 5px;
+}
+.carousel-control-prev {
+  height: 100%;
+}
+.carousel-control-next {
+  height: 100%;
+}
