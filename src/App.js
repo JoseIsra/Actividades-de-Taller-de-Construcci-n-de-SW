@@ -15,8 +15,8 @@ function App() {
       <Router>
         {/* momentaneo */}
         <Switch>
-        {routes.map((route) => {
-          return <Route {...route} />
+        {routes.map((route, id) => {
+          return <Route key={id} {...route} />
         })}
 
         </Switch>

@@ -1,4 +1,4 @@
-const {Sequelize} = require('sequelize');
+const { Sequelize } = require('sequelize');
 const petModel = require('../models/pet');
 const categoryModel = require('../models/category');
 const clientModel = require('../models/client');
@@ -10,45 +10,47 @@ const serviceTypeModel = require('../models/service_type');
 const subCategoryModel = require('../models/sub_category');
 
 //credentials
-const DB =require('../DBcredentials');
+const DB = require('../DBcredentials');
 //const db = {}; para las fututras sentencias
 
-const sequelize = new Sequelize( 
+const sequelize = new Sequelize(
     DB.database,
     DB.user,
-    DB.password, 
+    DB.password,
     {
-    host: DB.host,
-    dialect:'mysql'
-});
+        host: DB.host,
+        dialect: 'mysql'
+    });
 
-const Pet = petModel(sequelize,Sequelize);
-const Category = categoryModel (sequelize,Sequelize);
-const Client = clientModel (sequelize,Sequelize);
-const Product = productModel (sequelize,Sequelize);
-const Sale = saleModel (sequelize,Sequelize);
-const SaleDetail = saleDetailModel (sequelize,Sequelize);
-const Service = serviceModel (sequelize,Sequelize);
-const ServiceType = serviceTypeModel (sequelize,Sequelize);
-const SubCategory = subCategoryModel (sequelize,Sequelize);
+const Pet = petModel(sequelize, Sequelize);
+const Category = categoryModel(sequelize, Sequelize);
+const Client = clientModel(sequelize, Sequelize);
+const Product = productModel(sequelize, Sequelize);
+const Sale = saleModel(sequelize, Sequelize);
+const SaleDetail = saleDetailModel(sequelize, Sequelize);
+const Service = serviceModel(sequelize, Sequelize);
+const ServiceType = serviceTypeModel(sequelize, Sequelize);
+const SubCategory = subCategoryModel(sequelize, Sequelize);
 
 
-sequelize.sync({force:false})
-.then(()=>{
-    console.log('tablas sincronizadas');
-}).catch((err)=> console.log(err) );
+sequelize.sync({ force: false })
+    .then(() => {
+        console.log('tablas sincronizadas');
+    }).catch((err) => console.log(err));
 
 //db.sequelize = sequelize
 // db.Sequelize = Sequelize
+const model = {
+    'pet': Pet,
+    'category':Category,
+    'client':Client,
+    'product':Product,
+    'sale':Sale,
+    'saleDetail':SaleDetail,
+    'service':Service,
+    'serviceType':ServiceType,
+    'subCategory':SubCategory
 
-module.exports={
-Pet,
-Category,
-Service,
-ServiceType,
-Client,
-Product,
-Sale,
-SaleDetail,
-SubCategory
-}
+};
+module.exports = model;
+
