@@ -2,29 +2,20 @@
   text-align: center;
   min-height: 100vh;
 }
-.productos {
-  display: grid;
-  background-image: url("../../images/fondo-servicios.png");
-  grid-template-columns: 100%;
-  grid-template-rows: 30% 70%;
-  grid-template-areas: "titulo" "slider";
-  align-items: center;
-}
 
 html {
   scroll-behavior: smooth;
 }
-.Inicio {
+.inicio {
   background-image: url("../../images/fondo-inicio.png");
   display: flex;
-  width: 100%;
-  min-height: 100vh;
+  position: relative;
 }
 
 .texto {
   display: flex;
   flex-direction: column;
-  width: 25%;
+  width: 40%;
   position: absolute;
   right: 0;
   padding-right: 2rem;
@@ -34,9 +25,27 @@ html {
   padding-right: 1rem;
   color: white;
 }
-.texto button {
+.begin {
+  border: 1.5px solid #17a2b8;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  font-size: 20px;
+  text-decoration: none;
+  background: none;
+  color: #17a2b8;
+  transition: color 0.4s;
+  position: relative;
+
   margin-top: 3rem;
 }
+.begin:hover {
+  text-decoration: none;
+  color: white;
+  letter-spacing: 6px;
+  background: #17a2b8;
+}
+
+/*---- INICIO ABOUT US----*/
 .AboutUs h2 {
   color: white;
   padding-top: 6rem;
@@ -66,63 +75,23 @@ html {
   width: 25%;
   padding: 1rem;
 }
-.slide {
-  width: 60%;
-  height: 80%;
-  left: 20%;
-  display: flex;
-  align-items: center;
-  grid-area: "slider";
-}
-.productos h2 {
-  grid-area: "titulo";
-  font-size: 50px;
-}
-.carousel-inner {
-  height: 100%;
-  justify-items: auto;
-  border-radius: 10%;
-}
-h2 {
+/*-----------FIN ABOUT US------*/
+.texto h2,
+.aboutUs h2 {
   font-family: "Quicksand";
   color: white;
   letter-spacing: 3px;
   font-size: 50px;
 }
-.w-100 {
-  border-radius: 10%;
+.productos {
+  display: flex;
+  background-image: url("../../images/fondo-servicios.png");
+
+  align-items: center;
 }
-.btn-alimentos {
-  background: none;
-  outline: none;
-  border: 2px solid black;
-  font-size: 2rem;
-  padding: 0.5rem 2rem;
-  cursor: pointer;
-  margin-bottom: 2rem;
-  transition: color 0.4s;
-  position: relative;
-  overflow: hidden;
-  letter-spacing: -1px;
-  width: 350px;
-}
-.btn-alimentos:hover {
-  color: white;
-  letter-spacing: 5px;
-}
-.btn-alimentos:before {
-  content: "";
-  position: absolute;
-  display: block;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  background-color: black;
-  transform: translateY(-100%);
-  transition: transform 0.4s;
-  z-index: -1;
-}
-.btn-alimentos:hover:before {
-  transform: translateY(0);
+
+.servicios {
+  display: flex;
+  background-image: url("../../images/fondoCeleste.png");
+  align-items: center;
 }

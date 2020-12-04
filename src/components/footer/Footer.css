@@ -51,7 +51,7 @@
 .instagram {
   color: white;
   cursor: pointer;
-  transition: all 0.3s;
+  transition: color 0.4s;
 }
 .twitter:hover {
   color: #1da1f2;
