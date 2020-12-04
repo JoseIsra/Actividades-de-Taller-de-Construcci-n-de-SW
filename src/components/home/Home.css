@@ -1,9 +1,97 @@
 .section {
-  padding: 2rem;
   text-align: center;
   min-height: 100vh;
-  padding-top: 6rem;
 }
+
 html {
   scroll-behavior: smooth;
+}
+.inicio {
+  background-image: url("../../images/fondo-inicio.png");
+  display: flex;
+  position: relative;
+}
+
+.texto {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  position: absolute;
+  right: 0;
+  padding-right: 2rem;
+}
+.texto h2 {
+  padding-top: 6rem;
+  padding-right: 1rem;
+  color: white;
+}
+.begin {
+  border: 1.5px solid #17a2b8;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  font-size: 20px;
+  text-decoration: none;
+  background: none;
+  color: #17a2b8;
+  transition: color 0.4s;
+  position: relative;
+
+  margin-top: 3rem;
+}
+.begin:hover {
+  text-decoration: none;
+  color: white;
+  letter-spacing: 6px;
+  background: #17a2b8;
+}
+
+/*---- INICIO ABOUT US----*/
+.AboutUs h2 {
+  color: white;
+  padding-top: 6rem;
+  padding-bottom: 3rem;
+  font-size: 50px;
+}
+.AboutUs {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-image: url("../../images/fondo-productos.png");
+}
+.AboutUs2 {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+.AboutUs2 p,
+.AboutUs2 h4 {
+  color: white;
+}
+.mision,
+.vision,
+.metas,
+.proveedores {
+  width: 25%;
+  padding: 1rem;
+}
+/*-----------FIN ABOUT US------*/
+.texto h2,
+.aboutUs h2 {
+  font-family: "Quicksand";
+  color: white;
+  letter-spacing: 3px;
+  font-size: 50px;
+}
+.productos {
+  display: flex;
+  background-image: url("../../images/fondo-servicios.png");
+
+  align-items: center;
+}
+
+.servicios {
+  display: flex;
+  background-image: url("../../images/fondoCeleste.png");
+  align-items: center;
 }
