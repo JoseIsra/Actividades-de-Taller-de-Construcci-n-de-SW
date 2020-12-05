@@ -4,21 +4,14 @@
   margin: 0 auto;
   top: 0;
   display: flex;
-  flex-direction: row;
+  align-items: center;
   position: sticky;
   z-index: 999;
 }
-h1 {
-  color: white;
-  width: 15%;
-  text-align: center;
-  font-family: "Quicksand";
-}
 
 .menu {
-  width: 60%;
   display: flex;
-  flex-direction: row;
+  width: 60%;
   align-items: center;
   text-align: center;
   justify-content: space-evenly;
@@ -26,7 +19,7 @@ h1 {
 .menu a {
   text-decoration: none;
   width: inherit;
-  font-size: 1.2rem;
+  font-size: 18px;
   font-family: sans-serif;
   color: white;
   transition: all 0.3 ease;
@@ -55,8 +48,8 @@ h1 {
 }
 .botones {
   width: 25%;
+
   display: flex;
-  flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
 }
@@ -102,3 +95,29 @@ h1 {
 .login:hover::before {
   transform: translateX(0);
 }
+/*@media screen and (max-width: 960px) {
+  .header {
+    display: grid;
+    grid-template-columns: 15% 85%;
+    grid-template-rows: 2rem auto;
+    grid-template-areas: "logo nav" "logo botones";
+  }
+  .logo {
+    grid-area: logo;
+    width: 100%;
+  }
+  .imagenLogo {
+    width: 80%;
+  }
+  .menu {
+    grid-area: nav;
+    width: 100%;
+    padding-top: 2rem;
+  }
+  .botones {
+    grid-area: botones;
+    width: 100%;
+    padding-top: 3rem;
+    padding-bottom: 1rem;
+  }
+}*/
