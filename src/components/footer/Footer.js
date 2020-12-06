@@ -3,6 +3,7 @@ import "./Footer.css";
 import FacebookIcon from '@material-ui/icons/Facebook';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import InstagramIcon from '@material-ui/icons/Instagram';
+
 export const Footer=()=>{
     const newTab=(red)=>{
         switch(red){
@@ -36,13 +37,19 @@ export const Footer=()=>{
 <hr/>
 <nav className="deepFooter">
     <nav className="terminos">
-        <p>© 2020 HappyPet, Inc. All rights reserved</p>
-        <br/>
-        <a href="">Privacidad</a>
+        <div className="terminos1">
+            <p className="derechos">© 2020 HappyPet, Inc. All rights reserved</p>
+        </div>
+        
+        <div className="terminos2">
+<span className="separador">·</span>
+        <a className="priv" href="">Privacidad</a>
         <span className="separador">·</span>
-    <a href="">Términos</a>
+    <a className="term" href="">Términos</a>
     <span className="separador">·</span>
-    <a href="">Mapa del sitio</a>
+    <a className="map" href="">Mapa del sitio</a>
+        </div>
+        
     </nav>
     <nav className="redesSociales">
         <FacebookIcon onClick={()=>{newTab("facebook")}} className="facebook" />
