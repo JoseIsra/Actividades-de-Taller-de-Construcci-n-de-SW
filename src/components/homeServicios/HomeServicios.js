@@ -16,6 +16,10 @@ export const HomeServicios = () => {
         <div className="carousel-inner">
           <div className="carousel-item active">
             <img className="d-block w-100" src={image1} alt="First slide" />
+            <div className="cont-prueba">
+              <Link className="prueba" >Consultas</Link>
+
+            </div>
             <div className="carousel-caption d-none d-md-block">
               <div class="contantLink">
                 <Link className="btn-alimentos">Ir a consultas</Link>
@@ -26,6 +30,10 @@ export const HomeServicios = () => {
           </div>
           <div className="carousel-item ">
             <img className="d-block w-100" src={image2} alt="Second slide" />
+            <div className="cont-prueba">
+              <Link className="prueba" >Adiestramiento</Link>
+
+            </div>
             <div className="carousel-caption d-none d-md-block">
               <div class="contantLink">
                 <Link className="btn-alimentos">Reservar cita</Link>
@@ -37,6 +45,10 @@ export const HomeServicios = () => {
           </div>
           <div className="carousel-item ">
             <img className="d-block w-100" src={image3} alt="Third slide" />
+            <div className="cont-prueba">
+              <Link className="prueba" >Limpieza y Spa</Link>
+
+            </div>
             <div className="carousel-caption d-none d-md-block">
               <div class="contantLink">
                 <Link className="btn-alimentos">Reservar cita</Link>

@@ -16,11 +16,14 @@ export const Home = () => {
     return (
         <div className="home">
             <Header />
-            <main>
-                <section id="inicio" className="section">
+            <main className="main">
+                <section id="inicio" className="section seccionInicio">
                     <div className="inicio">
                         <div className="texto">
-                        <h2>Comienza a explorar todos nuestros productos y servicios</h2>
+                            <div className="letras">
+                                <h2>Comienza a explorar todos nuestros productos y servicios</h2>
+                            </div>
+                        
                         <Link to='/mainpage' className="begin">Comenzar</Link>
                     </div>
 
