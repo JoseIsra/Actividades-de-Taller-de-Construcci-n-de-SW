@@ -1,0 +1,50 @@
+
+._login
+{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.Login
+{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position:relative;
+    width:370px;
+    height:495px;
+    border:1px solid black;
+    border-radius: 20px;
+}
+
+.enviar
+{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:8px;
+    width:70px;
+    font-size:15px;
+    border: 1px solid black;
+    border-radius:15px;
+    outline:none;
+    cursor:pointer;
+}
+
+input,Link{
+    margin:5px 10px;
+    width:calc(100% - 20px);
+    font-size:1.2rem;
+    border:1px solid gray;
+    border-radius:15px;
+    padding:5px;
+    outline:none;
+}
+
+.linkreg{
+    display:flex;
+    align-content: center;
+}
