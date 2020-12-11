@@ -4,9 +4,6 @@ import { Header } from "../header/Header";
 import { Footer } from "../footer/Footer";
 import { HomeServicios } from "../homeServicios/HomeServicios";
 import { HomeProductos } from "../homeProductos/HomeProductos";
-import imagen3 from "../../images/fondo-alimentos.png";
-import fondoToys from "../../images/fondo-juguetes.png";
-import fondoDrugs from "../../images/fondo-medicina.png";
 import "bootstrap/dist/js/bootstrap";
 import { Link } from "react-router-dom";
 
@@ -19,12 +16,17 @@ export const Home = () => {
     return (
         <div className="home">
             <Header />
-            <main>
-                <section id="inicio" className="section inicio">
+            <main className="main">
+                <section id="inicio" className="section seccionInicio">
+                    <div className="inicio">
+                        <div className="texto">
+                            <div className="letras">
+                                <h2>Comienza a explorar todos nuestros productos y servicios</h2>
+                            </div>
+                        
+                        <Link to='/mainpage' className="begin">Comenzar</Link>
+                    </div>
 
-                    <div className="texto">
-                        <h2>Comienza a explorar todos nuestros productos y servicios</h2>
-                        <Link className="begin">Comenzar</Link>
                     </div>
 
                 </section>

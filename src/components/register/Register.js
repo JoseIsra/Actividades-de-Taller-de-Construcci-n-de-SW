@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import './Register.css';
-import SaveIcon from '@material-ui/icons/Save';
 
+import logoHappy from "../../images/logo-happypet.png";
+import { Link } from 'react-router-dom';
 export const Register = () => {
     const [user, setUser] = useState({
         name: '',
@@ -21,14 +22,17 @@ export const Register = () => {
     return (
         <div className="register">
             <header className="register__header">
-                <p>Happy Pet</p>
+                <Link to= "/home">
+                <img src={logoHappy} alt="logohappy" />
+                </Link>
             </header>
             <div className="register__card">
                 
             <h2>Regístrate</h2>
             <div className="register__content">
                 <form autoComplete="off">
-                    <input type="text"
+                    <input autoFocus="on"
+                    type="text"
                         name="name"
                         value={user.name}
                         placeholder="Nombre..."
@@ -53,8 +57,8 @@ export const Register = () => {
                         onChange={handleChange}
                     />
 
-                    <button type="submit" className="btn-register">Guardar datos
-                        <SaveIcon className="save-icon" />
+                    <button type="submit" 
+                    className="btn-register">Guardar datos    
                     </button>
                 </form>
             </div>

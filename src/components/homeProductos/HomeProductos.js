@@ -13,22 +13,32 @@ export const HomeProductos = () => {
         <div className="carousel-inner">
           <div className="carousel-item active">
             <img className="d-block w-100" src={imagen3} alt="First slide" />
+            <div className="cont-prueba">
+              <Link className="prueba" >Ver Alimentos</Link>
+
+            </div>
+            
             <div className="carousel-caption d-none d-md-block">
-              <div class="contLink">
-                <Link className="btn-animado">Ver alimentos</Link>
+              <div className="contLink">
+                <Link to='/mainpage'  className="btn-animado">Ver alimentos</Link>
               </div>
+<div className="cat"><h5>Alimentos</h5></div>
+<div className="descr"> <p>Variedad de productos y precios</p></div>
 
 
-
-              <h5>Alimentos</h5>
-              <p>Variedad de productos y precios</p>
+              
+             
             </div>
           </div>
           <div className="carousel-item ">
             <img className="d-block w-100" src={fondoToys} alt="Second slide" />
+            <div className="cont-prueba">
+              <Link className="prueba" >Ver Accesorios</Link>
+
+            </div>
             <div className="carousel-caption d-none d-md-block">
-              <div class="contLink">
-                <Link className="btn-animado">Ver accesorios</Link>
+              <div className="contLink">
+                <Link to='/mainpage' className="btn-animado">Ver accesorios</Link>
               </div>
 
 
@@ -38,9 +48,13 @@ export const HomeProductos = () => {
           </div>
           <div className="carousel-item ">
             <img className="d-block w-100" src={fondoDrugs} alt="Third slide" />
+            <div className="cont-prueba">
+              <Link className="prueba" >Ver artículos de limpieza</Link>
+
+            </div>
             <div className="carousel-caption d-none d-md-block">
-              <div class="contLink">
-                <Link className="btn-animado">Ver artículos</Link>
+              <div className="contLink">
+                <Link  to='/mainpage' className="btn-animado">Ver artículos</Link>
               </div>
 
               <h5>Artículos de limpieza</h5>

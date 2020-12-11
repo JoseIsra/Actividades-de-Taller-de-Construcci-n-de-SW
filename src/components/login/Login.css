@@ -14,22 +14,79 @@
     align-items: center;
     justify-content: center;
     position:relative;
-    width:370px;
-    height:495px;
+    width:350px;
+    height:375px;
     border:1px solid black;
     border-radius: 20px;
 }
 
-.enviar
+.Login h2
+{
+    border-bottom:3px solid black;
+}
+
+.login__content > form
 {
     display:flex;
     align-items: center;
-    justify-content: space-between;
-    padding:8px;
-    width:70px;
-    font-size:15px;
-    border: 1px solid black;
+    flex-direction: column;
+    justify-content: center;
+    padding:10px;
+    width:100%;
+    
+}
+
+.login__content input{
+    margin:10px 10px;
+    width:calc(100% - 20px);
+    font-size:1.2rem;
+    border:1px solid gray;
     border-radius:15px;
+    padding:5px;
+    outline:none;
+}
+
+.login__content input:focus
+{
+    box-shadow: 0 2px 0px rgba(14, 196, 212, 0.6), 
+    0 0 6px rgba(14, 196, 212, 0.6);
+}
+
+ .links_to_help{
+    position:relative;
+    color:black;
+    font-size: 17px;
+    text-decoration: none;
+    outline: none;
+}
+.links_to_help:nth-of-type(1)
+{
+left:-30px;
+}
+
+.links_to_help:nth-of-type(2)
+{
+    left:-50px;
+}
+
+
+
+.btn-enviar
+{
+    position:relative;
+    top:20px;
+    width:100%;
+    border:1px solid black;
+    background-color: transparent;
+    color:gray;
+    padding:10px;
     outline:none;
     cursor:pointer;
+    transition:0.2s all ease-in;
+}
+.btn-enviar:hover{
+    letter-spacing: 4px;
+    background-color: #4d97b3;
+    color:white;
+    font-weight: 900;
 }

@@ -2,28 +2,46 @@
   text-align: center;
   min-height: 100vh;
 }
-
+.home {
+  min-height: 100vh;
+  display: flex;
+  margin: 0;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.main {
+  width: 100%;
+}
 html {
   scroll-behavior: smooth;
 }
+
 .inicio {
   background-image: url("../../images/fondo-inicio.png");
   display: flex;
-  position: relative;
+  flex-direction: row-reverse;
+  width: 100%;
+  min-height: 100vh;
 }
 
 .texto {
   display: flex;
   flex-direction: column;
-  width: 40%;
-  position: absolute;
-  right: 0;
-  padding-right: 2rem;
+  justify-content: space-evenly;
+  width: 50%;
+  margin-right: 2rem;
+  padding-bottom: 1rem;
 }
-.texto h2 {
-  padding-top: 6rem;
-  padding-right: 1rem;
+.letras {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  text-align: center;
+}
+.letras h2 {
   color: white;
+  padding-right: 1rem;
 }
 .begin {
   border: 1.5px solid #17a2b8;
@@ -77,7 +95,7 @@ html {
 }
 /*-----------FIN ABOUT US------*/
 .texto h2,
-.aboutUs h2 {
+.AboutUs h2 {
   font-family: "Quicksand";
   color: white;
   letter-spacing: 3px;
@@ -94,4 +112,55 @@ html {
   display: flex;
   background-image: url("../../images/fondoCeleste.png");
   align-items: center;
+}
+@media screen and (max-width: 960px) {
+  .AboutUs h2 {
+    padding: 2rem;
+  }
+}
+@media screen and (max-width: 828px) {
+  .AboutUs2 {
+    display: grid;
+    flex-direction: none;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 50% 50%;
+    grid-template-areas: "mision vision" "metas proveedores";
+  }
+  .mision {
+    grid-area: mision;
+    width: 100%;
+  }
+  .vision {
+    grid-area: vision;
+    width: 100%;
+  }
+  .metas {
+    grid-area: metas;
+    width: 100%;
+  }
+  .proveedores {
+    grid-area: proveedores;
+    width: 100%;
+  }
+  .inicio {
+    background: black;
+    align-items: center;
+    justify-content: center;
+  }
+  .texto {
+    width: 100%;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+  }
+  .letras {
+    padding: 0;
+  }
+  .letras h2 {
+    padding: 0;
+  }
+  .begin {
+    width: 80%;
+    left: 10%;
+  }
 }
