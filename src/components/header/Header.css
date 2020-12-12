@@ -27,16 +27,16 @@
 .searchIcon {
   text-decoration: none;
   color: black;
-  background: white;
+  background: rgba(255, 255, 255, 0.664);
   height: 100%;
   outline: none;
   border-radius: 50%;
   margin-right: 0.5rem;
   padding: 0.5rem;
 }
-.mr-sm-2 {
+.home-search {
   width: 80%;
-  border-radius: 25%;
+  border-radius: 20px;
 }
 .hamburger {
   display: flex;
@@ -52,6 +52,11 @@
 }
 .hamburger:focus {
   outline: 0px;
+}
+.hamburger-inner,
+.hamburger-inner:before,
+.hamburger-inner:after {
+  background-color: rgba(255, 255, 255, 0.664);
 }
 
 .menu {

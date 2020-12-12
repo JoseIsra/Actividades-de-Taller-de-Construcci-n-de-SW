@@ -36,10 +36,12 @@ html {
 .letras {
   display: flex;
   align-items: center;
+  justify-content: center;
   width: 100%;
   text-align: center;
 }
 .letras h2 {
+  width: 80%;
   color: white;
   padding-right: 1rem;
 }
@@ -54,7 +56,7 @@ html {
   transition: color 0.4s;
   position: relative;
 
-  margin-top: 3rem;
+  margin-top: 2rem;
 }
 .begin:hover {
   text-decoration: none;
@@ -143,7 +145,7 @@ html {
     width: 100%;
   }
   .inicio {
-    background: black;
+    background-size: cover;
     align-items: center;
     justify-content: center;
   }

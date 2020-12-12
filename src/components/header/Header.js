@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Link } from "react-router-dom";
 import imagen3 from "../../images/logo-happypet.png";
@@ -23,7 +22,7 @@ export const Header = () => {
 <Link className="searchIcon">
 <SearchIcon/>
 </Link>
-<input className="form-control mr-sm-2" type="search" placeholder="¿En qué podemos ayudarte?"/>
+<input className="home-search form-control mr-sm-2" type="search" placeholder="¿En qué podemos ayudarte?"/>
     </div>
     
 <button className="panel-btn hamburger hamburger--vortex" onClick={hamburgerClick} type="button">

@@ -95,6 +95,20 @@
   padding-right: 1rem;
   padding-left: 0;
 }
+.terminos1,
+.terminos2 {
+  display: flex;
+}
+.terminos1 {
+  width: 40%;
+  display: flex;
+  justify-content: center;
+}
+.terminos2 {
+  width: 60%;
+  display: flex;
+  justify-content: space-evenly;
+}
 .terminos p {
   margin: 0;
 }

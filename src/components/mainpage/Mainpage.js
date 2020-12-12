@@ -4,6 +4,8 @@ import axios from 'axios';
 import './Mainpage.css';
 import { ProductCard } from '../productcard/ProductCard';
 import {Footer}  from '../footer/Footer';
+import { HeaderProductos } from '../headerProductos/HeaderProductos';
+
 
 
 export const Mainpage = () => {
@@ -21,9 +23,8 @@ useEffect(()=>{
 
     return (
         <div className="mainpage">
-        <header className="mainpage__header">Header de ventas aqui</header>
-
-        <div className="mainpage__container">
+        <HeaderProductos/>
+<div className="mainpage__container">
         <aside className="mainpage__left__side">
             <ul>
                 <li>categorias</li>
@@ -39,7 +40,8 @@ useEffect(()=>{
             
         </aside>
         </div>
-
+        
+            <Footer />
         
         </div>
     )
