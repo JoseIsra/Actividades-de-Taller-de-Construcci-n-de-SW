@@ -1,6 +1,6 @@
 .mainpage
 {
-height: 100vh;
+background-color:#f6f6f6;
 }
 
 .mainpage__header
@@ -21,10 +21,27 @@ height: 100vh;
     flex:0.2;
     position:relative;
     padding:5px;
-    height:200px;
+    height:400px;
     margin-top:2rem;
-    border:1px solid black;
+    margin-left:3px;
+    border:1px solid lightgray;
+    box-shadow: inset 1px 1px 40px rgba(0,0,0,.1),
+    inset -1px .1px 10px rgba(0,0,0,.3);
+    border-radius:1rem;
 }
+
+.catg-title
+{
+    font-weight: bolder;
+    font-size:20px;
+}
+.catg-title > span{
+    font-size:2.2rem;
+    margin-left:50px;
+    color:#17a2b8;
+    word-wrap: break-word;
+}
+
 
 .mainpage__right__side
 {
@@ -32,10 +49,14 @@ height: 100vh;
     padding:15px;
     margin-left:23px;
     margin-top:30px;
-    padding-left:40px;
+    padding-left:60px;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(4, 1fr);
     row-gap:30px;
     flex:0.8;
-    border:1px solid black;
+    border:1px solid lightgrey;
+    border-radius:2rem;
+    box-shadow:-2px -2px 0 lightgray;
+    
+;
 }

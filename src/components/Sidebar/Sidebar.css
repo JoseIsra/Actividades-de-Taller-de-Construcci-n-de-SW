@@ -1,0 +1,17 @@
+.sidebar-subtitle
+{
+color:gray;
+}
+
+.sidebar__categories
+{
+cursor:pointer;
+font-size:0.9rem;
+color:rgba(0,0,0,.8);
+transition:0.3s ease;
+}
+
+.sidebar__categories:hover{
+    font-weight: 900;
+    color:#17a2b8;
+}

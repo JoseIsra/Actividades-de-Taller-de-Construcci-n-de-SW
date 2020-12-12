@@ -11,7 +11,7 @@ const subCategoryModel = require('../models/sub_category');
 
 //credentials
 const DB = require('../DBcredentials');
-//const db = {}; para las fututras sentencias
+const db = {}; //para las fututras sentencias
 
 const sequelize = new Sequelize(
     DB.database,
@@ -38,8 +38,8 @@ sequelize.sync({ force: false })
         console.log('tablas sincronizadas');
     }).catch((err) => console.log(err));
 
-//db.sequelize = sequelize
-// db.Sequelize = Sequelize
+db.sequelize = sequelize
+db.Sequelize = Sequelize
 const model = {
     'pet': Pet,
     'category':Category,
@@ -49,7 +49,8 @@ const model = {
     'saleDetail':SaleDetail,
     'service':Service,
     'serviceType':ServiceType,
-    'subCategory':SubCategory
+    'subCategory':SubCategory,
+    'statement':db
 
 };
 module.exports = model;
