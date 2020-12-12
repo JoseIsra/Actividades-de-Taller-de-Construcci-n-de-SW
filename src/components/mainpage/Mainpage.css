@@ -3,17 +3,18 @@
 background-color:#f6f6f6;
 }
 
-.mainpage__header
-{
-    width:100%;
-    height:90px;
-    border:1px solid black;
+.mainpage__container {
+  position: relative;
+  display: flex;
 }
 
-.mainpage__container
-{
-    position:relative;
-    display:flex;
+.mainpage__left__side {
+  position: relative;
+  flex: 0.2;
+  padding: 5px;
+  height: 200px;
+  margin-top: 2rem;
+  border: 1px solid black;
 }
 
 .mainpage__left__side

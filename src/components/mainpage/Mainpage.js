@@ -5,6 +5,9 @@ import './Mainpage.css';
 import { ProductCard } from '../productcard/ProductCard';
 import { Footer } from '../footer/Footer';
 import { Sidebar } from '../Sidebar/Sidebar';
+import { HeaderProductos } from '../headerProductos/HeaderProductos';
+
+
 
 export const Mainpage = () => {
     const [products, setProducts] = useState([]);
@@ -33,7 +36,7 @@ export const Mainpage = () => {
 
     return (
         <div className="mainpage">
-            <header className="mainpage__header">Header de ventas aqui</header>
+        <HeaderProductos />
 
             <div className="mainpage__container">
                 <aside className="mainpage__left__side">
