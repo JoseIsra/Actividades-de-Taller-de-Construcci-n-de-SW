@@ -21,48 +21,49 @@ export const Register = () => {
 
     return (
         <div className="register">
-            <header className="register__header">
-                <Link to= "/home">
-                <img src={logoHappy} alt="logohappy" />
-                </Link>
-            </header>
-            <div className="register__card">
-                
-            <h2>Regístrate</h2>
-            <div className="register__content">
-                <form autoComplete="off">
-                    <input autoFocus="on"
-                    type="text"
-                        name="name"
-                        value={user.name}
-                        placeholder="Nombre..."
-                        onChange={handleChange}
-                    />
-                    <input type="text"
-                        name="lastname"
-                        placeholder="Apellido..."
-                        value={user.lastname}
-                        onChange={handleChange}
-                    />
-                    <input type="text"
-                        name="email"
-                        placeholder="Correo..."
-                        value={user.email}
-                        onChange={handleChange}
-                    />
-                    <input type="password"
-                        value={user.password}
-                        name="password"
-                        placeholder="Contraseña..."
-                        onChange={handleChange}
-                    />
 
-                    <button type="submit" 
-                    className="btn-register">Guardar datos    
-                    </button>
-                </form>
+            <Link to="/home">
+                <img className="hapyLogo" src={logoHappy} alt="logohappy" />
+            </Link>
+
+            <div className="container">
+                <div className="registerForm">
+                    <h2>Regístrate</h2>
+                    <div className="registerBox">
+                        <div className="inputBox w50">
+                            <input autoComplete="off" required type="text"
+                                name="name"
+                                onChange={handleChange}
+                            />
+                            <span>NOMBRES</span>
+                        </div>
+                        <div className="inputBox w50">
+                            <input autoComplete="off" required type="text"
+                                name="lastname"
+                                onChange={handleChange}
+                            />
+                            <span>APELLIDOS</span>
+                        </div>
+                        <div className="inputBox w50">
+                            <input autoComplete="off" required type="text"
+                                onChange={handleChange}
+                                name="email"
+                            />
+                            <span>CORREO</span>
+                        </div>
+                        <div className="inputBox w50">
+                            <input autoComplete="off" required type="pasword"
+                            onChange={handleChange}
+                            name="password"
+                            />
+                            <span>CONTRASEÑA</span>
+                        </div>
+                        <div className="inputBox w100">
+                            <input  type="submit" value="Guardar" />
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
 
         </div >
     )
