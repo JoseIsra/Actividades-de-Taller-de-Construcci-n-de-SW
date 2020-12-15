@@ -7,35 +7,40 @@ import logoHappy from "../../images/logo-happypet.png";
 
 export const Login = () => {
   return (
-    <div className="_login">
-      <header className="register__header">
-        <Link to="/home">
-          <img src={logoHappy} alt="logohappy" />
-        </Link>
-      </header>
-      <div className="Login">
+    <div className="login__section">
 
-        <h2>Iniciar sesión</h2>
-        <div className="login__content">
-          <form autoComplete="off">
-            <input 
-            autoFocus="on"
-            type="text" placeholder="Correo..." />
-            <input type="password" placeholder="Contraseña..." />
-            
-            
-              <Link className ="links_to_help" to="/register">no tienes cuenta? Crea una ya!</Link>
-              <Link className="links_to_help" >Olvidaste tu contraseña?</Link>
-            
-            <button type="submit" className="btn-enviar">
-              Ingresar
-          </button>
+    <Link to="/home">
+        <img className="hapyLogo" src={logoHappy} alt="logohappy" />
+    </Link>
 
-          </form>
-
+    <div className="container">
+        <div className="loginForm">
+            <h2>Iniciar Sesión</h2>
+            <div className="loginBox">
+                <div className="inputBox w50">
+                    <input autoComplete="off" required type="text"
+                        name="email"
+                    />
+                    <span>CORREO</span>
+                </div>
+                <div className="inputBox w50">
+                    <input autoComplete="off" required type="pasword"
+                    name="password"
+                    />
+                    <span>CONTRASEÑA</span>
+                </div>
+                <div className="links_to_help">
+                <Link to="/register" >Sin cuenta? Regístrate ya</Link>
+                <Link to="/register">Olvidaste tu contraseña?</Link>
+                </div>
+                <div className="inputBox w100">
+                    <input  type="submit" value="Ingresar" />
+                </div>
+            </div>
         </div>
-      </div>
     </div>
+
+</div >
   );
 }
 
