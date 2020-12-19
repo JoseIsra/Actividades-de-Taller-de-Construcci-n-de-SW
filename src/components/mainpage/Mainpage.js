@@ -1,36 +1,26 @@
 
 import React, { useState, useEffect } from 'react'
-import axios from 'axios';
+import { api } from '../../httprequestconfig/methods';
 import './Mainpage.css';
 import { ProductCard } from '../productcard/ProductCard';
 import { Footer } from '../footer/Footer';
 import { Sidebar } from '../Sidebar/Sidebar';
 import { HeaderProductos } from '../headerProductos/HeaderProductos';
+import { useDataLayerValue } from '../../DataLayer';
 
 
 
 export const Mainpage = () => {
     const [products, setProducts] = useState([]);
-    const [categories, setCategories] = useState([]);
-    const [idCategory, setIdCategory] = useState(1);
-    const [categoryName, setcategoryName] = useState('juguetes');
-    //useeffect --> recupera los registros de la tabla productos
-    const changeCategoriesAndId = (theId) => {
-        setIdCategory(theId);
-        setcategoryName(categories[theId - 1].cat_name);
-    }
-
+    const [{idCategory}] = useDataLayerValue();
+    
     useEffect(() => {
-        axios.get(`http://localhost:4000/api/products/${idCategory}]`)
+            api.getProducts(idCategory)
             .then(response => setProducts(response.data))
             .catch(err => console.log(err));
     }, [idCategory]);
 
-    useEffect(() => {
-        axios.get('http://localhost:4000/api/category')
-            .then(response => setCategories(response.data))
-            .catch(err => console.log(err));
-    }, []);
+    
 
 
 
@@ -39,16 +29,7 @@ export const Mainpage = () => {
         <HeaderProductos />
 
             <div className="mainpage__container">
-                <aside className="mainpage__left__side">
-
-                    <p className="catg-title">Categoria : 
-                    <br />
-                    <span>{categoryName} </span>
-                    </p>
-                    <Sidebar changeCategoriesAndId={changeCategoriesAndId} categories={categories} />
-
-                </aside>
-
+                        <Sidebar />
 
                 <aside className="mainpage__right__side">
                     {products.map((product, id) => {

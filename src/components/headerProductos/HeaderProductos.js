@@ -19,15 +19,15 @@ export const HeaderProductos=()=>{
     <input className="barraBuscar" placeholder="¿Qué producto necesitas?"/>
 </div>
 <div className="botonesP">
-    <Link className="carrito">
+    <Link className="carrito" to="">
         <Badge badgeContent={1} color="secondary">
-  <ShoppingCartIcon className="icono_shop_Producto"/>
+<ShoppingCartIcon className="icono_shop_Producto"/>
 </Badge>
         
     </Link>
     <div className="miCuenta_cont_Producto">
-         
-         
+    
+        
     <ul className="miCuenta_ul">
         <li className="miCuenta"><AccountCircleIcon/>
         Mi cuenta

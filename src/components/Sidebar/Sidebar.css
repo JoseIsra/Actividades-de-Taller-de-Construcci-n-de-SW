@@ -1,7 +1,33 @@
-.sidebar-subtitle
+
+.sidebar{
+padding:4px;
+height: 350px;
+flex:0.2;
+}
+
+
+.sidebar-title
 {
 color:gray;
+position:relative;
+top:0.7em;
 }
+
+.sidebar h3
+{
+    font-size:1.5rem;
+    margin-left:50px;
+    word-wrap: break-word;
+    font-weight: 600;
+    color:#17a2b8;
+}
+
+.sidebar-subtitle
+{
+    position:relative;
+    top:10px;
+}
+
 
 .sidebar__categories
 {

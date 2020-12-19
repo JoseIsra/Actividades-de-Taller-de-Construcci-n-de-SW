@@ -65,6 +65,8 @@ transition:0.3s ease-in;
     color:#17a2b8;
     background-color:transparent;
     border:2px solid #17a2b8; 
+    outline:none !important;
+    z-index:1;
 }
 
 .btn-seeDetails
