@@ -11,8 +11,8 @@ export const Footer=()=>{
         break;
         case "twitter": window.open("http://www.twitter.com","_blank");
         break;
-        case "instagram": window.open("http://www.instagram.com","_blank")
-        
+        case "instagram": window.open("http://www.instagram.com","_blank");break;
+        default:console.log("error")
     }
     }
     return(
