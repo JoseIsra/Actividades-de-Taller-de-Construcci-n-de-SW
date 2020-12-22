@@ -1,34 +1,24 @@
 
-import React, { useState, useEffect } from 'react'
-import { api } from '../../httprequestconfig/methods';
+import React, {useEffect, useState}  from 'react'
 import './Mainpage.css';
-import { ProductCard } from '../productcard/ProductCard';
-import { Footer } from '../footer/Footer';
-import { Sidebar } from '../Sidebar/Sidebar';
-import { HeaderProductos } from '../headerProductos/HeaderProductos';
-import { DetailProduct } from '../DetailProduct/DetailProduct';
 import { useDataLayerValue } from '../../DataLayer';
-import {Router, Route, Switch} from 'react-router-dom';
+import { Sidebar } from '../Sidebar/Sidebar';
+import { ProductCard } from '../productcard/ProductCard';
+import { api } from '../../httprequestconfig/methods';
 
 
 export const Mainpage = () => {
     const [products, setProducts] = useState([]);
     const [{idCategory}] = useDataLayerValue();
-    
+
     useEffect(() => {
-            api.getProducts(idCategory)
-            .then(response => setProducts(response.data))
-            .catch(err => console.log(err));
-    }, [idCategory]);
-
-    
-
-
+        api.getProducts(idCategory)
+        .then(response => setProducts(response.data))
+        .catch(err => console.log(err));
+}, [idCategory]);
 
     return (
         <div className="mainpage">
-            
-        <HeaderProductos />
 
             <div className="mainpage__container">
                         <Sidebar />
@@ -39,12 +29,8 @@ export const Mainpage = () => {
                     })}
 
                 </aside>
-            </div>
-
-            
-            
-
-            <Footer />
+            </div>  
+                
             
         </div>
     )
