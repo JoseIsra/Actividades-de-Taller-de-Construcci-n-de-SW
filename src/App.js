@@ -1,7 +1,6 @@
 import './App.css';
 
 import React, { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-// import {routes} from './routes';
 import { Register } from './components/register/Register';
 import { Login } from './components/login/Login';
 import { Home } from './components/home/Home';
@@ -17,12 +16,7 @@ function App() {
 
     <div className="app">
       <Router>
-        {/* momentaneo */}
         <Switch>
-        {/* {routes.map((route, id) => {
-          return <Route key={id} {...route} />
-        })} */}
-
         <Route exact path="/home" component ={Home} /> 
         <Route exact path="/login" component ={Login} />
         <Route exact path="/register" component ={Register} />
