@@ -6,8 +6,9 @@ import { ProductCard } from '../productcard/ProductCard';
 import { Footer } from '../footer/Footer';
 import { Sidebar } from '../Sidebar/Sidebar';
 import { HeaderProductos } from '../headerProductos/HeaderProductos';
+import { DetailProduct } from '../DetailProduct/DetailProduct';
 import { useDataLayerValue } from '../../DataLayer';
-
+import {Router, Route, Switch} from 'react-router-dom';
 
 
 export const Mainpage = () => {
@@ -26,6 +27,7 @@ export const Mainpage = () => {
 
     return (
         <div className="mainpage">
+            
         <HeaderProductos />
 
             <div className="mainpage__container">
@@ -39,7 +41,11 @@ export const Mainpage = () => {
                 </aside>
             </div>
 
+            
+            
+
             <Footer />
+            
         </div>
     )
 }

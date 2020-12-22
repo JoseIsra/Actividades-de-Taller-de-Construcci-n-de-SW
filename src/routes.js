@@ -23,9 +23,5 @@ export const routes = [
         path:'/mainpage',
         component:Mainpage,
         exact:true
-    },{
-        path:'/mainpage/product',
-        component:DetailProduct,
-        exact:true
     }
 ];
