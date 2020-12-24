@@ -1,5 +1,6 @@
 import React from 'react';
 import { Formik,Field, Form, ErrorMessage  } from 'formik';
+import  {TextError}  from './TextError';
 import { api } from './httprequestconfig/methods';
 import * as yup from 'yup';
 
@@ -25,27 +26,15 @@ const onSubmit = async (values, onSubmitProps)=>{
 export const PruebaForm = () => {
 
     return (
+        
         <Formik
             initialValues={{ cli_name: '', cli_lastname: '', cli_email: '', cli_password:''}}
             validationSchema={validationSchema}
-            // onSubmit= {async (values)=>{
-            //     const data={
-            //         cli_name:values.cli_name,
-            //         cli_lastname:values.cli_lastname,
-            //         cli_email:values.cli_email,
-            //         cli_password:values.cli_password
-            //     }
-            //     try{
-            //         await api.createClient(data)
-            //     }catch(err){
-            //         console.log(err)
-            //     }
-            // }
             onSubmit ={onSubmit}
-            
-        
+            validateOnBlur={false}
         >
         {formik => {
+            console.log(formik)
             return (
                 <Form>
                 <label>Nombre</label>
@@ -62,7 +51,7 @@ export const PruebaForm = () => {
                 <br />
                 <label>Contraseña</label>
                 <Field name="cli_password" type="password"/>
-                <ErrorMessage name="cli_password" />
+                <ErrorMessage name="cli_password" component={TextError} />
                 <button type="submit">Enviar</button>
             </Form>
             )
