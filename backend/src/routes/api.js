@@ -36,7 +36,15 @@ INNER JOIN categories c ON sc.id_category = c.idcategory where c.idcategory = ?
     res.end();
 });
 
-
+router.post('/register', async(req, res)=>{
+    try{
+        await model.client.create(req.body);
+        console.log("datos registrados");
+        res.end();
+    }catch(err){
+        console.log(err)
+    }
+});
 
 
 

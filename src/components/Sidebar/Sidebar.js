@@ -7,7 +7,7 @@ import { useDataLayerValue } from '../../DataLayer';
 export const Sidebar = () => {
         const [categories, setCategories] = useState([]);
         const [nameCategory,setNameCategory ] = useState('juguetes');
-        const [{},dispatch] = useDataLayerValue();
+        const [{_},dispatch] = useDataLayerValue();
 
 
     useEffect(()=>{

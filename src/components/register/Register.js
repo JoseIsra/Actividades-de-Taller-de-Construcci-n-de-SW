@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
 import './Register.css';
-
-import logoHappy from "../../images/logo-happypet.png";
+    import logoHappy from "../../images/logo-happypet.png";
 import { Link } from 'react-router-dom';
+import { registerSchema } from '../../Validations/RegisterValidation';
+
 export const Register = () => {
     const [user, setUser] = useState({
         name: '',
@@ -10,7 +11,6 @@ export const Register = () => {
         email: '',
         password: ''
     })
-
     const handleChange = (e) => {
         setUser({
             ...user,
@@ -18,7 +18,15 @@ export const Register = () => {
         });
     };
 
-
+    const checkThing= async()=>{
+        try{
+            const isValid = await registerSchema.isValid(user);
+            console.log(isValid);
+            }catch(err){
+            console.log(err.name);
+            console.log(err.errors[0]);
+        }
+    }
     return (
         <div className="register">
 
@@ -52,14 +60,14 @@ export const Register = () => {
                             <span>CORREO</span>
                         </div>
                         <div className="inputBox w50">
-                            <input autoComplete="off" required type="pasword"
+                            <input autoComplete="off" required type="password"
                             onChange={handleChange}
                             name="password"
                             />
                             <span>CONTRASEÑA</span>
                         </div>
                         <div className="inputBox w100">
-                            <input  type="submit" value="Guardar" />
+                            <input onClick={checkThing} type="submit" value="Guardar" />
                         </div>
                     </div>
                 </div>

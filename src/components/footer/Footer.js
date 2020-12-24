@@ -27,10 +27,10 @@ export const Footer=()=>{
 </nav>
 <nav className="comunidad">
     <p>Comunidad</p>
-    <a href="">Nuestros colaboradores</a>
-    <a href="">Comunidad 3</a>
-    <a href="">Comunidad 4</a>
-    <a href="">Comunidad 5</a>
+    <a href="#">Nuestros colaboradores</a>
+    <a href="#">Comunidad 3</a>
+    <a href="#">Comunidad 4</a>
+    <a href="#">Comunidad 5</a>
 </nav>
             </div>
 
