@@ -2,7 +2,8 @@
 
 const model = require('../dbconfig/dbconfig');
 const { QueryTypes } = require('sequelize');
-
+const bcrypt = require('bcryptjs');
+const { RedoTwoTone } = require('@material-ui/icons');
 const router = require('express').Router();
 
 
@@ -37,13 +38,31 @@ INNER JOIN categories c ON sc.id_category = c.idcategory where c.idcategory = ?
 });
 
 router.post('/register', async(req, res)=>{
+    
+    //autenticar correo
     try{
-        await model.client.create(req.body);
-        console.log("datos registrados");
-        res.end();
+        const client = await model.client.findOne({
+            where:{
+                cli_email:req.body.cli_email
+            }
+        })
+        if(!client){
+            let hashPassword
+            // hashear la contraseña
+            hashPassword = bcrypt.hashSync(req.body.cli_password , 10);
+            //guardar el registro
+            req.body.cli_password = hashPassword;
+            await model.client.create(req.body);
+            console.log("datos registrados");
+            res.end();
+        }else{
+            res.send("Ese correo ya existe");res.end();
+        }
+
     }catch(err){
-        console.log(err)
+        console.log(err);
     }
+
 });
 
 

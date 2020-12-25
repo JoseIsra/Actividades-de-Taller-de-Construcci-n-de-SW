@@ -8,7 +8,6 @@ import {Mainpage} from './components/mainpage/Mainpage';
 import { HeaderProductos } from './components/headerProductos/HeaderProductos';
 import { Footer } from './components/footer/Footer';
 import {DetailProduct} from './components/DetailProduct/DetailProduct';
-import {PruebaForm} from './PruebaForm';
 
 function App() {
   //estructura por el momento
@@ -20,7 +19,7 @@ function App() {
         <Switch>
         <Route exact path="/home" component ={Home} /> 
         <Route exact path="/login" component ={Login} />
-        <Route exact path="/register" component ={PruebaForm} />
+        <Route exact path="/register" component ={Register} />
 
           <>
           <HeaderProductos />  

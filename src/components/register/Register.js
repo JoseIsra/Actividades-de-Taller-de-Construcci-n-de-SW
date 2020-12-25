@@ -1,78 +1,108 @@
-import React, { useState } from 'react'
+import React, {useState,useEffect} from 'react'
 import './Register.css';
-    import logoHappy from "../../images/logo-happypet.png";
-import { Link } from 'react-router-dom';
-import { registerSchema } from '../../Validations/RegisterValidation';
+import { Formik, Field, Form, ErrorMessage } from 'formik';
+import { TextError } from '../TextError/TextError';
+import { api } from '../../httprequestconfig/methods';
+import logoHappy from "../../images/logo-happypet.png";
+import { Link,useHistory } from 'react-router-dom';
+import * as yup from 'yup';
+
+
+const validationSchema = yup.object({
+    cli_name: yup.string().required('No completado'),
+    cli_lastname: yup.string().required('No completado'),
+    cli_email: yup.string().email('no es un correo').required('No completado'),
+    cli_password: yup.string().min(6, 'de 6 a más caracteres por favor').required('No completado'),
+});
 
 export const Register = () => {
-    const [user, setUser] = useState({
-        name: '',
-        lastname: '',
-        email: '',
-        password: ''
-    })
-    const handleChange = (e) => {
-        setUser({
-            ...user,
-            [e.target.name]: e.target.value
-        });
-    };
+    const [message , setMessage] = useState(null);
+    const history = useHistory();
 
-    const checkThing= async()=>{
-        try{
-            const isValid = await registerSchema.isValid(user);
-            console.log(isValid);
-            }catch(err){
-            console.log(err.name);
-            console.log(err.errors[0]);
+    const onSubmit =  async(values, onSubmitProps) => {
+    const response = await api.createClient(values);
+
+    if(response.data === ''){
+        onSubmitProps.resetForm();
+        history.push('/login');
+        }else{
+            setTimeout(()=>{
+                setMessage(response.data);
+            },2000);
         }
+        
+        
+        
     }
+    
+
+
     return (
-        <div className="register">
+        <>
+    <Formik
+        initialValues={{ cli_name: '', cli_lastname: '', cli_email: '', cli_password: '' }}
+        validationSchema={validationSchema}
+        onSubmit={onSubmit}
+        validateOnBlur={false}
+    >
+        {formik => {
+            return (
+                <div className="register">
+                    <Link to="/home">
+                        <img className="hapyLogo" src={logoHappy} alt="logohappy" />
+                    </Link>
+                    <div className="container">
+                        <div className="registerForm">
+                    {message && <p className="emergencia">{message}</p> }
+                            <h2>Regístrate</h2>
+                            <div className="registerBox">
+                            <Form>
+                                    <div className="inputBox w50">
+                                        <Field 
+                                        autoComplete="off"
+                                        required name="cli_name" type="text" />
+                                        <span>Nombres</span>
+                                        <ErrorMessage name="cli_name" component={TextError} />
+                                    </div>
 
-            <Link to="/home">
-                <img className="hapyLogo" src={logoHappy} alt="logohappy" />
-            </Link>
+                                    <div className="inputBox w50">
+                                        <Field 
+                                        autoComplete="off"
+                                        required name="cli_lastname" type="text" />
+                                        <span>Apellidos</span>
+                                        <ErrorMessage name="cli_lastname" component={TextError} />
+                                    </div>
+                                    <div className="inputBox w50">
+                                        <Field 
+                                        autoComplete="off"
+                                        required name="cli_email" type="email" />
+                                        <span>Correo</span>
+                                        <ErrorMessage name="cli_email" component={TextError} />
+                                    </div>
+                                    <div className="inputBox w50">
+                                        <Field 
+                                        autoComplete="off"
+                                        required name="cli_password" type="password" />
+                                        <span>Contraseña</span>
+                                        <ErrorMessage name="cli_password" component={TextError} />
+                                    </div>
 
-            <div className="container">
-                <div className="registerForm">
-                    <h2>Regístrate</h2>
-                    <div className="registerBox">
-                        <div className="inputBox w50">
-                            <input autoComplete="off" required type="text"
-                                name="name"
-                                onChange={handleChange}
-                            />
-                            <span>NOMBRES</span>
+                                    <div className="inputBox w100">
+                                        <input 
+                                        type="submit"
+                                        value="Guardar"
+                                        />
+                                    </div>
+                                    </Form>
+                                    
+                                </div>
+                            </div>
                         </div>
-                        <div className="inputBox w50">
-                            <input autoComplete="off" required type="text"
-                                name="lastname"
-                                onChange={handleChange}
-                            />
-                            <span>APELLIDOS</span>
-                        </div>
-                        <div className="inputBox w50">
-                            <input autoComplete="off" required type="text"
-                                onChange={handleChange}
-                                name="email"
-                            />
-                            <span>CORREO</span>
-                        </div>
-                        <div className="inputBox w50">
-                            <input autoComplete="off" required type="password"
-                            onChange={handleChange}
-                            name="password"
-                            />
-                            <span>CONTRASEÑA</span>
-                        </div>
-                        <div className="inputBox w100">
-                            <input onClick={checkThing} type="submit" value="Guardar" />
-                        </div>
+
                     </div>
-                </div>
-            </div>
-
-        </div >
-    )
+        
+            )
+        }}
+    </Formik></>
+            )
 }
