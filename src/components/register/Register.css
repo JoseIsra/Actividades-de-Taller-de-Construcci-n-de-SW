@@ -36,11 +36,15 @@ z-index:2000;
 {
   position:absolute;
   top:10px;
-  background-color:#d90429;
   padding:5px;
-  font-size:0.8rem;
+  width:50%;
+  font-size:0.6rem;
+  text-align:center;
   font-weight: 600;
-  color:white;
+  background-color:#180605;
+  color:#C1705F;
+  border:1px solid #f7f7f7;
+  border-radius:4px;
   z-index:2000;
 }
 
