@@ -12,8 +12,14 @@ const createClient =(data) =>{
     return http.post('/register', data);
 }
 
+const login=(data)=>{
+    return http.post('/login', data);
+}
+
+
 export  const api={
     getProducts,
     getCategories,
-    createClient
+    createClient,
+    login
 }

@@ -1,9 +1,26 @@
 
 import React from 'react'
 import { Link } from 'react-router-dom';
+import { useDataLayerValue } from '../../DataLayer';
 
 import './ProductCard.css';
 export const ProductCard = ({ idproduct, prod_name, prod_price, prod_image }) => {
+    const [{},dispatch] = useDataLayerValue();
+
+    const addToBasket=()=>{
+        //agregar al carrito
+        dispatch({
+            type:'ADD_TO_BASKET',
+            item:{
+                idproduct,
+                prod_name,
+                prod_price,
+                prod_image
+            }
+        });
+    }
+
+
     return (
         <div className="productCard">
             <img src={prod_image} alt="producto" />
@@ -14,7 +31,7 @@ export const ProductCard = ({ idproduct, prod_name, prod_price, prod_image }) =>
 
             </div>
             <div className="productCard__BuyOptions">
-                <button className="btn-addToBasket">
+                <button onClick={addToBasket} className="btn-addToBasket">
                     Añadir al carrito
                 </button>
                 <Link to="/mainpage/product" className="btn-seeDetails">Ver detalles </Link>
