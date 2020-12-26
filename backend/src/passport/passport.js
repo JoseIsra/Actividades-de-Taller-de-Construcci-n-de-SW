@@ -35,7 +35,9 @@ module.exports = function(passport) {
 
 
     passport.deserializeUser((id, done)=> { //deserializamos al usuario, a partir de su id
-        model.client.findByPk(id).then(user => {
+        model.client.findByPk(id,{
+            attributes:['idclient','cli_name','cli_email']
+        }).then(user => {
             done(null,user);
         }).catch(err => console.log(err))
     });

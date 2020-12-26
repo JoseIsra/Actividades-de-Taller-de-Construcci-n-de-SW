@@ -1,14 +1,15 @@
 
 import React from 'react'
-import { Link } from 'react-router-dom';
+import { Link ,useHistory} from 'react-router-dom';
 import { useDataLayerValue } from '../../DataLayer';
 
 import './ProductCard.css';
 export const ProductCard = ({ idproduct, prod_name, prod_price, prod_image }) => {
-    const [{},dispatch] = useDataLayerValue();
-
+    const [{client},dispatch] = useDataLayerValue();
+    const history = useHistory();
     const addToBasket=()=>{
         //agregar al carrito
+        if(!client) return history.push('/login');
         dispatch({
             type:'ADD_TO_BASKET',
             item:{
@@ -18,6 +19,7 @@ export const ProductCard = ({ idproduct, prod_name, prod_price, prod_image }) =>
                 prod_image
             }
         });
+    
     }
 
 

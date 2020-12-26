@@ -26,7 +26,8 @@ router.get('/products/:id', productsController.getProducts);
 
 router.post('/register', clientController.saveClient);
 router.post('/login',clientController.login);
-
+router.get('/user', clientController.getUser);
+router.get('/logout', clientController.logout);
 
 
 

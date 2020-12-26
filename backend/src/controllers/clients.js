@@ -35,12 +35,19 @@ module.exports = {
             }
             else{
                 req.logIn(user , (err) => {
-                    res.send(req.user);
-                    console.log("user enviado");       
+                    res.send("autenticación exitosa");
+                console.log("user enviado");       
                 })
             }
         })(req, res, next);
 
+    },
+    getUser:(req, res)=>{
+        res.send(req.user);
+    },
+    logout:(req, res)=>{
+        req.logout();
+        res.send("sesion terminada");
     }
 
 

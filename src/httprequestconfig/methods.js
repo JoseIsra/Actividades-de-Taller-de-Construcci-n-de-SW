@@ -16,10 +16,20 @@ const login=(data)=>{
     return http.post('/login', data);
 }
 
+const getUser= ()=>{
+    return http.get('/user');
+}
+
+const logOut =()=>{
+    return http.get('/logout');
+}
+
 
 export  const api={
     getProducts,
     getCategories,
     createClient,
-    login
+    login,
+    getUser,
+    logOut
 }

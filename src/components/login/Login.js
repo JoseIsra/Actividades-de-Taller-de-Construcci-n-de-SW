@@ -4,7 +4,6 @@ import { Formik, Field, Form, ErrorMessage } from 'formik';
 import { TextError } from '../TextError/TextError';
 import { api } from '../../httprequestconfig/methods';
 import { Link, useHistory } from 'react-router-dom';
-import { useDataLayerValue } from '../../DataLayer';
 import logoHappy from "../../images/logo-happypet.png";
 import * as yup from 'yup';
 
@@ -19,8 +18,6 @@ const validationSchema = yup.object({
 
 
 export const Login = () => {
-    const [,dispatch] = useDataLayerValue();
-    const [client, setClient] = useState(null);
     const [message, setMessage] = useState(null);
     const [visible , setVisible] = useState(false);
 
@@ -34,11 +31,8 @@ export const Login = () => {
                 setMessage(response.data);
             }else{
                 // setClient(response.data);
-                dispatch({
-                    type:'SET_USER',
-                    client:response.data
-                })
                 history.push('/mainpage');
+                console.log("usuario ingresado");
             }
         }catch(err){
             console.log(err);
