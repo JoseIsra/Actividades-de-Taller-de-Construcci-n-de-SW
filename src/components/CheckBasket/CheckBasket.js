@@ -12,8 +12,8 @@ function CheckBasket() {
             <div className="checkBasket__leftSide">
             {(basket?.length === 0)? (
                 <div className="checkBasket__empty">
-                <h2>Su cesta está vacía 😥</h2>
-                <p>Presione "agregar al carrito" en los productos que desee</p>
+                <h2>💀Su carrito está vacío 😥😖😫</h2>
+                <p>Presione "agregar al carrito" en los productos que desee 🤓</p>
                 </div>
             ) :(
                 <div className="checkBastet__products">
