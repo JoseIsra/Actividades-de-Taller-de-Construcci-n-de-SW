@@ -17,15 +17,15 @@ function App() {
     <div className="app">
       <Router>
         <Switch>
-        <Route exact path="/home" component ={Home} /> 
-        <Route exact path="/login" component ={Login} />
-        <Route exact path="/register" component ={Register} />
+        <Route exact path="https://goofy-bassi-2cae2c.netlify.app/home" component ={Home} /> 
+        <Route exact path="https://goofy-bassi-2cae2c.netlify.app/login" component ={Login} />
+        <Route exact path="https://goofy-bassi-2cae2c.netlify.app/register" component ={Register} />
 
           <>
           <HeaderProductos />  
-        <Route exact path="/mainpage" component={Mainpage} />
-        <Route exact path="/mainpage/product" component={DetailProduct} />
-        <Route exact path="/mainpage/basket" component={CheckBasket} />
+        <Route exact path="https://goofy-bassi-2cae2c.netlify.app/mainpage" component={Mainpage} />
+        <Route exact path="https://goofy-bassi-2cae2c.netlify.app/mainpage/product" component={DetailProduct} />
+        <Route exact path="https://goofy-bassi-2cae2c.netlify.app/mainpage/basket" component={CheckBasket} />
           <Footer />
           </>
 
