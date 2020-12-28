@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/tallersw-happypet/static/css/main.7b121bd9.chunk.css",
+    "main.js": "/tallersw-happypet/static/js/main.323ded37.chunk.js",
+    "main.js.map": "/tallersw-happypet/static/js/main.323ded37.chunk.js.map",
+    "runtime-main.js": "/tallersw-happypet/static/js/runtime-main.c301bb93.js",
+    "runtime-main.js.map": "/tallersw-happypet/static/js/runtime-main.c301bb93.js.map",
+    "static/css/2.43b2b750.chunk.css": "/tallersw-happypet/static/css/2.43b2b750.chunk.css",
+    "static/js/2.6ae5c762.chunk.js": "/tallersw-happypet/static/js/2.6ae5c762.chunk.js",
+    "static/js/2.6ae5c762.chunk.js.map": "/tallersw-happypet/static/js/2.6ae5c762.chunk.js.map",
+    "index.html": "/tallersw-happypet/index.html",
+    "static/css/2.43b2b750.chunk.css.map": "/tallersw-happypet/static/css/2.43b2b750.chunk.css.map",
+    "static/css/main.7b121bd9.chunk.css.map": "/tallersw-happypet/static/css/main.7b121bd9.chunk.css.map",
+    "static/js/2.6ae5c762.chunk.js.LICENSE.txt": "/tallersw-happypet/static/js/2.6ae5c762.chunk.js.LICENSE.txt",
+    "static/media/fondo-alimentos.bb2d4a4b.png": "/tallersw-happypet/static/media/fondo-alimentos.bb2d4a4b.png",
+    "static/media/Home.css": "/tallersw-happypet/static/media/fondoCeleste.d9a7a437.png",
+    "static/media/fondo-juguetes.9ef64902.png": "/tallersw-happypet/static/media/fondo-juguetes.9ef64902.png",
+    "static/media/fondo-medicina.2524eed3.png": "/tallersw-happypet/static/media/fondo-medicina.2524eed3.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c301bb93.js",
+    "static/css/2.43b2b750.chunk.css",
+    "static/js/2.6ae5c762.chunk.js",
+    "static/css/main.7b121bd9.chunk.css",
+    "static/js/main.323ded37.chunk.js"
+  ]
+}
