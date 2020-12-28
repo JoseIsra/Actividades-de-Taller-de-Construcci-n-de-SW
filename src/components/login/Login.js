@@ -67,7 +67,7 @@ export const Login = () => {
             return (
                 <div className="login__section">
 
-                    <Link to="/home">
+                    <Link to="/">
                         <img className="hapyLogo" src={logoHappy} alt="logohappy" />
                     </Link>
 

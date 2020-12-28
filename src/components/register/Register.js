@@ -54,7 +54,7 @@ export const Register = () => {
         {formik => {
             return (
                 <div className="register">
-                    <Link to="/home">
+                    <Link to="/">
                         <img className="hapyLogo" src={logoHappy} alt="logohappy" />
                     </Link>
                     <div className="container">
