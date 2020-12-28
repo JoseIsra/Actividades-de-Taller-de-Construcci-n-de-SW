@@ -8,9 +8,7 @@ export const HomeProductos = () => {
   return (
     <div className="homeProductos">
       <span className="title"><h2>Nuestros productos</h2></span>
-      <img src ="/images/fondo-alimentos.png"/>
-      <img src ="/images/fondo-juguetes.png"/>
-      {/* <div id="carouselExampleControls" className="carousel slide" data-ride="carousel">
+      <div id="carouselExampleControls" className="carousel slide" data-ride="carousel">
 
         <div className="carousel-inner">
           <div className="carousel-item active">
@@ -78,7 +76,7 @@ export const HomeProductos = () => {
           <span className="sr-only">Next</span>
         </a>
 
-      </div> */}
+      </div> 
     </div>
   )
 }
