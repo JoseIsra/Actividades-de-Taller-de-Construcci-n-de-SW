@@ -1,7 +1,7 @@
 
 const  dbInfo= {
     database:'happypet',
-    password:'',
+    password:"",
     host:'localhost',
     user:'root'
 }
