@@ -22,8 +22,8 @@ html {
   display: flex;
   flex-direction: row-reverse;
   width: 100%;
-  /* background-repeat: no-repeat; */
-  background-size: auto;
+  background-repeat: no-repeat;
+  background-size: contain;
   min-height: 100vh;
 }
 
@@ -79,6 +79,8 @@ html {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  background-repeat: no-repeat;
+  background-size: contain;
   background-image: url("../../images/fondo-productos.png");
 }
 .AboutUs2 {
@@ -107,6 +109,8 @@ html {
 }
 .productos {
   display: flex;
+  background-repeat: no-repeat;
+  background-size: contain;
   background-image: url("../../images/fondo-servicios.png");
 
   align-items: center;
@@ -114,6 +118,8 @@ html {
 
 .servicios {
   display: flex;
+  background-repeat: no-repeat;
+  background-size: contain;
   background-image: url("../../images/fondoCeleste.png");
   align-items: center;
 }
