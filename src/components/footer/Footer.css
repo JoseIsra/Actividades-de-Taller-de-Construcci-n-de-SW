@@ -1,0 +1,161 @@
+.navFooter {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+.aboutUs {
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+  text-align: left;
+  padding-left: 1rem;
+  justify-content: space-evenly;
+}
+.aboutUs a {
+  padding: 1rem;
+}
+.comunidad a {
+  padding: 1rem;
+}
+.comunidad {
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+  text-align: left;
+  padding-left: 1rem;
+}
+.footer {
+  background: black;
+  width: 100%;
+}
+.aboutUs a {
+  color: white;
+  font-weight: lighter;
+}
+.comunidad a {
+  color: white;
+  font-weight: lighter;
+}
+.aboutUs p,
+.comunidad p {
+  color: white;
+  padding-left: 1rem;
+  padding-top: 1rem;
+  font-weight: 500;
+}
+.aboutUs a:hover,
+.comunidad a:hover {
+  color: white;
+}
+.facebook,
+.twitter,
+.instagram {
+  color: white;
+  cursor: pointer;
+  transition: color 0.4s;
+}
+.twitter:hover {
+  color: #1da1f2;
+}
+.facebook:hover {
+  color: #0c85ee;
+}
+.instagram:hover {
+  color: #ba35b1;
+}
+.deepFooter {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  align-items: center;
+
+  padding: 0.5rem;
+}
+.deepFooter p {
+  color: white;
+  font-weight: lighter;
+}
+.redesSociales {
+  width: 25%;
+  display: flex;
+  flex-direction: row;
+
+  justify-content: space-evenly;
+  right: 0;
+}
+.terminos {
+  width: 75%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-right: 1rem;
+  padding-left: 0;
+}
+.terminos1,
+.terminos2 {
+  display: flex;
+}
+.terminos1 {
+  width: 40%;
+  display: flex;
+  justify-content: center;
+}
+.terminos2 {
+  width: 60%;
+  display: flex;
+  justify-content: space-evenly;
+}
+.terminos p {
+  margin: 0;
+}
+.terminos a {
+  color: white;
+  text-decoration: none;
+  position: relative;
+}
+
+.terminos a:hover {
+  color: white;
+}
+.separador {
+  color: white;
+  display: inline-block;
+  text-align: center;
+  align-items: center;
+}
+@media screen and (max-width: 828px) {
+  .deepFooter {
+    flex-direction: column;
+  }
+  .terminos {
+    width: 100%;
+    padding: 1rem;
+  }
+  .redesSociales {
+    width: 100%;
+    padding: 0;
+    bottom: 0;
+  }
+  .aboutUs,
+  .comunidad {
+    width: 50%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .terminos {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .terminos1,
+  .terminos2 {
+    padding: 1rem;
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+  }
+}

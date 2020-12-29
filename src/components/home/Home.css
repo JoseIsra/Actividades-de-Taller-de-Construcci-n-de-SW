@@ -1,0 +1,170 @@
+.section {
+  text-align: center;
+  min-height: 100vh;
+}
+.home {
+  min-height: 100vh;
+  display: flex;
+  margin: 0;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.main {
+  width: 100%;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+.inicio {
+  background-image: url("../../images/fondo-inicio.png");
+  display: flex;
+  flex-direction: row-reverse;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  min-height: 100vh;
+}
+
+.texto {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 50%;
+  margin-right: 2rem;
+  padding-bottom: 1rem;
+}
+.letras {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  text-align: center;
+}
+.letras h2 {
+  width: 80%;
+  color: white;
+  padding-right: 1rem;
+}
+.begin {
+  border: 1.5px solid #17a2b8;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  font-size: 20px;
+  text-decoration: none;
+  background: none;
+  color: #17a2b8;
+  transition: color 0.4s;
+  position: relative;
+
+  margin-top: 2rem;
+}
+.begin:hover {
+  text-decoration: none;
+  color: white;
+  letter-spacing: 6px;
+  background: #17a2b8;
+}
+
+/*---- INICIO ABOUT US----*/
+.AboutUs h2 {
+  color: white;
+  padding-top: 6rem;
+  padding-bottom: 3rem;
+  font-size: 50px;
+}
+.AboutUs {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-image: url("../../images/fondo-productos.png");
+}
+.AboutUs2 {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+.AboutUs2 p,
+.AboutUs2 h4 {
+  color: white;
+}
+.mision,
+.vision,
+.metas,
+.proveedores {
+  width: 25%;
+  padding: 1rem;
+}
+/*-----------FIN ABOUT US------*/
+.texto h2,
+.AboutUs h2 {
+  font-family: "Quicksand";
+  color: white;
+  letter-spacing: 3px;
+  font-size: 50px;
+}
+.productos {
+  display: flex;
+  background-image: url("../../images/fondo-servicios.png");
+
+  align-items: center;
+}
+
+.servicios {
+  display: flex;
+  background-image: url("../../images/fondoCeleste.png");
+  align-items: center;
+}
+@media screen and (max-width: 960px) {
+  .AboutUs h2 {
+    padding: 2rem;
+  }
+}
+@media screen and (max-width: 828px) {
+  .AboutUs2 {
+    display: grid;
+    flex-direction: none;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 50% 50%;
+    grid-template-areas: "mision vision" "metas proveedores";
+  }
+  .mision {
+    grid-area: mision;
+    width: 100%;
+  }
+  .vision {
+    grid-area: vision;
+    width: 100%;
+  }
+  .metas {
+    grid-area: metas;
+    width: 100%;
+  }
+  .proveedores {
+    grid-area: proveedores;
+    width: 100%;
+  }
+  .inicio {
+    background-size: cover;
+    align-items: center;
+    justify-content: center;
+  }
+  .texto {
+    width: 100%;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+  }
+  .letras {
+    padding: 0;
+  }
+  .letras h2 {
+    padding: 0;
+  }
+  .begin {
+    width: 80%;
+    left: 10%;
+  }
+}

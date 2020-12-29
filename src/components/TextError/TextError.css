@@ -1,0 +1,6 @@
+.error-text{
+    position:absolute;
+    color:red;
+    font-size:0.7rem;
+    right:0;
+}

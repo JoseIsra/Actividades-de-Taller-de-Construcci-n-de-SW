@@ -1,50 +1,128 @@
-
-._login
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+/* font-family: 'Poppins', sans-serif;  */
+.login__section
 {
-    display:flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-}
-
-.Login
-{
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
     position:relative;
-    width:370px;
-    height:495px;
-    border:1px solid black;
-    border-radius: 20px;
-}
-
-.enviar
-{
-    display:flex;
+    min-height: 100vh;
+    justify-content: center;
+    display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding:8px;
-    width:70px;
-    font-size:15px;
-    border: 1px solid black;
-    border-radius:15px;
-    outline:none;
-    cursor:pointer;
+    background-color: #112d42; 
 }
 
-input,Link{
-    margin:5px 10px;
-    width:calc(100% - 20px);
-    font-size:1.2rem;
-    border:1px solid gray;
-    border-radius:15px;
-    padding:5px;
-    outline:none;
+.login__section::before
+{
+  content:'';
+  position:absolute;
+  top:0;
+  left:0;
+  width:60%;
+  height: 100%;
+  background-color: #03a9f4;
 }
 
-.linkreg{
-    display:flex;
-    align-content: center;
+
+
+
+.loginForm
+{
+position:absolute;
+display:flex;
+justify-content: center;
+align-items: center;
+flex-direction:column;
+padding:70px 50px;
+background-color: #fff;
+height: 100%;
+width:390px;
+}
+
+.loginForm > h2
+{
+color:#0f3959;
+font-size:2em;
+font-weight: 500;
+font-family: 'Poppins', sans-serif;
+}
+
+.loginForm .loginBox
+{
+position:relative;
+display: flex;
+flex-wrap: wrap;
+flex-direction:column;
+padding-top:30px;
+width:100%;
+}
+
+.loginForm .loginBox .inputBox
+{
+margin:0 0 35px 0;
+position:relative;
+}
+
+
+.loginForm .loginBox .inputBox.w100
+{
+width:100%;
+}
+
+.loginForm .loginBox .inputBox input
+{
+font-family: 'Poppins', sans-serif;
+width:100% !important;
+padding:5px 0;
+resize:none;
+font-size:18px;
+font-weight: 300;
+color:#333;
+border:none;
+border-bottom:1px solid #777;
+outline:none;
+}
+
+.loginForm .loginBox .inputBox span
+{
+position:absolute;
+left:0;
+padding:5px 0;
+font-size:18px;
+color:#333;
+font-weight: 300;
+transition:0.2s;
+pointer-events: none;
+}
+.loginForm .loginBox .inputBox input:focus ~ span,
+.loginForm .loginBox .inputBox input:valid ~ span
+{
+transform:translateY(-20px);
+font-size:12px;
+font-weight: 900;
+color:#112d42;
+letter-spacing: 2px;
+}
+.links_to_help
+{
+    display: flex;
+    flex-direction: column;
+    font-size: 0.8em;
+    margin-bottom:20px;
+}
+
+
+.loginForm .loginBox .inputBox input[type="submit"]
+{
+position:relative;
+cursor:pointer;
+background-color: #0f3959;
+color:white;
+padding:12px;
+width:150px;
+}
+
+.loginForm .loginBox .inputBox input[type="submit"]:hover
+{
+background-color: black;
+letter-spacing: 3px;
+text-transform: uppercase;
 }

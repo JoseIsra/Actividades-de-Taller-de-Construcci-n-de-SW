@@ -1,4 +1,8 @@
-# Proyecto de taller de construcción de software
+# Proyecto ----> Happy Pet
 
-#Página de venta de productos para mascotas y que
-brinda servicios básicos para la higiene, salud, entrenamiento y alimentación para la mascota
+## Info del proyecto
+- Curso: Taller de Construcción de SW
+- Universidad : Universidad Nacional Mayor de San Marocs
+
+## Info sobre implementación
+- deploy de la parte del frontend en Netlify, LINK PARA EL MUNDO :https://ha-ppypet.netlify.app/

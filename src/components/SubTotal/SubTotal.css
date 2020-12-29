@@ -1,0 +1,47 @@
+.subtotal{
+    position:relative;
+    margin-top:20px;
+    margin-right:20px;
+    display:flex;
+    flex-direction: column;
+    width:250px;
+    height: 160px;
+    background-color: rgba(0,0,0,.3);
+    border-radius:5px;
+    padding:10px;
+}
+
+.subtotal > p{
+    font-size:0.8rem;
+}
+
+.subtotal .subtotal__info
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.subtotal__info >p
+{
+    font-size:0.8rem;
+    color:black;
+}
+.subtotal__info  span
+{
+    font-size:1rem;
+}
+
+.subtotal__info button{
+    color: white;
+    border-radius:10px;
+    background-color:#0f3959;
+    outline:none !important;
+    cursor:pointer;
+}
+
+.subtotal__info button:hover
+{
+    letter-spacing: 3px;
+    background-color: black;
+}
