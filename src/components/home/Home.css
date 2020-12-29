@@ -22,8 +22,8 @@ html {
   display: flex;
   flex-direction: row-reverse;
   width: 100%;
-  background-repeat: no-repeat;
-  background-size: contain;
+  /* background-repeat: no-repeat; */
+  background-size: auto;
   min-height: 100vh;
 }
 
