@@ -5,6 +5,10 @@ const getProducts = (id)=>{
     return http.get(`/products/${id}`);
 } 
 
+const getProductById = (id)=>{
+    return http.get(`/product/${id}`);
+}
+
 const getCategories = () => {
     return http.get('/category');
 }
@@ -27,6 +31,7 @@ const logOut =()=>{
 
 export  const api={
     getProducts,
+    getProductById,
     getCategories,
     createClient,
     login,

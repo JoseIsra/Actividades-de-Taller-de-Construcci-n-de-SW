@@ -16,5 +16,19 @@ module.exports = {
         const productsJson = JSON.stringify(products);
         res.send(productsJson);
         res.end();
+    },
+
+    getProductById: async (req, res) => {
+        const { id } = req.params;
+
+        const product = await model.product.findByPk(id,{
+                attributes:['idproduct','prod_name','prod_price','prod_description','prod_image']
+            
+        });
+
+            const productJson = JSON.stringify(product);
+            res.send(productJson);res.end();
+        
     }
+
 }

@@ -23,6 +23,7 @@ router.get('/category', async(req, res) => {
 });
 
 router.get('/products/:id', productsController.getProducts);
+router.get('/product/:id', productsController.getProductById);
 
 router.post('/register', clientController.saveClient);
 router.post('/login',clientController.login);

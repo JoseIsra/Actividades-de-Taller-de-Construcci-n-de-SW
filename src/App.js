@@ -24,7 +24,7 @@ function App() {
           <>
           <HeaderProductos />  
         <Route exact path="/mainpage" component={Mainpage} />
-        <Route exact path="/mainpage/product" component={DetailProduct} />
+        <Route exact path="/mainpage/product/:id" component={DetailProduct} />
         <Route exact path="/mainpage/basket" component={CheckBasket} />
           <Footer />
           </>

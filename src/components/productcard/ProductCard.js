@@ -36,7 +36,7 @@ export const ProductCard = ({ idproduct, prod_name, prod_price, prod_image }) =>
                 <button onClick={addToBasket} className="btn-addToBasket">
                     Añadir al carrito
                 </button>
-                <Link to="/mainpage/product" className="btn-seeDetails">Ver detalles </Link>
+                <Link to={`/mainpage/product/${idproduct}`} className="btn-seeDetails">Ver detalles </Link>
             </div>
 
         </div>
