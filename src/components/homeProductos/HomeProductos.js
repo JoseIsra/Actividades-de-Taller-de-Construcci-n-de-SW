@@ -76,7 +76,7 @@ export const HomeProductos = () => {
           <span className="sr-only">Next</span>
         </a>
 
-      </div>
+      </div> 
     </div>
   )
 }

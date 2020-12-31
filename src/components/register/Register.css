@@ -1,94 +1,158 @@
-.register {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  position: relative;
-  background-color: white;
-}
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+/* font-family: 'Poppins', sans-serif;  */
 
-.register__header {
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  width: 100%;
-  height: 100px;
-  border-bottom: 1px solid lightgray;
-  background-color: #4d97b3;
-}
-.register__header  img
+.register
 {
-  object-fit: contain;
-  height: 100px;
-  margin-left:2rem;
-
+    position:relative;
+    min-height: 100vh;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    background-color: #112d42; 
 }
 
-.register__card {
-  margin-top: 60px;
-  display: flex;
-  flex-direction: column;
+.register::before
+{
+  content:'';
+  position:absolute;
+  top:0;
+  left:0;
+  width:60%;
+  height: 100%;
+  background-color: #03a9f4;
+}
+
+.hapyLogo
+{
+position:absolute;
+top:10px;
+left:30px;
+object-fit: contain;
+width:100px;
+z-index:2000;
+}
+
+.emergencia
+{
+  position:absolute;
+  top:10px;
+  padding:5px;
+  width:50%;
+  font-size:0.6rem;
+  text-align:center;
+  font-weight: 600;
+  background-color:#180605;
+  color:#C1705F;
+  border:1px solid #f7f7f7;
+  border-radius:4px;
+  z-index:2000;
+}
+
+
+
+
+.container
+{
+  position:relative;
+  min-width:500px;
+  min-height:550px;
+  display:flex;
   align-items: center;
   justify-content: center;
-  position: relative;
-  width: 370px;
-  height: 495px;
-  border: 1px solid gray;
-  border-radius: 20px;
+  z-index:1000;
 }
-
-.register__card > h2 {
-  font-size: 1.5rem;
-  letter-spacing: 4px;
-  border-bottom: 4px solid black;
-  color: black;
-}
-
-.register__content > form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.registerForm
+{
+  position:absolute;
+  display:flex;
   justify-content: center;
-  width: 100%;
-}
-
-.register__content input {
-  margin: 20px 10px;
-  width: calc(100% - 20px);
-  font-size: 1.2rem;
-  border: 1px solid gray;
-  border-radius: 15px;
-  padding: 5px;
-  outline: none;
-}
-
-.register__content input:focus {
-  box-shadow: 0 2px 0px rgba(14, 196, 212, 0.6), 
-  0 0 6px rgba(14, 196, 212, 0.6);
-}
-
-.btn-register {
-  display: flex;
   align-items: center;
-  justify-content: center;
-  padding: 10px;
-  width: 100%;
-  color: gray;
-  font-size: 19px;
-  background-color: transparent;
-  border: 1px solid black;
-  outline: none;
-  transition: 0.2s ease-in;
-  cursor: pointer;
+  flex-direction:column;
+  padding:70px 50px;
+  background-color: #fff;
+  height: 100%;
+  width:390px;
 }
 
-.btn-register:hover {
-  color: white;
-  font-weight: 900;
-  letter-spacing: 4px;
-  background-color: #4d97b3;
+.registerForm > h2
+{
+  color:#0f3959;
+  font-size:2em;
+  font-weight: 500;
+  font-family: 'Poppins', sans-serif;
 }
 
+.registerForm .registerBox
+{
+  position:relative;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction:column;
+  padding-top:30px;
+  width:100%;
+}
+
+.registerForm .registerBox .inputBox
+{
+margin:0 0 35px 0;
+position:relative;
+}
+
+
+.registerForm .registerBox .inputBox.w100
+{
+  width:100%;
+  
+}
+
+.registerForm .registerBox .inputBox input
+{
+  font-family: 'Poppins', sans-serif;
+  width:100% !important;
+  padding:5px 0;
+  resize:none;
+  font-size:18px;
+  font-weight: 300;
+  color:#333;
+  border:none;
+  border-bottom:1px solid #777;
+  outline:none;
+}
+
+.registerForm .registerBox .inputBox span
+{
+  position:absolute;
+  left:0;
+  padding:5px 0;
+  font-size:18px;
+  color:#333;
+  font-weight: 300;
+  transition:0.2s;
+  pointer-events: none;
+}
+.registerForm .registerBox .inputBox input:focus ~ span,
+.registerForm .registerBox .inputBox input:valid ~ span
+{
+transform:translateY(-20px);
+font-size:12px;
+font-weight: 900;
+color:#112d42;
+letter-spacing: 2px;
+}
+
+.registerForm .registerBox .inputBox input[type="submit"]
+{
+  position:relative;
+  cursor:pointer;
+  background-color: #0f3959;
+  color:white;
+  padding:12px;
+  width:150px;
+}
+
+.registerForm .registerBox .inputBox input[type="submit"]:hover
+{
+background-color: black;
+letter-spacing: 3px;
+text-transform: uppercase;
+}

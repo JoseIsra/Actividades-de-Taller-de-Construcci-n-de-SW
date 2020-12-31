@@ -1,0 +1,25 @@
+
+.basketItem
+{
+    position: relative;
+    margin-top:30px;
+    margin-bottom:15px;
+    display:flex;
+    padding:30px;
+    background-color:#f3f3f3;
+}
+
+.basketItem > img{
+    width:150px;
+    height: 150px;
+    object-fit: contain;
+}
+
+.basketItem__Info 
+{
+    position:relative;
+    left:20px;
+    display:flex;
+    flex-direction: column;
+    padding:10px;
+}

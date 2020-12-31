@@ -16,12 +16,7 @@ module.exports = (sequlize, type) => {
         },
         sub_cat_name:{
             type:type.STRING
-        },
-        sub_cat_description:{
-            type:type.TEXT
         }
-
-
     }, {
         timestamps: false
     })

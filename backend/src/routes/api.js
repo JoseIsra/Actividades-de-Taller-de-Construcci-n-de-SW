@@ -1,34 +1,34 @@
 
-/* const { Pet } = require('../dbconfig/dbconfig');
-const { Category } = require('../dbconfig/dbconfig');
-const { Product } = require('../dbconfig/dbconfig'); */
+
 const model = require('../dbconfig/dbconfig');
+const { QueryTypes } = require('sequelize');
+const clientController = require('../controllers/clients');
+const productsController = require('../controllers/products');
+const client = require('../models/client');
 const router = require('express').Router();
 
 
 
 router.get('/pets', async(req, res) => {
 
-    const respuesta = await model.pet.findAll();
-    const rsptaJson = JSON.stringify(respuesta);
-    res.send(rsptaJson);
+    const response = await model.pet.findAll();
+    const responseJson = JSON.stringify(response);
+    res.send(responseJson);
 });
 
 router.get('/category', async(req, res) => {
-    const respuesta = await model.category.findAll();
-    const rsptaJson = JSON.stringify(respuesta);
-    res.send(rsptaJson);
+    const  response= await model.category.findAll();
+    const responseJson = JSON.stringify(response);
+    res.send(responseJson);res.end();
 });
 
-router.get('/products', async(req, res)=> {
-    const products = await model.product.findAll({
-        attributes:['idproduct','prod_image', 'prod_name','prod_price']
-    });
-    const productsJson = JSON.stringify(products);
-    res.send(productsJson);
-    res.end();
-}); 
+router.get('/products/:id', productsController.getProducts);
+router.get('/product/:id', productsController.getProductById);
 
+router.post('/register', clientController.saveClient);
+router.post('/login',clientController.login);
+router.get('/user', clientController.getUser);
+router.get('/logout', clientController.logout);
 
 
 

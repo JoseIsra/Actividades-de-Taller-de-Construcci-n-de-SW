@@ -4,15 +4,15 @@ import imagen3 from "../../images/logo-happypet.png";
 import SearchIcon from '@material-ui/icons/Search';
 import "./Header.css";
 
-const hamburgerClick=()=>{
-    const d=document;
+const hamburgerClick = () => {
+    const d = document;
     d.querySelector(".panel-btn").classList.toggle("is-active");
 }
 
-export const Header=()=>{
+export const Header = () => {
 
 
-    return(
+    return (
         <header className="header">
 <span className="logo">
     <img className="imagenLogo" src={imagen3} alt="logo"/>
@@ -45,6 +45,6 @@ export const Header=()=>{
 
 </nav>
 
-        </header>
+        </header >
     )
 }

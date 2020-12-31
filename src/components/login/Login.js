@@ -1,41 +1,114 @@
-import React, { useState } from "react";
+import React ,{ useState, useEffect }from "react";
 import "./Login.css";
-import { Link } from 'react-router-dom'
+import { Formik, Field, Form, ErrorMessage } from 'formik';
+import { TextError } from '../TextError/TextError';
+import { api } from '../../httprequestconfig/methods';
+import { Link, useHistory } from 'react-router-dom';
 import logoHappy from "../../images/logo-happypet.png";
+import * as yup from 'yup';
+
+
+
+const validationSchema = yup.object({
+    cli_email: yup.string().email('no es un correo').required('No completado'),
+    cli_password: yup.string().min(6, 'de 6 a más caracteres por favor').required('No completado'),
+});
+
 
 
 
 export const Login = () => {
-  return (
-    <div className="_login">
-      <header className="register__header">
-        <Link to="/home">
-          <img src={logoHappy} alt="logohappy" />
-        </Link>
-      </header>
-      <div className="Login">
+    const [message, setMessage] = useState(null);
+    const [visible , setVisible] = useState(false);
 
-        <h2>Iniciar sesión</h2>
-        <div className="login__content">
-          <form autoComplete="off">
-            <input 
-            autoFocus="on"
-            type="text" placeholder="Correo..." />
-            <input type="password" placeholder="Contraseña..." />
-            
-            
-              <Link className ="links_to_help" to="/register">no tienes cuenta? Crea una ya!</Link>
-              <Link className="links_to_help" >Olvidaste tu contraseña?</Link>
-            
-            <button type="submit" className="btn-enviar">
-              Ingresar
-          </button>
+    const history = useHistory();
 
-          </form>
+    const onSubmit = async (values, onSubmitProps) => {
+        try {
+            const response = await api.login(values);
+            onSubmitProps.resetForm();
+            if(response.data === 'Datos inválidos'){
+                setMessage(response.data);
+            }else{
+                // setClient(response.data);
+                history.push('/mainpage');
+                console.log("usuario ingresado");
+            }
+        }catch(err){
+            console.log(err);
+        }}
 
-        </div>
-      </div>
-    </div>
-  );
+      
+
+
+    useEffect(()=>{
+        if(!message){
+            setVisible(false);
+            return
+        }
+        setVisible(true);
+        const timer = setTimeout(() => {
+            setVisible(false)
+        }, 2500);
+        return () => clearTimeout(timer);
+    },[message]);
+
+
+
+    return (
+        <Formik
+        initialValues={{ cli_email: '', cli_password: '' }}
+        validationSchema={validationSchema}
+        onSubmit={onSubmit}
+        validateOnBlur={false}
+        >
+    {formik => {
+
+            return (
+                <div className="login__section">
+
+                    <Link to="/">
+                        <img className="hapyLogo" src={logoHappy} alt="logohappy" />
+                    </Link>
+
+                    <div className="container">
+                        <div className="loginForm">
+                        {visible && (<p className="emergencia">
+                    <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="red" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-alert-triangle"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></span>{message}
+                    </p>)}
+                            <h2>Iniciar Sesión</h2>
+                            <div className="loginBox">
+                                <Form>
+                                <div className="inputBox w50">
+                                <Field 
+                                        autoComplete="off"
+                                        required name="cli_email" type="email" />
+                                        <span>Correo</span>
+                                <ErrorMessage name="cli_email" component={TextError} />
+                                        
+                                </div>
+                                <div className="inputBox w50">
+                                <Field 
+                                        required name="cli_password" type="password" />
+                                        <span>Contraseña</span>
+                                <ErrorMessage name="cli_password" component={TextError} />
+                                </div>
+                                <div className="links_to_help">
+                                    <Link to="/register" >Sin cuenta? Regístrate ya</Link>
+                                    <Link to="/register">Olvidaste tu contraseña?</Link>
+                                </div>
+                                <div className="inputBox w100">
+                                <input type="submit" value="save" />
+                                </div>
+                                </Form>
+                            </div>
+                        </div>
+                    </div>
+
+                </div >
+            )
+  }}
+        </Formik>
+    )
 }
 

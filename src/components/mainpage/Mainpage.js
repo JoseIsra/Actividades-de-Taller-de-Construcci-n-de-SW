@@ -1,49 +1,37 @@
 
-import React, {useState, useEffect} from 'react'
-import axios from 'axios';
+import React, {useEffect, useState}  from 'react'
 import './Mainpage.css';
+import { useDataLayerValue } from '../../DataLayer';
+import { Sidebar } from '../Sidebar/Sidebar';
 import { ProductCard } from '../productcard/ProductCard';
-import { HeaderProductos } from '../headerProductos/HeaderProductos';
-
+import { api } from '../../httprequestconfig/methods';
 
 
 export const Mainpage = () => {
     const [products, setProducts] = useState([]);
+    const [{idCategory}] = useDataLayerValue();
 
-
-    //useeffect --> recupera los registros de la tabla productos
-useEffect(()=>{
-    axios.get('http://localhost:4000/api/products')
-    .then(response => setProducts(response.data))
-    .catch(err => console.log(err));
-},[]);
-
-
+    useEffect(() => {
+        api.getProducts(idCategory)
+        .then(response => setProducts(response.data))
+        .catch(err => console.log(err));
+}, [idCategory]);
 
     return (
         <div className="mainpage">
-        <HeaderProductos/>
-<div className="mainpage__container">
-        <aside className="mainpage__left__side">
-            <ul>
-                <li>categorias</li>
-                <li>categorias</li>
-                <li>categorias</li>
-            </ul>
-        </aside>
 
-        <aside className="mainpage__right__side"> 
-            {products.map((product, id) => {
-                return <ProductCard key={id}  {...product} />
-            })}
+            <div className="mainpage__container">
+                        <Sidebar />
+
+                <aside className="mainpage__right__side">
+                    {products.map((product, id) => {
+                        return <ProductCard key={id}  {...product} />
+                    })}
+
+                </aside>
+            </div>  
+                
             
-        </aside>
-        </div>
-        
-
-            <footer>
-                <h1>FOOTER HAPPY PET</h1>
-            </footer>
         </div>
     )
 }

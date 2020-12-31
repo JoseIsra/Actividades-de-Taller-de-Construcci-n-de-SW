@@ -12,8 +12,10 @@ module.exports = (sequlize, type) => {
         },
         prod_price:{
             type:type.DECIMAL(10,2)
-        }
-        ,
+        },
+        prod_description:{
+            type:type.TEXT
+        },
         prod_idsubcategory: {
             type: type.INTEGER,
             aLLowNull: false,

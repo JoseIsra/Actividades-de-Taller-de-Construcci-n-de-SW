@@ -1,3 +1,4 @@
+
 .headerProductos {
   display: grid;
   position: sticky;
@@ -43,21 +44,7 @@
   justify-content: space-evenly;
   width: 100%;
 }
-.miCuenta {
-  background: none;
-  color: rgba(255, 255, 255, 0.74);
-  outline: none;
-  border: none;
-  list-style: none;
-  height: 50%;
-}
-.miCuenta:focus {
-  outline: none;
-}
-.miCuenta:hover {
-  color: white;
-  cursor: pointer;
-}
+
 .carrito {
   text-decoration: none;
   display: flex;
@@ -72,61 +59,43 @@
   text-decoration: none;
   color: white;
 }
-.panel_cuenta_Producto {
-  top: 100%;
-  right: 25%;
-  width: 10rem;
-  max-height: 0;
-  overflow: hidden;
-  display: flex;
-  list-style: none;
-  background: black;
-  padding: 0;
-  flex-direction: column;
-  position: absolute;
-  transition: all 0.4s;
-}
-.cont_panel {
-  align-items: center;
-  box-shadow: 3px 0 gray inset;
-  margin-bottom: 0.25rem;
-  padding: 0;
-  justify-content: center;
-  transition: 0.5s;
-}
-.cont_panel:hover {
-  box-shadow: 10rem 0 gray inset;
-}
-.login_Producto,
-.register_Producto {
-  color: white;
-  padding: 0.5rem 1rem;
-  display: flex;
-  height: 100%;
-  width: 100%;
-  transition: color 0.4 s;
-}
-.login_Producto:hover,
-.register_Producto:hover {
-  text-decoration: none;
-  justify-content: space-evenly;
-  margin-left: 0.25rem;
-  color: white;
-}
 
-.miCuenta_cont_Producto {
+.header__session {
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 60%;
   padding: 0 0.5rem;
+  text-decoration: none !important;
+  outline:none;
 }
-.miCuenta_ul {
-  padding: 0;
-  margin: 0;
+
+.header__options
+{
+  display:flex;
+  flex-direction: column;
+  width:70%;
+  padding:3px;
+  border:1px solid black;
+  border-radius:5px;
+  background-color: black;
 }
-.miCuenta:hover > ul {
-  overflow: visible;
-  max-height: 50rem;
+
+.header__options:hover{
+  font-weight: 800;
 }
+
+.header__options__one
+{
+  font-size:0.7rem;
+  font-weight: 700;
+  color:#03a9f4;
+}
+.header__options__two
+{
+  font-size:0.9rem;
+  text-align: center;
+  color:#f3f3f3;
+}
+

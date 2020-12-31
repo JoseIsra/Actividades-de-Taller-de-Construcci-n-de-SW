@@ -1,0 +1,35 @@
+
+
+.checkBasket{
+    min-height:100vh;
+    width:100%;
+    background-color:white;
+    display:flex;
+    justify-content: space-between;
+}
+.checkBasket__empty
+{
+    padding:10px;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+}
+
+.checkBasket__empty > h2
+{
+    font-size:2.5rem;
+}
+.checkBastet__products
+{
+    height: max-content;
+}
+
+.checkBastet__products > h3
+{
+    padding-left:30px;
+}
+
+
+
+

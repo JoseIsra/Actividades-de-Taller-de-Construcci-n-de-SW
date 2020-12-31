@@ -8,7 +8,7 @@ export const HomeServicios = () => {
 
   return (
     <div className="homeService">
-      <span class="title">
+      <span className="title">
         <h2>Nuestros servicios</h2>
       </span>
       <div id="carouselExampleControls2" className="carousel slide" data-ride="carousel">
@@ -21,7 +21,7 @@ export const HomeServicios = () => {
 
             </div>
             <div className="carousel-caption d-none d-md-block">
-              <div class="contantLink">
+              <div className="contantLink">
                 <Link className="btn-alimentos">Ir a consultas</Link>
               </div>
               <h5>Consultas básicas</h5>
@@ -35,7 +35,7 @@ export const HomeServicios = () => {
 
             </div>
             <div className="carousel-caption d-none d-md-block">
-              <div class="contantLink">
+              <div className="contantLink">
                 <Link className="btn-alimentos">Reservar cita</Link>
               </div>
 
@@ -50,7 +50,7 @@ export const HomeServicios = () => {
 
             </div>
             <div className="carousel-caption d-none d-md-block">
-              <div class="contantLink">
+              <div className="contantLink">
                 <Link className="btn-alimentos">Reservar cita</Link>
               </div>
               <h5>Tratamiento completo de limpieza</h5>

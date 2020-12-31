@@ -11,8 +11,8 @@ export const Footer=()=>{
         break;
         case "twitter": window.open("http://www.twitter.com","_blank");
         break;
-        case "instagram": window.open("http://www.instagram.com","_blank")
-        
+        case "instagram": window.open("http://www.instagram.com","_blank");break;
+        default:console.log("error")
     }
     }
     return(
@@ -27,10 +27,10 @@ export const Footer=()=>{
 </nav>
 <nav className="comunidad">
     <p>Comunidad</p>
-    <a href="">Nuestros colaboradores</a>
-    <a href="">Comunidad 3</a>
-    <a href="">Comunidad 4</a>
-    <a href="">Comunidad 5</a>
+    <a href="#">Nuestros colaboradores</a>
+    <a href="#">Comunidad 3</a>
+    <a href="#">Comunidad 4</a>
+    <a href="#">Comunidad 5</a>
 </nav>
             </div>
 

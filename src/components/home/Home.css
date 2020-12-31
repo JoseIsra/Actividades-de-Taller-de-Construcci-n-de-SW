@@ -1,3 +1,4 @@
+
 .section {
   text-align: center;
   min-height: 100vh;
@@ -22,6 +23,7 @@ html {
   display: flex;
   flex-direction: row-reverse;
   width: 100%;
+  background-size:auto;
   min-height: 100vh;
 }
 
@@ -55,7 +57,6 @@ html {
   color: #17a2b8;
   transition: color 0.4s;
   position: relative;
-
   margin-top: 2rem;
 }
 .begin:hover {

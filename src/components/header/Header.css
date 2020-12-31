@@ -103,16 +103,11 @@
   align-items: center;
   justify-content: space-evenly;
 }
-.logo {
-  display: flex;
-  align-items: center;
-  width: 15%;
-  height: auto;
-  justify-content: center;
-}
+
 .imagenLogo {
-  width: 70%;
-  height: auto;
+  flex:0.2;
+  object-fit: contain;
+  height: 100px;
 }
 .login {
   border: 1.5px solid black;
