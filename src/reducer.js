@@ -1,6 +1,6 @@
 
 export const getAmountOfMoney =(basket) =>
-        basket?.reduce((total, item) => parseFloat(item.prod_price) + total,0);
+        basket?.reduce((total, item) => parseFloat(item.prod_price)*item.cantidad + total,0);
 
 
 
@@ -39,6 +39,14 @@ const reducer = (state , action)=>{
             return{
                 ...state,
                 client:action.client
+            }
+        }
+        case 'UPDATE_UNITS':{
+            let indice = state.basket.findIndex(item => item.idproduct === action.id);
+            state.basket[indice].cantidad = action.units;
+            return{
+                ...state,
+                basket:[...state.basket]
             }
         }
     

@@ -1,11 +1,14 @@
-import React from 'react'
+import React,{useState} from 'react'
+import {Card, CardMedia  } from '@material-ui/core';
+import TextField from '@material-ui/core/TextField';
+
 import { useDataLayerValue } from '../../DataLayer';
 import './BasketItem.css';
 
 
-export const BasketItem = ({ idproduct, prod_name, prod_price, prod_image }) => {
+export const BasketItem = ({ idproduct, prod_name, prod_price, prod_image,prod_description}) => {
     const [, dispatch]  = useDataLayerValue();
-
+    const [newUnits,setNewUnits] = useState(1);
     const removeItem =()=>{
         console.log(typeof prod_price);
         dispatch({
@@ -14,17 +17,58 @@ export const BasketItem = ({ idproduct, prod_name, prod_price, prod_image }) => 
         });
     }
 
+    const updateUnits =()=>{
+        dispatch({
+            type:'UPDATE_UNITS',
+            units:newUnits,
+            id:idproduct
+        });
+    }
+
+
+
     return (
-        <div className="basketItem">
-            <img src={prod_image} alt="productHere" />
-            <div className="basketItem__Info">
-                <h4>{prod_name}</h4>
-                <p>S/.<strong>{prod_price}</strong></p>
-            <button 
-            onClick={removeItem}
-            className="btn-Remove">Remover de carrito</button>
-            </div>
-        </div>
+        <Card className="basketItem">
+                
+                    
+            <CardMedia
+            component="img"
+            alt="Contemplative Reptile"
+            image={prod_image}
+            />
+                    
+                <div className="basketItem__Info">
+                <h2>{prod_name}</h2> 
+                    <p>{prod_description}</p>
+
+                    <div className="basketItem__buy">
+                        <p><strong>Precio: S/.</strong>{prod_price}</p>
+                        <div className="basketItem__info__Amount">
+
+                        <TextField
+                        id="outlined-basic" 
+                        className="optionNumber"
+                        label="Cantidad"
+                        value={newUnits}
+                        onChange={(e) => setNewUnits(e.target.value)}
+                        variant="outlined" type="number"  InputProps={{
+                            inputProps: { 
+                            min: 1,
+                            }
+                        }} />
+                        <button 
+                        onClick={updateUnits}>Establecer cantidad</button>
+                        </div>
+                        
+                    </div>
+                    <button
+                    onClick={removeItem}
+                    >Retirar del carrito</button>
+                </div>
+            
+
+        </Card>
+    
     )
 }
 
