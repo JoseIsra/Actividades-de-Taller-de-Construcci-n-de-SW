@@ -1,12 +1,9 @@
 
 
 const model = require('../dbconfig/dbconfig');
-const { QueryTypes } = require('sequelize');
 const clientController = require('../controllers/clients');
 const productsController = require('../controllers/products');
-const client = require('../models/client');
 const router = require('express').Router();
-
 
 
 router.get('/pets', async(req, res) => {
@@ -24,7 +21,9 @@ router.get('/category', async(req, res) => {
 
 router.get('/products/:id', productsController.getProducts);
 router.get('/product/:id', productsController.getProductById);
+router.post('/buy',productsController.buyingInfo);
 
+//routes para el cliente
 router.post('/register', clientController.saveClient);
 router.post('/login',clientController.login);
 router.get('/user', clientController.getUser);

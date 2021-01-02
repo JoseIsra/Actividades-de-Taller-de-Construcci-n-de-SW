@@ -1,6 +1,6 @@
 
 import http from '../axiosconfig';
-
+//products request
 const getProducts = (id)=>{
     return http.get(`/products/${id}`);
 } 
@@ -16,6 +16,15 @@ const createClient =(data) =>{
     return http.post('/register', data);
 }
 
+//buy request
+const sendToBuy=(data)=>{
+    return http.post('/buy', data);
+}
+
+
+
+
+// client requests
 const login=(data)=>{
     return http.post('/login', data);
 }
@@ -34,6 +43,7 @@ export  const api={
     getProductById,
     getCategories,
     createClient,
+    sendToBuy,
     login,
     getUser,
     logOut
