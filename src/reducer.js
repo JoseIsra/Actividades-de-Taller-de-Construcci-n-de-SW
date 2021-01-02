@@ -8,7 +8,9 @@ export const getAmountOfMoney =(basket) =>
 export const initialState = {
     idCategory:1,
     basket:[],
-    client:null
+    client:null,
+    modalContent:'',
+    isModalVisible:false,
 }
 
 
@@ -22,16 +24,36 @@ const reducer = (state , action)=>{
             }
             
         case 'ADD_TO_BASKET':{
-            return {
-            ...state,
-            basket:[...state.basket, action.item]
-            }
+            if(state.basket.length === 0){
+                return{
+                    ...state,
+                    basket:[...state.basket, action.item]
+                }
+            }else{
+                let indic = state.basket.findIndex(item => item.idproduct === action.item.idproduct);
+                if(indic === -1){
+                    return {
+                        ...state,
+                        basket:[...state.basket,action.item]
+                    }
+                }else{
+                    return {
+                        ...state,
+                        basket:[...state.basket]
+                    }
+                }
+            }   
         } 
+        
         case 'REMOVE_ITEM':{
-            const newProducts = state.basket.filter((item) => item.idproduct !== action.id);
+            let newProducts  = [...state.basket];
+            const indexProduct = state.basket.findIndex(item => item.idproduct === action.id);
+            if(indexProduct >= 0){
+                newProducts.splice(indexProduct, 1);
+            }
             return {
                 ...state,
-                basket: newProducts
+                basket:newProducts
                 
             }
         } 
@@ -42,11 +64,24 @@ const reducer = (state , action)=>{
             }
         }
         case 'UPDATE_UNITS':{
-            let indice = state.basket.findIndex(item => item.idproduct === action.id);
-            state.basket[indice].cantidad = action.units;
+            // let indice = state.basket.findIndex(item => item.idproduct === action.id);
+            // state.basket[indice].cantidad = action.units;
+            state.basket = state.basket.map(item => {
+                if(item.idproduct === action.id) item.cantidad = action.units
+                return item
+            });
             return{
                 ...state,
-                basket:[...state.basket]
+                basket:[...state.basket],
+                isModalVisible:true,
+                modalContent:'Monto actualizado',
+            }
+        }
+
+        case 'CLOSE_MODAL':{
+            return {
+                ...state,
+                isModalVisible:false,
             }
         }
     

@@ -4,7 +4,7 @@
 {
     position: relative;
     margin-top:30px;
-    width:700px;
+    width:900px;
     display:flex;
     background-color:#f3f3f3;
 }
@@ -37,10 +37,7 @@
 font-size:1rem;
 color:rgba(0,0,0,.7);
 }
-.basketItem__buy
-{
-    width:300px;
-}
+
 
 .basketItem__Info > button
 {
@@ -62,7 +59,10 @@ color:rgba(0,0,0,.7);
     transform: scale(0.9);
 
 }
-
+.basketItem__buy
+{
+    width:300px;
+}
 
 
 .basketItem__buy > p{
@@ -72,6 +72,8 @@ color:rgba(0,0,0,.7);
 .basketItem__info__Amount{
     display: flex;
     justify-content: space-around;
+    position: relative;
+
 }
 
 .optionNumber{
@@ -109,6 +111,7 @@ width:90px;
     transform: scale(0.9);
 
 }
+
 
 
 

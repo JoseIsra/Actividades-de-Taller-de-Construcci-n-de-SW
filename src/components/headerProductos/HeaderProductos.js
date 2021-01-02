@@ -27,7 +27,9 @@ export const HeaderProductos=()=>{
     return(
         <header className="headerProductos">
 <span className="logo_Productos">
+    <Link to ="/mainpage">
     <img className="imgLogo" src={logo} alt=""/>
+    </Link>
 </span>
 <div className="buscar">
     <input className="barraBuscar" placeholder="¿Qué producto necesitas?"/>

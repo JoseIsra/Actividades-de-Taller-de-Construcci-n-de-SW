@@ -25,7 +25,7 @@ export const Mainpage = () => {
 
                 <aside className="mainpage__right__side">
                     {products.map((product, id) => {
-                        return <ProductCard key={id}  {...product} />
+                        return <ProductCard key={id}  {...product} cantidad={1} />
                     })}
 
                 </aside>

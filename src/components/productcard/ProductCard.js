@@ -4,7 +4,7 @@ import { Link ,useHistory} from 'react-router-dom';
 import { useDataLayerValue } from '../../DataLayer';
 
 import './ProductCard.css';
-export const ProductCard = ({ idproduct, prod_name, prod_price, prod_image ,prod_description}) => {
+export const ProductCard = ({ idproduct, prod_name, prod_price, prod_image ,prod_description, cantidad}) => {
     const [{client},dispatch] = useDataLayerValue();
     const history = useHistory();
     const addToBasket=()=>{
@@ -18,7 +18,7 @@ export const ProductCard = ({ idproduct, prod_name, prod_price, prod_image ,prod
                 prod_price,
                 prod_image,
                 prod_description,
-                cantidad:1
+                cantidad
             }
         });
     

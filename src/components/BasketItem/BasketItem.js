@@ -1,16 +1,15 @@
 import React,{useState} from 'react'
 import {Card, CardMedia  } from '@material-ui/core';
 import TextField from '@material-ui/core/TextField';
-
 import { useDataLayerValue } from '../../DataLayer';
 import './BasketItem.css';
 
 
-export const BasketItem = ({ idproduct, prod_name, prod_price, prod_image,prod_description}) => {
-    const [, dispatch]  = useDataLayerValue();
-    const [newUnits,setNewUnits] = useState(1);
+export const BasketItem = ({ idproduct, prod_name, prod_price, prod_image,prod_description,cantidad}) => {
+    const [,dispatch]  = useDataLayerValue();
+    const [newUnits,setNewUnits] = useState(cantidad);
+
     const removeItem =()=>{
-        console.log(typeof prod_price);
         dispatch({
             type:'REMOVE_ITEM',
             id:idproduct
@@ -18,14 +17,13 @@ export const BasketItem = ({ idproduct, prod_name, prod_price, prod_image,prod_d
     }
 
     const updateUnits =()=>{
+        
         dispatch({
             type:'UPDATE_UNITS',
             units:newUnits,
-            id:idproduct
+            id:idproduct,
         });
     }
-
-
 
     return (
         <Card className="basketItem">
@@ -59,7 +57,6 @@ export const BasketItem = ({ idproduct, prod_name, prod_price, prod_image,prod_d
                         <button 
                         onClick={updateUnits}>Establecer cantidad</button>
                         </div>
-                        
                     </div>
                     <button
                     onClick={removeItem}
