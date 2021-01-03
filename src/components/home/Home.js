@@ -62,9 +62,7 @@ export const Home = () => {
 
                 </section>
                 <section id="servicios" className="section servicios">
-                    <HomeServicios
-
-                    />
+                    <HomeServicios/>
                 </section>
             </main>
             <Footer />

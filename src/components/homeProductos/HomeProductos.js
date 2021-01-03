@@ -1,9 +1,10 @@
 import React from "react"
 import "./HomeProductos.css";
-import imagen3 from "../../images/fondo-alimentos.png";
-import fondoToys from "../../images/fondo-juguetes.png";
-import fondoDrugs from "../../images/fondo-medicina.png";
+// import imagen3 from "../../images/fondo-alimentos.png";
+// import fondoToys from "../../images/fondo-juguetes.png";
+// import fondoDrugs from "../../images/fondo-medicina.png";
 import { Link } from "react-router-dom";
+import { PrintRounded } from "@material-ui/icons";
 export const HomeProductos = () => {
   return (
     <div className="homeProductos">
@@ -12,7 +13,7 @@ export const HomeProductos = () => {
 
         <div className="carousel-inner">
           <div className="carousel-item active">
-            <img className="d-block w-100" src={imagen3} alt="First slide" />
+            <img className="d-block w-100" src='/fondo-alimentos.png' alt="First slide" />
             <div className="cont-prueba">
               <Link className="prueba" >Ver Alimentos</Link>
 
@@ -31,7 +32,7 @@ export const HomeProductos = () => {
             </div>
           </div>
           <div className="carousel-item ">
-            <img className="d-block w-100" src={fondoToys} alt="Second slide" />
+            <img className="d-block w-100" src='/fondo-juguetes.png' alt="Second slide" />
             <div className="cont-prueba">
               <Link className="prueba" >Ver Accesorios</Link>
 
@@ -47,7 +48,7 @@ export const HomeProductos = () => {
             </div>
           </div>
           <div className="carousel-item ">
-            <img className="d-block w-100" src={fondoDrugs} alt="Third slide" />
+            <img className="d-block w-100" src='/fondo-medicina.png' alt="Third slide" />
             <div className="cont-prueba">
               <Link className="prueba" >Ver artículos de limpieza</Link>
 

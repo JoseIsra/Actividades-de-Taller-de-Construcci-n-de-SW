@@ -1,8 +1,8 @@
 import React from "react";
 import "./HomeServicios.css";
-import image1 from "../../images/fondo-alimentos.png";
-import image2 from "../../images/fondo-juguetes.png";
-import image3 from "../../images/fondo-medicina.png";
+// import image1 from "../../images/fondo-alimentos.png";
+// import image2 from "../../images/fondo-juguetes.png";
+// import image3 from "../../images/fondo-medicina.png";
 import { Link } from "react-router-dom";
 export const HomeServicios = () => {
 
@@ -15,7 +15,7 @@ export const HomeServicios = () => {
 
         <div className="carousel-inner">
           <div className="carousel-item active">
-            <img className="d-block w-100" src={image1} alt="First slide" />
+            <img className="d-block w-100" src='/fondo-alimentos.png' alt="First slide" />
             <div className="cont-prueba">
               <Link className="prueba" >Consultas</Link>
 
@@ -29,7 +29,7 @@ export const HomeServicios = () => {
             </div>
           </div>
           <div className="carousel-item ">
-            <img className="d-block w-100" src={image2} alt="Second slide" />
+            <img className="d-block w-100" src='/fondo-juguetes.png' alt="Second slide" />
             <div className="cont-prueba">
               <Link className="prueba" >Adiestramiento</Link>
 
@@ -44,7 +44,7 @@ export const HomeServicios = () => {
             </div>
           </div>
           <div className="carousel-item ">
-            <img className="d-block w-100" src={image3} alt="Third slide" />
+            <img className="d-block w-100" src='/fondo-medicina.png' alt="Third slide" />
             <div className="cont-prueba">
               <Link className="prueba" >Limpieza y Spa</Link>
 
