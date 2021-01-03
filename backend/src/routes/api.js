@@ -3,6 +3,7 @@
 const model = require('../dbconfig/dbconfig');
 const clientController = require('../controllers/clients');
 const productsController = require('../controllers/products');
+const { RssFeedTwoTone } = require('@material-ui/icons');
 const router = require('express').Router();
 
 
@@ -18,6 +19,17 @@ router.get('/category', async(req, res) => {
     const responseJson = JSON.stringify(response);
     res.send(responseJson);res.end();
 });
+
+router.get('/subcategory/:id', async (req ,res) => {
+        const result = await model.subCategory.findAll({
+            where:{
+                id_category:req.params.id
+            }
+        });
+        const resultJson = JSON.stringify(result);
+        res.send(resultJson);res.end();
+});
+
 
 router.get('/products/:id', productsController.getProducts);
 router.get('/product/:id', productsController.getProductById);

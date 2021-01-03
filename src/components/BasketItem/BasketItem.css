@@ -9,7 +9,6 @@
     background-color:#f3f3f3;
 }
 
-
 .basketItem > img{
     margin: auto 0;
     object-fit: contain;
@@ -20,6 +19,7 @@
 {
     position:relative;
     left:20px;
+    
     display:flex;
     flex-direction: column;
     justify-content: center;
@@ -61,8 +61,25 @@ color:rgba(0,0,0,.7);
 }
 .basketItem__buy
 {
+    position:relative;
     width:300px;
 }
+.updateMessage
+{
+    position:absolute;
+    bottom:80px;
+    right:30px;
+}
+.updateMessage > p{
+    padding:5px;
+    margin: auto 0;
+    font-weight: 600;
+    color:white;
+    border-radius:0.5rem;
+    border:none;
+    background-color: #0077b6;
+}
+
 
 
 .basketItem__buy > p{

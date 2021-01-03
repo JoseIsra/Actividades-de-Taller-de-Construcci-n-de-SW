@@ -1,12 +1,13 @@
 import React,{useState} from 'react'
 import {Card, CardMedia  } from '@material-ui/core';
 import TextField from '@material-ui/core/TextField';
+import { Modal } from '../Modal/Modal';
 import { useDataLayerValue } from '../../DataLayer';
 import './BasketItem.css';
 
 
 export const BasketItem = ({ idproduct, prod_name, prod_price, prod_image,prod_description,cantidad}) => {
-    const [,dispatch]  = useDataLayerValue();
+    const [{modalContent, isModalVisible,modalIndex},dispatch]  = useDataLayerValue();
     const [newUnits,setNewUnits] = useState(cantidad);
 
     const removeItem =()=>{
@@ -22,19 +23,24 @@ export const BasketItem = ({ idproduct, prod_name, prod_price, prod_image,prod_d
             type:'UPDATE_UNITS',
             units:newUnits,
             id:idproduct,
+            index:idproduct
         });
     }
+    const closeModal = ()=>{
+        dispatch({
+            type:'CLOSE_MODAL'
+        })
+    }
+
 
     return (
         <Card className="basketItem">
-                
-                    
             <CardMedia
             component="img"
             alt="Contemplative Reptile"
             image={prod_image}
             />
-                    
+                
                 <div className="basketItem__Info">
                 <h2>{prod_name}</h2> 
                     <p>{prod_description}</p>
@@ -61,6 +67,9 @@ export const BasketItem = ({ idproduct, prod_name, prod_price, prod_image,prod_d
                     <button
                     onClick={removeItem}
                     >Retirar del carrito</button>
+                            {isModalVisible? (
+                    idproduct === modalIndex ? <Modal modalContent={modalContent} closeModal={closeModal} />:null
+                ):null}
                 </div>
             
 

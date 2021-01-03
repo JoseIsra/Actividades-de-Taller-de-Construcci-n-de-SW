@@ -9,7 +9,7 @@ import { api } from '../../httprequestconfig/methods';
 
 export const Mainpage = () => {
     const [products, setProducts] = useState([]);
-    const [{idCategory}] = useDataLayerValue();
+    const [{idCategory, idSubCategory}] = useDataLayerValue();
 
     useEffect(() => {
         api.getProducts(idCategory)
@@ -24,9 +24,18 @@ export const Mainpage = () => {
                         <Sidebar />
 
                 <aside className="mainpage__right__side">
-                    {products.map((product, id) => {
-                        return <ProductCard key={id}  {...product} cantidad={1} />
-                    })}
+
+                    { 
+                    products.filter((item) => {
+                        if(idSubCategory === null){
+                            return item
+                        }else if(item.prod_idsubcategory === idSubCategory){
+                            return item
+                        }
+                    }).map((product, id) => {
+                        return <ProductCard key={id}  {...product}  />
+                    })
+                }
 
                 </aside>
             </div>  

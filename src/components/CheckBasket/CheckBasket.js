@@ -3,12 +3,12 @@ import { useDataLayerValue } from '../../DataLayer';
 import { BasketItem } from '../BasketItem/BasketItem';
 import SubTotal from '../SubTotal/SubTotal';
 import './CheckBasket.css';
-import { Modal } from '../Modal/Modal';
+
 
 
 
 function CheckBasket() {
-    const [{basket,isModalVisible, modalContent},dispatch] = useDataLayerValue();
+    const [{basket, },dispatch] = useDataLayerValue();
     
 
     const closeModal = ()=>{
@@ -22,8 +22,8 @@ function CheckBasket() {
             <div className="checkBasket__leftSide">
             {(basket?.length === 0)? (
                 <div className="checkBasket__empty">
-                <h2>💀Su carrito está vacío 😥😖😫</h2>
-                <p>Presione "agregar al carrito" en los productos que desee 🤓</p>
+                <h2>💀Su carrito está vacío 😥</h2>
+                <p>Presione "agregar al carrito" en los productos que desee </p>
                 </div>
             ) :(
                 <div className="checkBastet__products">
@@ -38,7 +38,6 @@ function CheckBasket() {
             {basket?.length > 0 && (
             <div className="checkBasket__rightSide">
                 <SubTotal /> 
-                {isModalVisible && <Modal modalContent={modalContent} closeModal={closeModal} />}
             </div>
             )}
 

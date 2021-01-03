@@ -1,4 +1,4 @@
-import React,{ useEffect } from "react";
+import React,{ useEffect, useState } from "react";
 import "./HeaderProductos.css";
 import logo from "../../images/logo-happypet.png";
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
@@ -11,7 +11,6 @@ import MenuListComposition from '../MenuList/MenuList';
 
 export const HeaderProductos=()=>{
     const [{basket, client},dispatch] = useDataLayerValue();
-
     useEffect(()=>{
         api.getUser()
         .then(response => {
@@ -21,7 +20,7 @@ export const HeaderProductos=()=>{
             })
         }).catch(err => console.log(err)) 
     }, []);
-    
+
 
 
     return(
@@ -32,12 +31,12 @@ export const HeaderProductos=()=>{
     </Link>
 </span>
 <div className="buscar">
-    <input className="barraBuscar" placeholder="¿Qué producto necesitas?"/>
+    <input className="barraBuscar"  placeholder="¿Qué producto necesitas?"/>
 </div>
    
 
 <div className="botonesP">
-    <Link className="carrito" to={!client ? "/login":"mainpage/basket"}>
+    <Link className="carrito" to={!client ? "/login":"/mainpage/basket"}>
         <Badge badgeContent={basket?.length} color="secondary">
 <ShoppingCartIcon className="icono_shop_Producto"/>
 </Badge>

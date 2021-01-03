@@ -12,6 +12,10 @@ const getProductById = (id)=>{
 const getCategories = () => {
     return http.get('/category');
 }
+const getSubcategories = (id)=>{
+return http.get(`/subcategory/${id}`)
+}
+
 const createClient =(data) =>{
     return http.post('/register', data);
 }
@@ -42,6 +46,7 @@ export  const api={
     getProducts,
     getProductById,
     getCategories,
+    getSubcategories,
     createClient,
     sendToBuy,
     login,

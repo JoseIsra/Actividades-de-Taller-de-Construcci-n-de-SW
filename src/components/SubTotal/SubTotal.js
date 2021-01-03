@@ -12,6 +12,7 @@ const [{basket}] = useDataLayerValue();
 
 
 const buyProducts = (total)=>{
+    console.log(total);
         let data={
             basket,
             total
@@ -31,15 +32,13 @@ const buyProducts = (total)=>{
                 <p>Total ({basket.length}) productos</p>
                 <div className="subtotal__info">
                 <p>Monto: <span> <strong>S/.{`${value}`}</strong></span></p>
-                <button onClick={()=>buyProducts(value)}>Comprar</button>
+                <button onClick={()=>buyProducts(value)}>Realizar compra</button>
                 </div>
                 </>
             )}
             decimalScale={2}
             value={getAmountOfMoney(basket)}
             displayType={"text"}
-            thousandSeparator={true}
-            // prefix={"S/."}
             />
 
         </div>
