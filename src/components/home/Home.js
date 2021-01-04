@@ -22,7 +22,7 @@ export const Home = () => {
                     <div className="inicio">
                         <div className="texto">
                             <div className="letras">
-                                <h2>PROBANDO2 a explorar todos nuestros productos y servicios</h2>
+                                <h2>Comienza a explorar todos nuestros productos y servicios</h2>
                             </div>
                         
                         <Link to='/mainpage' className="begin">Comenzar</Link>
