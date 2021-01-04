@@ -1,6 +1,4 @@
-
 .section {
-  text-align: center;
   min-height: 100vh;
 }
 .home {
@@ -23,7 +21,7 @@ html {
   display: flex;
   flex-direction: row-reverse;
   width: 100%;
-  background-size:auto;
+  background-size: auto;
   min-height: 100vh;
 }
 
@@ -53,12 +51,14 @@ html {
   padding-bottom: 1rem;
   font-size: 20px;
   text-decoration: none;
+  text-align: center;
   background: none;
   color: #17a2b8;
   transition: color 0.4s;
   position: relative;
   margin-top: 2rem;
 }
+
 .begin:hover {
   text-decoration: none;
   color: white;
@@ -69,6 +69,7 @@ html {
 /*---- INICIO ABOUT US----*/
 .AboutUs h2 {
   color: white;
+  text-align: center;
   padding-top: 6rem;
   padding-bottom: 3rem;
   font-size: 50px;
@@ -88,6 +89,7 @@ html {
 .AboutUs2 p,
 .AboutUs2 h4 {
   color: white;
+  text-align: center;
 }
 .mision,
 .vision,

@@ -11,7 +11,8 @@ export const HomeServicios = () => {
       <span className="title">
         <h2>Nuestros servicios</h2>
       </span>
-      <div id="carouselExampleControls2" className="carousel slide" data-ride="carousel">
+      <div className="contenedorSlider">
+        <div id="carouselExampleControls2" className="carousel slide" data-ride="carousel">
 
         <div className="carousel-inner">
           <div className="carousel-item active">
@@ -72,6 +73,7 @@ export const HomeServicios = () => {
           <span className="sr-only">Next</span>
         </a>
 
+      </div>
       </div>
 
     </div>
