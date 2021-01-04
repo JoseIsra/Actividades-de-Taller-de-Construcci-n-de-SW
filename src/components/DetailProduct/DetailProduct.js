@@ -35,21 +35,18 @@ export const DetailProduct = () => {
             <div className="detailProduct_title">
                 <h1>{product.prod_name}</h1>
             </div>
+            <div className="detailProduct_description">
+                <h2>Descripción: </h2>
+                <p>{product.prod_description}</p>
+            </div>
+            
             <div className="detailProduct_price">
                 <h2>Precio: S/. {product.prod_price}</h2>
             </div>
             <div className="detailProduct_main">
-                
                     <button className="detailProduct_button">Agregar</button>
-
-                
-
             </div>
-            <div className="detailProduct_description">
-                <h2>Descripción: </h2>
-             
-                <p>{product.prod_description}</p>
-            </div>
+            
             
             <img className="detailProduct_image" src={product.prod_image} alt="producto cool" />
         </div>
