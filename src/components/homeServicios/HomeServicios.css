@@ -1,7 +1,7 @@
 .slide {
   width: 60%;
   height: 70%;
-  left: 20%;
+
   display: flex;
   align-items: center;
   margin-top: 4rem;
@@ -58,14 +58,14 @@
   transform: translateY(0);
 }
 /* ----------*/
-.title h2 {
-  font-size: 50px;
-  height: 20%;
-}
+
 .homeService {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   padding-bottom: 5%;
+  width: 100%;
+  min-height: 100vh;
 }
 .carousel-control-prev,
 .carousel-control-next {

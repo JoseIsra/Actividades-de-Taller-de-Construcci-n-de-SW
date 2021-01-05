@@ -12,6 +12,7 @@ import { Link } from "react-router-dom";
 
 
 
+
 export const Home = () => {
     return (
         <div className="home">
@@ -58,7 +59,6 @@ export const Home = () => {
 
                 </section>
                 <section id="productos" className="section productos">
-                    <img src='/fondo-alimentos.png'/>
                     <HomeProductos />
 
                 </section>
