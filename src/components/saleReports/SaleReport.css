@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&display=swap');
+
+
+.salereport{
+    display: flex;
+    flex-direction: column;
+    width:100%;
+    min-height: 100vh;
+}
+
+
+
+.salereport__title
+{
+    padding:10px;
+    position: relative;
+}
+
+.salereport__title > h1{
+    font-family: 'Josefin Sans', sans;
+}
+
+
+.salereport__links
+{
+    position:absolute;
+    bottom:0;
+}
+.salereport__links > a{
+    font-size:1.4rem;
+    padding:10px;
+    
+}
+
+.salereport__body
+{
+    margin-top:30px;
+    padding:30px;
+display:flex;
+height: 60vh;
+justify-content: space-between;
+}
+
+
+.salereport_dataUsers
+{
+    display: flex;
+    padding:10px;
+}
+
+.salereports_dataUsers__fields
+{
+    margin-right:20px;
+}
+
+.salereports_dataUsers__fields > h2
+{
+    font-family: 'Josefin Sans', sans;
+    font-size:2.3rem;
+    font-weight: 400;
+    border-bottom:2px solid black;
+}
+.salereports_dataUsers__fields p
+{
+    padding:5px;
+}
+
+.salereports_dataUsers__fields  span{
+    font-size:1.3rem;
+}
+

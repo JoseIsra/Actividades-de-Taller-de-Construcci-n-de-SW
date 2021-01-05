@@ -13,6 +13,7 @@ export const initialState = {
     idSubCategory:null,
     modalContent:'',
     isModalVisible:false,
+    modalForBuying:false,
     modalIndex:null
 }
 
@@ -25,8 +26,6 @@ const reducer = (state , action)=>{
                 ...state,
                 idCategory:action.payload,
                 idSubCategory:null,
-                searchTerm:null,
-                filterNow:false,
             }
         case 'UPDATE_SUBCATEGORY':{
             return{
@@ -58,12 +57,6 @@ const reducer = (state , action)=>{
         } 
         
         case 'REMOVE_ITEM':{
-            // let newProducts  = [...state.basket];
-            // const indexProduct = state.basket.findIndex(item => item.idproduct === action.id);
-            // if(indexProduct >= 0){
-            //     newProducts[indexProduct].cantidad = 0;
-            //     newProducts.splice(indexProduct, 1);
-            // }
             let newProducts = state.basket.filter(item => item.idproduct !== action.id);
             return {
                 ...state,
@@ -78,8 +71,6 @@ const reducer = (state , action)=>{
             }
         }
         case 'UPDATE_UNITS':{
-            // let indice = state.basket.findIndex(item => item.idproduct === action.id);
-            // state.basket[indice].cantidad = action.units;
             state.basket = state.basket.map(item => {
                 if(item.idproduct === action.id) item.cantidad = action.units
                 return item
@@ -92,11 +83,20 @@ const reducer = (state , action)=>{
                 modalIndex:action.index
             }
         }
+        case 'THANKS_FOR_BUYING' : {
+            return{
+                ...state,
+                modalForBuying:true,
+                modalContent:"Compra realizada exitosamente!"
+            }
+        }
 
         case 'CLOSE_MODAL':{
             return {
                 ...state,
                 isModalVisible:false,
+                modalForBuying:false,
+                modalContent:''
             }
         }
     

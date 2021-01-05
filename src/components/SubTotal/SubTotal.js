@@ -8,7 +8,7 @@ import './SubTotal.css';
 
 
 function SubTotal() {
-const [{basket}] = useDataLayerValue();
+const [{basket}, dispatch] = useDataLayerValue();
 
 
 const buyProducts = (total)=>{
@@ -17,12 +17,16 @@ const buyProducts = (total)=>{
             basket,
             total
         }
-    api.sendToBuy(data)
-    .then(res => {
-        basket.splice(0,basket.length);
-        window.location.reload();
-    })
-    .catch(err => console.log(err));
+            basket.splice(0,basket.length);
+        dispatch({
+            type:'THANKS_FOR_BUYING'
+        })
+    // api.sendToBuy(data)
+    // .then(res => {
+        
+        
+    // })
+    // .catch(err => console.log(err));
 }
     return (
         <div className="subtotal">

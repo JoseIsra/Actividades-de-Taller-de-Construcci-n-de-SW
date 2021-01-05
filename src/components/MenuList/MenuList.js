@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
 import ClickAwayListener from '@material-ui/core/ClickAwayListener';
 import Grow from '@material-ui/core/Grow';
@@ -82,9 +83,9 @@ export default function MenuListComposition() {
                         >
                             <Paper>
                                 <ClickAwayListener onClickAway={handleClose}>
-                                    <MenuList autoFocusItem={open} id="menu-list-grow" onKeyDown={handleListKeyDown}>
-                                        <MenuItem onClick={handleClose}>Reportes</MenuItem>
-                                        <MenuItem onClick={closeSession}>Cerrar sesión</MenuItem>
+                                    <MenuList style={{backgroundColor:"black"}} autoFocusItem={open} id="menu-list-grow" onKeyDown={handleListKeyDown}>
+                                        <Link to="/mainpage/reports"><MenuItem style={{color:"white"}} >Reportes</MenuItem> </Link>
+                                        <MenuItem style={{color:"white"}} onClick={closeSession}>Cerrar sesión</MenuItem>
                                     </MenuList>
                                 </ClickAwayListener>
                             </Paper>

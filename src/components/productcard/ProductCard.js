@@ -18,7 +18,7 @@ export const ProductCard = ({ idproduct, prod_name, prod_price, prod_image ,prod
                 prod_price,
                 prod_image,
                 prod_description,
-                cantidad:"1"
+                cantidad:1
             }
         });
     

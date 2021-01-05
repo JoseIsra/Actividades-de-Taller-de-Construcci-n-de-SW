@@ -10,7 +10,7 @@ export const BasketItem = ({ idproduct, prod_name, prod_price, prod_image,prod_d
     const [{modalContent, isModalVisible,modalIndex},dispatch]  = useDataLayerValue();
     const [newUnits,setNewUnits] = useState(cantidad);
 
-    const removeItem =()=>{
+    const removeItem =()=>{        
         dispatch({
             type:'REMOVE_ITEM',
             id:idproduct
@@ -18,7 +18,6 @@ export const BasketItem = ({ idproduct, prod_name, prod_price, prod_image,prod_d
     }
 
     const updateUnits =()=>{
-        
         dispatch({
             type:'UPDATE_UNITS',
             units:newUnits,
@@ -62,14 +61,15 @@ export const BasketItem = ({ idproduct, prod_name, prod_price, prod_image,prod_d
                         }} />
                         <button 
                         onClick={updateUnits}>Establecer cantidad</button>
+                        {isModalVisible? (
+                    idproduct === modalIndex ? <Modal modalContent={modalContent} closeModal={closeModal} />:null
+                ):null}
                         </div>
                     </div>
                     <button
                     onClick={removeItem}
                     >Retirar del carrito</button>
-                            {isModalVisible? (
-                    idproduct === modalIndex ? <Modal modalContent={modalContent} closeModal={closeModal} />:null
-                ):null}
+                
                 </div>
             
 

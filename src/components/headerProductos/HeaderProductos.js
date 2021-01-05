@@ -50,9 +50,13 @@ export const HeaderProductos=()=>{
         :'Iniciar Sesión'}</span>
             </div>
     </Link>
-
-
 </div>
+        <div className="header__links">
+                    <Link to="/">Ir al inicio</Link>
+                    <Link to="/mainpage">Ver productos</Link>
+                    <Link to="/servicios">Ver servicios</Link>
+                </div>
         </header>
+    
     )
 }

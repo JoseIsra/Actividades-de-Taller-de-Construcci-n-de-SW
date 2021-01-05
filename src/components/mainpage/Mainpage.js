@@ -19,13 +19,13 @@ export const Mainpage = () => {
 
     return (
         <div className="mainpage">
-
+                
             <div className="mainpage__container">
                         <Sidebar />
 
                 <aside className="mainpage__right__side">
 
-                    { 
+                    {
                     products.filter((item) => {
                         if(idSubCategory === null){
                             return item
