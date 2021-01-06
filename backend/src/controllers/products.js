@@ -58,5 +58,4 @@ module.exports = {
                 }
             res.send("compra realizada");
     }
-
 }

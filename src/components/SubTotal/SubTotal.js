@@ -12,22 +12,19 @@ const [{basket}, dispatch] = useDataLayerValue();
 
 
 const buyProducts = (total)=>{
-    console.log(total);
         let data={
             basket,
             total
         }
+        api.sendToBuy(data)
+        .then(res => {
             basket.splice(0,basket.length);
         dispatch({
             type:'THANKS_FOR_BUYING'
-        })
-    // api.sendToBuy(data)
-    // .then(res => {
-        
-        
-    // })
-    // .catch(err => console.log(err));
-}
+        })    
+    })
+    .catch(err => console.log(err));
+        }
     return (
         <div className="subtotal">
             <CurrencyFormat  

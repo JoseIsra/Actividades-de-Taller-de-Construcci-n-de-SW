@@ -37,6 +37,15 @@ const getUser= ()=>{
     return http.get('/user');
 }
 
+
+const getBills= ()=>{
+    return http.get('/bills');
+}
+
+const getBillData= (billNumber)=>{
+    return http.get(`/bill/${billNumber}`);
+}
+
 const logOut =()=>{
     return http.get('/logout');
 }
@@ -47,6 +56,8 @@ export  const api={
     getProductById,
     getCategories,
     getSubcategories,
+    getBills,
+    getBillData,
     createClient,
     sendToBuy,
     login,

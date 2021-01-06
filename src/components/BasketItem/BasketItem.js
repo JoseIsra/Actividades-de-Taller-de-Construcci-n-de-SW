@@ -16,11 +16,11 @@ export const BasketItem = ({ idproduct, prod_name, prod_price, prod_image,prod_d
             id:idproduct
         });
     }
-
+    
     const updateUnits =()=>{
         dispatch({
             type:'UPDATE_UNITS',
-            units:newUnits,
+            units:Math.abs(newUnits),
             id:idproduct,
             index:idproduct
         });

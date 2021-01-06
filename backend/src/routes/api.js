@@ -3,7 +3,6 @@
 const model = require('../dbconfig/dbconfig');
 const clientController = require('../controllers/clients');
 const productsController = require('../controllers/products');
-const { RssFeedTwoTone } = require('@material-ui/icons');
 const router = require('express').Router();
 
 
@@ -39,6 +38,9 @@ router.post('/buy',productsController.buyingInfo);
 router.post('/register', clientController.saveClient);
 router.post('/login',clientController.login);
 router.get('/user', clientController.getUser);
+router.get('/bills',clientController.getBills);
+router.get('/bill/:idBill', clientController.getBillData);
+
 router.get('/logout', clientController.logout);
 
 
