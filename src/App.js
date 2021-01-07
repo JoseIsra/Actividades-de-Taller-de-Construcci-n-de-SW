@@ -15,7 +15,7 @@ import { SaleReport } from './components/saleReports/SaleReport';
 
 function App() {
 
-
+  
 
   return (
     
@@ -26,22 +26,23 @@ function App() {
         <Route exact path="/" component ={Home} /> 
         <Route exact path="/login" component ={Login} />
         <Route exact path="/register" component ={Register} />
-
-        <Route  exact path="/mainpage/reports" component={SaleReport}  />
+        <Route exact path="/mainpage/reports" component ={SaleReport} />
+        <Route exact path="/dashboard" render ={()=><h1>DASHBOARD</h1>} />
+      
 
     
           <>
           <HeaderProductos />  
-        <Route exact path="/mainpage" component={Mainpage} />
+
+          <Route exact path="/mainpage" component={Mainpage} />
         <Route exact path="/mainpage/product/:id" component={DetailProduct} />
         <PrivateRoute exact path="/mainpage/basket" >
           <CheckBasket />
           </PrivateRoute>
+
           <Footer />
           </>
-          
     
-
         </Switch>
       </Router>
 

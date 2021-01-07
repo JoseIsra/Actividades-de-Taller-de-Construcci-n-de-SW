@@ -1,4 +1,4 @@
-import React,{ useEffect, useState } from "react";
+import React,{ useEffect } from "react";
 import "./HeaderProductos.css";
 import logo from "../../images/logo-happypet.png";
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
@@ -11,6 +11,8 @@ import MenuListComposition from '../MenuList/MenuList';
 
 export const HeaderProductos=()=>{
     const [{basket, client},dispatch] = useDataLayerValue();
+    
+
     useEffect(()=>{
         api.getUser()
         .then(response => {

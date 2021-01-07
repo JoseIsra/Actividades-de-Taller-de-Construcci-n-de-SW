@@ -89,8 +89,10 @@
 
 .header__options__one
 {
+  position: relative;
+  left:20px;
   font-size:1rem;
-  font-weight: 700;
+  font-weight: 600;
   color:#03a9f4;
 }
 .header__options__two

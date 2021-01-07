@@ -10,6 +10,7 @@ import Popper from '@material-ui/core/Popper';
 import MenuItem from '@material-ui/core/MenuItem';
 import MenuList from '@material-ui/core/MenuList';
 import { makeStyles } from '@material-ui/core/styles';
+import { useDataLayerValue } from '../../DataLayer';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -21,6 +22,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function MenuListComposition() {
+    const [{client}] = useDataLayerValue();
     const classes = useStyles();
     const [open, setOpen] = React.useState(false);
     const anchorRef = React.useRef(null);
@@ -67,7 +69,7 @@ export default function MenuListComposition() {
     return (
         <div className={classes.root}>
             <div>
-                <Button style={{'outline':'none !important'}}
+                <Button style={{'outline':'none !important','marginRight':'10px'}}
                     ref={anchorRef}
                     aria-controls={open ? 'menu-list-grow' : undefined}
                     aria-haspopup="true"
@@ -85,6 +87,7 @@ export default function MenuListComposition() {
                                 <ClickAwayListener onClickAway={handleClose}>
                                     <MenuList style={{backgroundColor:"black"}} autoFocusItem={open} id="menu-list-grow" onKeyDown={handleListKeyDown}>
                                         <Link to="/mainpage/reports"><MenuItem style={{color:"white"}} >Reportes</MenuItem> </Link>
+                                        {client.is_admin ? (<Link to="/dashboard"> <MenuItem style={{color:"white"}} >Dashboard</MenuItem></Link>):null}
                                         <MenuItem style={{color:"white"}} onClick={closeSession}>Cerrar sesión</MenuItem>
                                     </MenuList>
                                 </ClickAwayListener>

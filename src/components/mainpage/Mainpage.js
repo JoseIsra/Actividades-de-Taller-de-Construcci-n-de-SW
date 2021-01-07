@@ -18,9 +18,9 @@ export const Mainpage = () => {
 }, [idCategory]);
 
     return (
+        
         <div className="mainpage">
-                
-            <div className="mainpage__container">
+        <div className="mainpage__container">
                         <Sidebar />
 
                 <aside className="mainpage__right__side">
@@ -39,6 +39,9 @@ export const Mainpage = () => {
 
                 </aside>
             </div>  
+        
+                
+            
                 
             
         </div>

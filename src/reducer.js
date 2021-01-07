@@ -14,7 +14,7 @@ export const initialState = {
     modalContent:'',
     isModalVisible:false,
     modalForBuying:false,
-    modalIndex:null
+    modalIndex:null,
 }
 
 

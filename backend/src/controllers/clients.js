@@ -37,8 +37,7 @@ module.exports = {
             }
             else{
                 req.logIn(user , (err) => {
-                    res.send("autenticación exitosa");
-                console.log("user enviado");       
+                    res.send("usuario logeado");
                 })
             }
         })(req, res, next);
