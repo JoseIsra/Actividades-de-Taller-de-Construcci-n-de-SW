@@ -9,6 +9,7 @@ import { HeaderProductos } from './components/headerProductos/HeaderProductos';
 import { Footer } from './components/footer/Footer';
 import {DetailProduct} from './components/DetailProduct/DetailProduct';
 import  CheckBasket from './components/CheckBasket/CheckBasket';
+import {FormularioServicio} from "./components/formularioServicio/FormularioServicio";
 function App() {
   //estructura por el momento
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route exact path="/" component ={Home} /> 
         <Route exact path="/login" component ={Login} />
         <Route exact path="/register" component ={Register} />
+        <Route exact path="/service" component={FormularioServicio}/>
 
           <>
           <HeaderProductos />  

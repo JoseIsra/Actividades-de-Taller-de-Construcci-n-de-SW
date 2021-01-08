@@ -7,12 +7,6 @@ import { HomeProductos } from "../homeProductos/HomeProductos";
 import "bootstrap/dist/js/bootstrap";
 import { Link } from "react-router-dom";
 
-
-
-
-
-
-
 export const Home = () => {
     return (
         <div className="home">
