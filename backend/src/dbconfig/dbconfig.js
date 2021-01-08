@@ -5,7 +5,7 @@ const clientModel = require('../models/client');
 const productModel = require('../models/product');
 const saleModel = require('../models/sale');
 const saleDetailModel = require('../models/sale_detail');
-const serviceModel = require('../models/service');
+const appointmentModel = require('../models/appointment');
 const serviceTypeModel = require('../models/service_type');
 const subCategoryModel = require('../models/sub_category');
 
@@ -28,7 +28,7 @@ const Client = clientModel(sequelize, Sequelize);
 const Product = productModel(sequelize, Sequelize);
 const Sale = saleModel(sequelize, Sequelize);
 const SaleDetail = saleDetailModel(sequelize, Sequelize);
-const Service = serviceModel(sequelize, Sequelize);
+const Appointment = appointmentModel(sequelize, Sequelize);
 const ServiceType = serviceTypeModel(sequelize, Sequelize);
 const SubCategory = subCategoryModel(sequelize, Sequelize);
 
@@ -47,7 +47,7 @@ const model = {
     'product':Product,
     'sale':Sale,
     'saleDetail':SaleDetail,
-    'service':Service,
+    'appointment':Appointment,
     'serviceType':ServiceType,
     'subCategory':SubCategory,
     'statement':db

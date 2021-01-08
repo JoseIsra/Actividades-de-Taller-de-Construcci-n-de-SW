@@ -4,7 +4,7 @@ import { useDataLayerValue } from '../DataLayer'
 
 export const PrivateRoute = ({ children, ...rest }) => {
     const [{ client }] = useDataLayerValue();
-    return (
+        return (
         <Route
             {...rest}
             render={({ location }) =>

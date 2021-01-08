@@ -21,7 +21,6 @@ const validationSchema = yup.object({
 export const Login = () => {
     const [message, setMessage] = useState(null);
     const [visible , setVisible] = useState(false);
-    const[,dispatch] = useDataLayerValue();
     const history = useHistory();
 
     const onSubmit = async (values, onSubmitProps) => {

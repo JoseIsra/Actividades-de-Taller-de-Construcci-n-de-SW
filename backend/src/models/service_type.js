@@ -9,9 +9,6 @@ module.exports = (sequlize, type) => {
         },
         serv_type_name:{
             type:type.STRING
-        },
-        serv_type_description:{
-            type:type.TEXT
         }
     }, {
         timestamps: false

@@ -8,7 +8,8 @@ export const HomeProductos = () => {
   return (
     <div className="homeProductos">
       <span className="title"><h2>Nuestros productos</h2></span>
-      <div id="carouselExampleControls" className="carousel slide" data-ride="carousel">
+     <div className="contenedorSlider">
+        <div id="carouselExampleControls" className="carousel slide" data-ride="carousel">
 
         <div className="carousel-inner">
           <div className="carousel-item active">
@@ -77,6 +78,7 @@ export const HomeProductos = () => {
         </a>
 
       </div> 
+     </div>
     </div>
   )
 }

@@ -7,11 +7,6 @@ import { HomeProductos } from "../homeProductos/HomeProductos";
 import "bootstrap/dist/js/bootstrap";
 import { Link } from "react-router-dom";
 
-
-
-
-
-
 export const Home = () => {
     return (
         <div className="home">
@@ -62,9 +57,8 @@ export const Home = () => {
 
                 </section>
                 <section id="servicios" className="section servicios">
-                    <HomeServicios
+                    <HomeServicios/>
 
-                    />
                 </section>
             </main>
             <Footer />

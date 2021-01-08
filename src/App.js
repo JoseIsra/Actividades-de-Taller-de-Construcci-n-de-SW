@@ -13,6 +13,7 @@ import  CheckBasket from './components/CheckBasket/CheckBasket';
 import {PrivateRoute} from './components/PrivateRoute';
 import { SaleReport } from './components/saleReports/SaleReport';
 
+import {FormularioServicio} from "./components/formularioServicio/FormularioServicio";
 function App() {
 
   
@@ -26,10 +27,14 @@ function App() {
         <Route exact path="/" component ={Home} /> 
         <Route exact path="/login" component ={Login} />
         <Route exact path="/register" component ={Register} />
-        <Route exact path="/mainpage/reports" component ={SaleReport} />
+        
         <Route exact path="/dashboard" render ={()=><h1>DASHBOARD</h1>} />
       
+        <Route exact path="/service" component={FormularioServicio}/>
 
+        <PrivateRoute exact path="/mainpage/reports" >
+          <SaleReport />
+          </PrivateRoute>
     
           <>
           <HeaderProductos />  
@@ -41,6 +46,8 @@ function App() {
           </PrivateRoute>
 
           <Footer />
+
+       
           </>
     
         </Switch>

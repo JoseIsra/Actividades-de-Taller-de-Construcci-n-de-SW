@@ -11,18 +11,16 @@ export const HomeServicios = () => {
       <span className="title">
         <h2>Nuestros servicios</h2>
       </span>
-      <div id="carouselExampleControls2" className="carousel slide" data-ride="carousel">
+      <div className="contenedorSlider">
+        <div id="carouselExampleControls2" className="carousel slide" data-ride="carousel">
 
         <div className="carousel-inner">
           <div className="carousel-item active">
             <img className="d-block w-100" src={image1} alt="First slide" />
-            <div className="cont-prueba">
-              <Link className="prueba" >Consultas</Link>
-
-            </div>
+            
             <div className="carousel-caption d-none d-md-block">
               <div className="contantLink">
-                <Link className="btn-alimentos">Ir a consultas</Link>
+                <Link to="/service" className="btn-alimentos">Ir a consultas</Link>
               </div>
               <h5>Consultas básicas</h5>
               <p>Realice cualquier tipo de consulta con respecto a su mascota: alimentación, estado de salud, etc.</p>
@@ -30,13 +28,10 @@ export const HomeServicios = () => {
           </div>
           <div className="carousel-item ">
             <img className="d-block w-100" src={image2} alt="Second slide" />
-            <div className="cont-prueba">
-              <Link className="prueba" >Adiestramiento</Link>
-
-            </div>
+          
             <div className="carousel-caption d-none d-md-block">
               <div className="contantLink">
-                <Link className="btn-alimentos">Reservar cita</Link>
+                <Link to="/service" className="btn-alimentos">Reservar cita</Link>
               </div>
 
               <h5>Adiestramiento</h5>
@@ -45,13 +40,10 @@ export const HomeServicios = () => {
           </div>
           <div className="carousel-item ">
             <img className="d-block w-100" src={image3} alt="Third slide" />
-            <div className="cont-prueba">
-              <Link className="prueba" >Limpieza y Spa</Link>
-
-            </div>
+          
             <div className="carousel-caption d-none d-md-block">
               <div className="contantLink">
-                <Link className="btn-alimentos">Reservar cita</Link>
+                <Link to="/service" className="btn-alimentos">Reservar cita</Link>
               </div>
               <h5>Tratamiento completo de limpieza</h5>
               <p>Deje a su mascota en buenas manos, ofrecemos servicios completos de limpieza</p>
@@ -72,6 +64,7 @@ export const HomeServicios = () => {
           <span className="sr-only">Next</span>
         </a>
 
+      </div>
       </div>
 
     </div>

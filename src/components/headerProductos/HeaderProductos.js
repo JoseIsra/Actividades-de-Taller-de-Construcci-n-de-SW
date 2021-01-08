@@ -56,7 +56,7 @@ export const HeaderProductos=()=>{
         <div className="header__links">
                     <Link to="/">Ir al inicio</Link>
                     <Link to="/mainpage">Ver productos</Link>
-                    <Link to="/servicios">Ver servicios</Link>
+                    <Link to="/service">Ver servicios</Link>
                 </div>
         </header>
     

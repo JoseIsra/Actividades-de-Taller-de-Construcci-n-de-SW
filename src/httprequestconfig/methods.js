@@ -36,7 +36,9 @@ const login=(data)=>{
 const getUser= ()=>{
     return http.get('/user');
 }
-
+const sentAppointment=(data)=>{
+    return http.post('/appointment',data)
+}
 
 const getBills= ()=>{
     return http.get('/bills');
@@ -56,6 +58,7 @@ export  const api={
     getProductById,
     getCategories,
     getSubcategories,
+    sentAppointment,
     getBills,
     getBillData,
     createClient,

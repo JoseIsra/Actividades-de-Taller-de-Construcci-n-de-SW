@@ -74,6 +74,20 @@ module.exports = {
             res.send(dataJson);res.end();
 
     },
+    saveAppointment: async(req, res)=>{
+        const {message, telephone ,service} = req.body;
+        try{
+            await model.appointment.create({
+                message:message,
+                client_number:telephone,
+                id_client:req.user.idclient,
+                serv_type:service
+            });
+            res.send("cita guardada exitosamente");
+        }catch(err){
+            console.log(err);
+        }
+    },
     logout:(req, res)=>{
         req.logout();
         res.send("sesion terminada");

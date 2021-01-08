@@ -37,6 +37,7 @@ router.post('/buy',productsController.buyingInfo);
 //routes para el cliente
 router.post('/register', clientController.saveClient);
 router.post('/login',clientController.login);
+router.post('/appointment',clientController.saveAppointment);
 router.get('/user', clientController.getUser);
 router.get('/bills',clientController.getBills);
 router.get('/bill/:idBill', clientController.getBillData);
