@@ -6,7 +6,6 @@ import { api } from '../../httprequestconfig/methods';
 import { Link, useHistory } from 'react-router-dom';
 import logoHappy from "../../images/logo-happypet.png";
 import * as yup from 'yup';
-import { useDataLayerValue } from "../../DataLayer";
 
 
 

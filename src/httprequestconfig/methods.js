@@ -16,9 +16,12 @@ const getSubcategories = (id)=>{
 return http.get(`/subcategory/${id}`)
 }
 
-const createClient =(data) =>{
-    return http.post('/register', data);
+const getDashData =()=>{
+    return http.get('/dashinfo');
 }
+
+
+
 
 //buy request
 const sendToBuy=(data)=>{
@@ -31,6 +34,10 @@ const sendToBuy=(data)=>{
 // client requests
 const login=(data)=>{
     return http.post('/login', data);
+}
+
+const createClient =(data) =>{
+    return http.post('/register', data);
 }
 
 const getUser= ()=>{
@@ -59,6 +66,7 @@ export  const api={
     getCategories,
     getSubcategories,
     sentAppointment,
+    getDashData,
     getBills,
     getBillData,
     createClient,

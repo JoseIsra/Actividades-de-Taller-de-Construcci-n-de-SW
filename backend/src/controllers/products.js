@@ -1,5 +1,6 @@
 const model = require('../dbconfig/dbconfig');
 const { QueryTypes } = require('sequelize');
+const { type } = require('jquery');
 
 
 module.exports = {
@@ -57,5 +58,43 @@ module.exports = {
                     return;
                 }
             res.send("compra realizada");
+    },
+    sendDashInfo:async (req, res)=>{
+        try{        
+        const maxtotal = await model.sale.max('total');
+        const soldProducts = await model.statement.sequelize.query(`
+        select prod_name, COUNT(idproduct) as cantidad from sale_details 
+        inner join products using (idproduct)
+        group by (idproduct) order by count(idproduct) desc limit 5
+        `,{
+            type:QueryTypes.SELECT
+        });
+        const servicesDone = await model.statement.sequelize.query(`
+        select serv_type_name ,count(serv_type) as cantidad from appointments ap inner join
+        service_types st on ap.serv_type= st.idservice_type  group by serv_type ; 
+        `,{
+            type:QueryTypes.SELECT
+        });
+
+        const sells = await model.statement.sequelize.query(`
+        select total, CONCAT(DAY(date),' ',DAYNAME(date),', ',MONTHNAME(date)) as fecha from sales order by total desc limit 7`,
+        {
+            type:QueryTypes.SELECT
+        });
+
+        const sumTotal = await model.sale.sum('total');
+
+        //package and send
+        let obj={
+            max:JSON.stringify(maxtotal),
+            importantProducts:soldProducts,
+            services:servicesDone,
+            sells:sells,
+            sumTotal:sumTotal
+        }
+            res.send(obj);res.end();
+        }catch(err){
+                console.log(err);
+        }
     }
 }

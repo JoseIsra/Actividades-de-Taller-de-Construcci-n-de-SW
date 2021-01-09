@@ -34,6 +34,9 @@ router.get('/products/:id', productsController.getProducts);
 router.get('/product/:id', productsController.getProductById);
 router.post('/buy',productsController.buyingInfo);
 
+router.get('/dashinfo', productsController.sendDashInfo);
+
+
 //routes para el cliente
 router.post('/register', clientController.saveClient);
 router.post('/login',clientController.login);
