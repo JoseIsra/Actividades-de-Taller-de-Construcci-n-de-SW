@@ -6,8 +6,9 @@ import { useDataLayerValue } from '../../DataLayer';
 
 export const Sidebar = () => {
         const [categories, setCategories] = useState([]);
+        const [subCategories, setSubCategories] = useState([]);
         const [nameCategory,setNameCategory ] = useState('juguetes');
-        const [{_},dispatch] = useDataLayerValue();
+        const [{idCategory},dispatch] = useDataLayerValue();
 
 
     useEffect(()=>{
@@ -16,10 +17,23 @@ export const Sidebar = () => {
             .catch(err => console.log(err));
     },[]);
 
+    useEffect(() => {
+        api.getSubcategories(idCategory)
+        .then(response => setSubCategories(response.data))
+        .catch(err => console.log(err))
+    }, [idCategory])
+
     const changeCategory = (id)=>{
         setNameCategory(categories[id-1].cat_name);
             dispatch({
                 type:'UPDATE_CATEGORY',
+                payload:id
+            });
+    }
+
+    const changeSubcategory = (id)=>{
+            dispatch({
+                type:'UPDATE_SUBCATEGORY',
                 payload:id
             });
     }
@@ -41,6 +55,17 @@ export const Sidebar = () => {
                 })
             }
             </ul>
+            <span >Subcategorias</span>
+            <ul>
+            {subCategories.map((subcategory, index) => {
+                    return <li
+                    key={index}
+                    onClick={(e)=>changeSubcategory(subcategory.idsub_category)}
+                    className="sidebar__categories"
+                    >{subcategory.sub_cat_name}</li>
+                })}
+            </ul>
+            
         </div>
     )
 }

@@ -1,18 +1,21 @@
+
+
 .subtotal{
     position:relative;
-    margin-top:20px;
+    margin-top:50px;
     margin-right:20px;
     display:flex;
     flex-direction: column;
-    width:250px;
-    height: 160px;
-    background-color: rgba(0,0,0,.3);
+    width:280px;
+    height: 200px;
+    background: black;
     border-radius:5px;
     padding:10px;
 }
 
 .subtotal > p{
-    font-size:0.8rem;
+    font-size:1rem;
+    color:white;
 }
 
 .subtotal .subtotal__info
@@ -24,18 +27,20 @@
 
 .subtotal__info >p
 {
-    font-size:0.8rem;
-    color:black;
+    font-size:1rem;
+    color:white;
 }
 .subtotal__info  span
 {
-    font-size:1rem;
+    font-size:1.3rem;
+    color:gray;
 }
 
 .subtotal__info button{
-    color: white;
-    border-radius:10px;
-    background-color:#0f3959;
+    color: gray;
+    border:1px solid #0077b6;
+    background-color: transparent;
+    padding:5px;
     outline:none !important;
     cursor:pointer;
 }
@@ -43,5 +48,10 @@
 .subtotal__info button:hover
 {
     letter-spacing: 3px;
-    background-color: black;
+    color:#0077b6;
+    box-shadow: inset 1.5px 1.5px 5px #0077b6,
+    inset -1px -1px 7px  #0077b6;
+    
+    
+    
 }

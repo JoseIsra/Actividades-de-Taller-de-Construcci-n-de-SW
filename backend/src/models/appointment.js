@@ -1,17 +1,25 @@
 
 
 module.exports = (sequlize, type) => {
-    return sequlize.define("service", {
-        idservice: {
+    return sequlize.define("appointment", {
+        id_appoint: {
             type: type.INTEGER,
             autoIncrement: true,
             primaryKey: true
         },
-    serv_name:{
+    message:{
+            type:type.TEXT
+        },
+        client_number:{
             type:type.STRING
         },
-        serv_description:{
-            type:type.TEXT
+        id_client:{
+            type:type.INTEGER,
+            allowNull:false,
+            references:{
+                model:'clients',
+                key:'idclient',
+            }
         },
         serv_type:{
             type:type.INTEGER,

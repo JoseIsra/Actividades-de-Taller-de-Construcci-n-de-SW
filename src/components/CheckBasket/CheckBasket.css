@@ -2,11 +2,23 @@
 
 .checkBasket{
     min-height:100vh;
-    width:100%;
+    min-width:600px;
     background-color:white;
     display:flex;
     justify-content: space-between;
 }
+
+.checkBasket__leftSide
+{
+    flex:0.7;
+}
+.checkBasket__rightSide
+{
+    flex:0.3;
+    display: flex;
+    justify-content: center;
+}
+
 .checkBasket__empty
 {
     padding:10px;
@@ -28,8 +40,8 @@
 .checkBastet__products > h3
 {
     padding-left:30px;
+    margin-top:40px;
 }
-
 
 
 

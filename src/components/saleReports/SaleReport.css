@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&display=swap');
+
+
+.salereport{
+    display: flex;
+    flex-direction: column;
+    width:100%;
+    min-height: 100vh;
+    position:relative;
+    background: linear-gradient(0deg, hsla(189, 34%, 42%, 1) 14%, hsla(220, 78%, 29%, 1) 84%);
+}
+
+
+
+.salereport__title
+{
+    padding:10px;
+    position: relative;
+    width:600px;
+}
+
+.salereport__title > h1{
+    font-family: 'Josefin Sans', sans;
+    color:white;
+    font-weight: 600;
+}
+
+
+.salereport__links
+{
+    position:absolute;
+    bottom:0;
+}
+.salereport__links > a{
+    font-size:1.4rem;
+    padding:10px;
+    color:white;
+}
+.salereport__links > a:hover{
+    color:white;
+    font-weight: 800;
+}
+
+
+.salereport__body
+{
+    margin-top:30px;
+    padding:30px;
+    width:1000px;
+display:flex;
+height: 60vh;
+justify-content: space-between;
+}
+
+
+.salereport_dataUsers
+{
+    display: flex;
+    padding:10px;
+}
+
+.salereports_dataUsers__fields
+{
+    margin-right:20px;
+}
+
+.salereports_dataUsers__fields > h2
+{
+    font-family: 'Josefin Sans', sans;
+    font-size:2.3rem;
+    font-weight: 400;
+    border-bottom:2px solid #f1faee;
+    color:#f1faee;
+}
+.salereports_dataUsers__fields p
+{
+    padding:5px;
+    color:lightgrey;
+    font-weight: 500;
+    
+}
+
+.salereports_dataUsers__fields  span{
+    font-size:1.3rem;
+    color:#f1faee;
+}
+
+.salereport__listBills
+{
+    padding:10px;
+    border-left: 4px dashed white; 
+    overflow: auto;
+}
+.salereport_listBills  table,th,td
+{
+    border-collapse: collapse;
+    border-bottom:0.6px solid white;
+    padding:5px;
+}
+.salereport__listBills >P {
+    color:white;
+}
+
+
+#tableList  th
+{
+    text-align: center;
+    color:white;
+}
+#tableList  td
+{
+    text-align: center;
+    padding:10px;
+    color:rgba(255,255,255,.5);
+}
+
+
+
+.salereport_listBills .scrollTable
+{
+    height: 100px;
+    width:100%;
+    overflow: auto;
+}
+
+
+.salereport_showBills
+{
+    position:absolute;
+    right:20px;
+    top:30px;
+    padding:15px;
+    border:2px dashed white;
+    border-radius:10px;
+}
+.salereport_showBills > h3
+{
+    font-family: 'Josefin Sans', sans;
+    color:white;
+    font-weight: 600;
+}
+
+.salereport_showBills > input
+{
+    background-color: transparent;
+    border:none;
+    border-bottom:1px solid lightgrey;
+    outline:none !important;
+    color:white;
+}
+.salereport_showBills > button
+{
+    border-radius:999px;
+    background-color: transparent;
+    outline:none !important;
+    padding:5px;
+    color:white;
+    font-weight: 400;
+    border:1px solid white;
+}
+
+.salereport_showBills > button:hover{
+    transform: scale(1.1);
+}
+.salereport_showBills > button:active{
+    transform: scale(0.7);
+}
+
+
+.salereport_listDataBills
+{
+    padding:10px;
+    margin:0;
+    height: 300px;
+    overflow: auto;
+}
+
+.salereport_listDataBills > span
+{
+    color:white;
+    border-bottom:2px solid white;
+}
+
+.listBills
+{
+    display: flex;
+    flex-direction: column;
+    margin:0;
+    position: relative;
+}
+.listBills span
+{
+    color:white;
+    font-weight: 300;
+}
+
+
+.listBills span:nth-of-type(4)
+{
+    position:relative;
+    position:absolute;
+    bottom:0;
+}
+

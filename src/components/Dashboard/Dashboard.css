@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&display=swap');
+/* font-family: 'Josefin Sans', sans;*/
+
+
+
+.dashboard
+{
+    max-width: 100vw;
+    
+    background-color:black ;
+    
+}
+
+.dashboard__title
+{
+    padding:20px;
+    margin-top:10px;
+}
+.dashboard__title > h1
+{
+    font-family: 'Josefin Sans', sans;
+    letter-spacing: 2px;
+    font-weight: 500;
+    font-size:3rem;
+    color:white;
+}
+.dashboard__title  span
+{
+    color:#03a9f4;
+}
+
+
+.dashboard__content
+{
+    display:flex;
+    flex-direction: column;
+    padding:10px;
+}
+.dashboard__content__SectionOne
+{
+    display:flex;
+    margin-top:30px;
+    justify-content: space-around;
+    align-items: center;
+    height: 60vh;
+}
+
+.dashboard__content__SectionTwo
+{
+    margin-top:70px;
+    display:flex;
+    justify-content: space-around;
+    padding:20px;
+    width:100%;
+}
+.sectionTwoNumbers
+{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding:10px;
+}
+.sectionTwoNumbers > p
+{
+    padding:20px;
+    font-size:2rem;
+    color:white;
+    font-weight: 500;
+}
+.sectionTwoNumbers span
+{
+    color:#03a9f4;
+    font-size:3rem;
+}
+
+
+.sellchart
+{
+    padding:20px;
+    width:650px;
+    height: 400px;
+}
+
+
+
+.barchart
+{
+    width:600px;
+    height: 400px;
+}
+
+.linechart
+{
+    width:400px;
+    height:400px;
+}
+
+.linechart > h3
+{
+    text-align: center;
+    color:white;
+    font-weight: 400;
+}

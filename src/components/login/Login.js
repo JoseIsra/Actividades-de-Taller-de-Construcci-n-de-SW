@@ -20,7 +20,6 @@ const validationSchema = yup.object({
 export const Login = () => {
     const [message, setMessage] = useState(null);
     const [visible , setVisible] = useState(false);
-
     const history = useHistory();
 
     const onSubmit = async (values, onSubmitProps) => {
@@ -30,15 +29,15 @@ export const Login = () => {
             if(response.data === 'Datos inválidos'){
                 setMessage(response.data);
             }else{
-                // setClient(response.data);
+            
                 history.push('/mainpage');
-                console.log("usuario ingresado");
+                
             }
         }catch(err){
             console.log(err);
         }}
 
-      
+    
 
 
     useEffect(()=>{

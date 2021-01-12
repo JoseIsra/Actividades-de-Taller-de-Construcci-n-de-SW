@@ -78,8 +78,8 @@ html {
   width: 100%;
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
   background-size: cover;
+  flex-direction: column;
   background-image: url("../../images/fondo-productos.png");
 }
 .AboutUs2 {
@@ -111,15 +111,14 @@ html {
   display: flex;
   background-size: cover;
   background-image: url("../../images/fondo-servicios.png");
-
   align-items: center;
 }
 
 .servicios {
   display: flex;
-  background-size: cover;
   background-image: url("../../images/fondoCeleste.png");
   align-items: center;
+  background-size: cover;
 }
 @media screen and (max-width: 960px) {
   .AboutUs h2 {

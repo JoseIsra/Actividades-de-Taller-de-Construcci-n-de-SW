@@ -1,7 +1,7 @@
 
 .headerProductos {
   display: grid;
-  position: sticky;
+  position: relative;
   z-index: 999;
   grid-template-columns: 10% 60% 30%;
   background: #4d97b3;
@@ -74,8 +74,9 @@
 .header__options
 {
   display:flex;
-  flex-direction: column;
   width:70%;
+  justify-content: center;
+  align-items: center;
   padding:3px;
   border:1px solid black;
   border-radius:5px;
@@ -88,8 +89,10 @@
 
 .header__options__one
 {
-  font-size:0.7rem;
-  font-weight: 700;
+  position: relative;
+  left:20px;
+  font-size:1rem;
+  font-weight: 600;
   color:#03a9f4;
 }
 .header__options__two
@@ -99,3 +102,20 @@
   color:#f3f3f3;
 }
 
+.header__links
+{
+ position:absolute;
+ display:flex;
+ justify-content: space-around;
+ padding:2px;
+ background-color: black;
+ top:100%; 
+ width:100%;
+ z-index:-1000;
+}
+.header__links > a{
+  color:white;
+  display: inline-block;
+  margin:0 20px;
+  font-size:1rem;
+}

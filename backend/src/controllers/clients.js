@@ -1,6 +1,8 @@
 const passport = require('passport');
 const model = require('../dbconfig/dbconfig');
 const bcrypt = require('bcryptjs');
+const { QueryTypes } = require('sequelize');
+const { response } = require('express');
 
 
 module.exports = {
@@ -35,8 +37,7 @@ module.exports = {
             }
             else{
                 req.logIn(user , (err) => {
-                    res.send("autenticación exitosa");
-                console.log("user enviado");       
+                    res.send("usuario logeado");
                 })
             }
         })(req, res, next);
@@ -44,6 +45,48 @@ module.exports = {
     },
     getUser:(req, res)=>{
         res.send(req.user);
+    },
+    getBills: async(req, res)=>{
+        try{
+            const bills = await model.sale.findAll( {
+                attributes:['bill_number','total','date'],
+                where:{
+                    idclient:req.user.idclient
+                }
+            })
+            const billsJson = JSON.stringify(bills);
+            res.send(billsJson);res.end();
+
+        }catch(err){
+            console.log(err);
+        }
+    },
+    getBillData: async(req, res)=>{
+            const {idBill} = req.params;
+            const infoBills = await model.statement.sequelize.query(`
+            SELECT prod_name, prod_price, quantity FROM products 
+            INNER JOIN sale_details USING (idproduct) WHERE bill_number = ?
+            `, {
+                replacements:[`${idBill}`],
+                type:QueryTypes.SELECT
+            });
+            const dataJson = JSON.stringify(infoBills);
+            res.send(dataJson);res.end();
+
+    },
+    saveAppointment: async(req, res)=>{
+        const {message, telephone ,service} = req.body;
+        try{
+            await model.appointment.create({
+                message:message,
+                client_number:telephone,
+                id_client:req.user.idclient,
+                serv_type:service
+            });
+            res.send("cita guardada exitosamente");
+        }catch(err){
+            console.log(err);
+        }
     },
     logout:(req, res)=>{
         req.logout();
