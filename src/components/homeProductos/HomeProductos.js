@@ -1,8 +1,8 @@
 import React from "react"
 import "./HomeProductos.css";
-// import imagen3 from "../../images/fondo-alimentos.png";
-// import fondoToys from "../../images/fondo-juguetes.png";
-// import fondoDrugs from "../../images/fondo-medicina.png";
+import imagen3 from "../../images/fondo-alimentos.png";
+import fondoToys from "../../images/fondo-juguetes.png";
+ import fondoDrugs from "../../images/fondo-medicina.png";
 import { Link } from "react-router-dom";
 import { PrintRounded } from "@material-ui/icons";
 export const HomeProductos = () => {
@@ -14,11 +14,8 @@ export const HomeProductos = () => {
 
         <div className="carousel-inner">
           <div className="carousel-item active">
-            <img className="d-block w-100" src='/fondo-alimentos.png' alt="First slide" />
-            <div className="cont-prueba">
-              <Link className="prueba" >Ver Alimentos</Link>
-
-            </div>
+            <img className="d-block w-100" src={imagen3} alt="First slide" />
+        
             
             <div className="carousel-caption d-none d-md-block">
               <div className="contLink">
@@ -33,11 +30,8 @@ export const HomeProductos = () => {
             </div>
           </div>
           <div className="carousel-item ">
-            <img className="d-block w-100" src='/fondo-juguetes.png' alt="Second slide" />
-            <div className="cont-prueba">
-              <Link className="prueba" >Ver Accesorios</Link>
-
-            </div>
+            <img className="d-block w-100" src={fondoToys} alt="Second slide" />
+         
             <div className="carousel-caption d-none d-md-block">
               <div className="contLink">
                 <Link to='/mainpage' className="btn-animado">Ver accesorios</Link>
@@ -49,11 +43,8 @@ export const HomeProductos = () => {
             </div>
           </div>
           <div className="carousel-item ">
-            <img className="d-block w-100" src='/fondo-medicina.png' alt="Third slide" />
-            <div className="cont-prueba">
-              <Link className="prueba" >Ver artículos de limpieza</Link>
-
-            </div>
+            <img className="d-block w-100" src={fondoDrugs} alt="Third slide" />
+         
             <div className="carousel-caption d-none d-md-block">
               <div className="contLink">
                 <Link  to='/mainpage' className="btn-animado">Ver artículos</Link>
