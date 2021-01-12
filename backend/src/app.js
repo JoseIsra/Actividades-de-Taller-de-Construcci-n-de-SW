@@ -6,6 +6,7 @@ const passport = require('passport');
 const app = express();
 require('./dbconfig/dbconfig');
 require('./passport/passport')(passport);
+const PORT = 4000;
 
 //bodyparser
 
@@ -30,4 +31,4 @@ app.use(passport.session());
 app.use('/api', require('./routes/api'));
 
 //server
-app.listen(process.env.PORT || 4000, console.log("BEEP BEEP te escucho"));
+app.listen(process.env.PORT|| PORT , console.log("BEEP BEEP te escucho"));
