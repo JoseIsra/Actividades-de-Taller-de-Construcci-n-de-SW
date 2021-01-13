@@ -31,4 +31,4 @@ app.use(passport.session());
 app.use('/api', require('./routes/api'));
 
 //server
-app.listen(process.env.PORT|| PORT , console.log("BEEP BEEP te escucho"));
+app.listen(process.env.PORT|| PORT , console.log(`BEEP BEEP te escucho ${PORT}`));
