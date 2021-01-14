@@ -16,6 +16,7 @@ export const HeaderProductos=()=>{
     useEffect(()=>{
         api.getUser()
         .then(response => {
+            console.log(response);
             dispatch({
                 type:'SET_USER',
                 client:response.data
