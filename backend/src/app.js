@@ -1,8 +1,10 @@
 const express = require('express');
 const morgan = require('morgan');
 const cors = require('cors');
+const model = require('./dbconfig/dbconfig');
 const session = require('express-session');
 const passport = require('passport');
+const SessionStore = require('express-session-sequelize')(session.Store);
 const app = express();
 require('./dbconfig/dbconfig');
 require('./passport/passport')(passport);
@@ -17,10 +19,20 @@ app.use(cors({
 }));
 app.use(morgan("dev"));
 
+
+const sequelizeSessionStore = new SessionStore({
+    db: model.seque,
+    table:'sessions'
+});
+
+
 app.use(session({
+    key:'asdfasdfnclanspp',
     secret:"the secrete madafaka secret",
-    resave: true,
-    saveUninitialized: true
+    store:sequelizeSessionStore,
+    resave: false,
+    saveUninitialized: false
+
 }));
 
 app.use(passport.initialize());
@@ -30,4 +42,4 @@ app.use(passport.session());
 app.use('/api', require('./routes/api'));
 
 //server
-app.listen(4000, console.log("BEEP BEEP te escucho"));
+app.listen(8080, console.log("BEEP BEEP te escucho"));

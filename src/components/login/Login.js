@@ -9,6 +9,7 @@ import * as yup from 'yup';
 
 
 
+
 const validationSchema = yup.object({
     cli_email: yup.string().email('no es un correo').required('No completado'),
     cli_password: yup.string().min(6, 'de 6 a más caracteres por favor').required('No completado'),
@@ -20,6 +21,7 @@ const validationSchema = yup.object({
 export const Login = () => {
     const [message, setMessage] = useState(null);
     const [visible , setVisible] = useState(false);
+    
     const history = useHistory();
 
     const onSubmit = async (values, onSubmitProps) => {
@@ -29,8 +31,7 @@ export const Login = () => {
             if(response.data === 'Datos inválidos'){
                 setMessage(response.data);
             }else{
-            
-                history.push('/mainpage');
+            history.push('/mainpage');    
                 
             }
         }catch(err){

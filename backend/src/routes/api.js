@@ -14,9 +14,14 @@ router.get('/pets', async(req, res) => {
 });
 
 router.get('/category', async(req, res) => {
-    const  response= await model.category.findAll();
-    const responseJson = JSON.stringify(response);
-    res.send(responseJson);res.end();
+    try{
+        const  response= await model.category.findAll();
+        const responseJson = JSON.stringify(response);
+        res.send(responseJson);res.end();
+    }catch(err){
+        console.log("AYDA")
+        console.log(err);
+    }
 });
 
 router.get('/subcategory/:id', async (req ,res) => {
@@ -39,13 +44,13 @@ router.get('/dashinfo', productsController.sendDashInfo);
 
 //routes para el cliente
 router.post('/register', clientController.saveClient);
-router.post('/login',clientController.login);
-router.post('/appointment',clientController.saveAppointment);
+router.post('/login', require('../controllers/signin'));
+router.get('/logout', clientController.logout);
 router.get('/user', clientController.getUser);
+router.post('/appointment',clientController.saveAppointment);
 router.get('/bills',clientController.getBills);
 router.get('/bill/:idBill', clientController.getBillData);
 
-router.get('/logout', clientController.logout);
 
 
 

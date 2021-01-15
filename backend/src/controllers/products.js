@@ -1,6 +1,6 @@
 const model = require('../dbconfig/dbconfig');
 const { QueryTypes } = require('sequelize');
-const { type } = require('jquery');
+
 
 
 module.exports = {

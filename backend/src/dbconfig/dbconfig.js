@@ -10,7 +10,7 @@ const serviceTypeModel = require('../models/service_type');
 const subCategoryModel = require('../models/sub_category');
 
 //credentials
-const DB = require('../dbCredentials');
+const DB = require('../DBcredentials');
 const db = {}; //para las fututras sentencias
 
 const sequelize = new Sequelize(
@@ -19,7 +19,14 @@ const sequelize = new Sequelize(
     DB.password,
     {
         host: DB.host,
-        dialect: 'mysql'
+        dialect: 'mysql',
+        pool: {
+            max: 50,
+            min: 0,
+            acquire: 30000,
+            idle: 10000
+        }
+    
     });
 
 const Pet = petModel(sequelize, Sequelize);
@@ -50,8 +57,8 @@ const model = {
     'appointment':Appointment,
     'serviceType':ServiceType,
     'subCategory':SubCategory,
-    'statement':db
+    'statement':db,
+    'seque':sequelize
 
 };
 module.exports = model;
-
