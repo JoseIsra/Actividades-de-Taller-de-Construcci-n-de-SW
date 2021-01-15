@@ -29,8 +29,16 @@ export const Login = () => {
             if(response.data === 'Datos inválidos'){
                 setMessage(response.data);
             }else{
-            
-                history.push('/mainpage');
+                api.getUser()
+                .then(response => {
+                    console.log(response);
+                    console.log("funciona esto o no?");
+                    dispatch({
+                        type:'SET_USER',
+                        client:response.data
+                    })
+                    history.push('/mainpage');
+                }).catch(err => console.log(err))
                 
             }
         }catch(err){
