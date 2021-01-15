@@ -20,7 +20,6 @@ const validationSchema = yup.object({
 export const Login = () => {
     const [message, setMessage] = useState(null);
     const [visible , setVisible] = useState(false);
-    const [,dispatch] = useDataLayerValue();
     const history = useHistory();
 
     const onSubmit = async (values, onSubmitProps) => {
@@ -30,11 +29,7 @@ export const Login = () => {
             if(response.data === 'Datos inválidos'){
                 setMessage(response.data);
             }else{
-                api.getUser()
-                .then(response => {
                     history.push('/mainpage');
-                }).catch(err => console.log(err))
-                
             }
         }catch(err){
             console.log(err);

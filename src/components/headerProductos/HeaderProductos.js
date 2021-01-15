@@ -10,7 +10,7 @@ import { useDataLayerValue } from '../../DataLayer';
 import MenuListComposition from '../MenuList/MenuList';
 
 export const HeaderProductos=()=>{
-    const [{basket, client}] = useDataLayerValue();
+    const [{basket, client},dispatch] = useDataLayerValue();
     
 
     useEffect(()=>{
