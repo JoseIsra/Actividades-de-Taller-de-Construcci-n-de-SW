@@ -6,7 +6,7 @@ import { api } from '../../httprequestconfig/methods';
 import { Link, useHistory } from 'react-router-dom';
 import logoHappy from "../../images/logo-happypet.png";
 import * as yup from 'yup';
-
+import { useDataLayerValue } from '../../DataLayer';
 
 
 const validationSchema = yup.object({
@@ -20,6 +20,7 @@ const validationSchema = yup.object({
 export const Login = () => {
     const [message, setMessage] = useState(null);
     const [visible , setVisible] = useState(false);
+    const [,dispatch] = useDataLayerValue();
     const history = useHistory();
 
     const onSubmit = async (values, onSubmitProps) => {
