@@ -17,6 +17,7 @@ export const HeaderProductos=()=>{
         api.getUser()
         .then(response => {
             console.log(response);
+            console.log("funciona esto o no?");
             dispatch({
                 type:'SET_USER',
                 client:response.data
