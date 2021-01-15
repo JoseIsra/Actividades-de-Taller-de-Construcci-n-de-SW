@@ -32,12 +32,6 @@ export const Login = () => {
             }else{
                 api.getUser()
                 .then(response => {
-                    console.log(response);
-                    console.log("funciona esto o no?");
-                    dispatch({
-                        type:'SET_USER',
-                        client:response.data
-                    })
                     history.push('/mainpage');
                 }).catch(err => console.log(err))
                 
