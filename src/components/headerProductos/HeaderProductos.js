@@ -2,7 +2,7 @@ import React,{ useEffect } from "react";
 import "./HeaderProductos.css";
 import logo from "../../images/logo-happypet.png";
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
-//import { api } from '../../httprequestconfig/methods';
+import { api } from '../../httprequestconfig/methods';
 
 import { Link  } from "react-router-dom";
 import { Badge } from '@material-ui/core';
