@@ -44,7 +44,7 @@ router.get('/dashinfo', productsController.sendDashInfo);
 
 //routes para el cliente
 router.post('/register', clientController.saveClient);
-router.post('/login', require('../controllers/signin'));
+router.post('/login',clientController.logUser);
 router.get('/logout', clientController.logout);
 router.get('/user', clientController.getUser);
 router.post('/appointment',clientController.saveAppointment);
