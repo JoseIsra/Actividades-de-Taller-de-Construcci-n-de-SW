@@ -6,17 +6,20 @@ import ListAltIcon from '@material-ui/icons/ListAlt';
 import './SaleReport.css';
 import { api } from '../../httprequestconfig/methods';
 import { useBills } from './useBills';
+import { useDataLayerValue } from '../../DataLayer';
+import Cookies from 'js-cookie';    
+
 
 
 export const SaleReport = () => {
+    
     const {bills} = useBills();
-    const [user ,setUser] = useState({
-        name:'',
-        apell:'',
-        email:'',
-        });
+    const [{client} ,dispatch] = useDataLayerValue();
     const[searchBill , setSearchBill] = useState('');
     const[billData , setBillData] = useState([]);
+
+    
+
 
     const billWatcher =()=>{
         api.getBillData(searchBill)
@@ -24,15 +27,26 @@ export const SaleReport = () => {
         .catch(err => console.log(err));
     }
 
-    useEffect(() => {
-        api.getUser()
-            .then(response => {
-                setUser(user => ({
-                    name:response.data.cli_name,
-                    apell:response.data.cli_lastname,
-                    email:response.data.cli_email,
-                }));
-    }).catch(err => console.log(err))
+    // const readCookie=()=>{
+    //     let data = Cookies.get('user');
+    //     if(data !== undefined){
+    //         data=JSON.parse(data);
+    //         console.log(data);
+    //         dispatch({
+    //             type:'SET_USER',
+    //             client:data
+    //         })
+    //     }
+    // }
+    useEffect(()=>{ 
+        let data = Cookies.get('user');
+        if(data !== undefined){
+            data=JSON.parse(data);
+            dispatch({
+                type:'SET_USER',
+                client:data
+            })
+        }
 }, []);
 
 
@@ -52,9 +66,9 @@ export const SaleReport = () => {
             <div className="salereport_dataUsers">
                 <div className="salereports_dataUsers__fields">
                     <h2>Datos de Usuarios</h2>
-                    <p>NOMBRE: <span>{user.name} </span> </p>
-                    <p>APELLIDOS: <span> {user.apell}</span></p>
-                    <p>CORREO: <span>{user.email}</span></p>
+                    <p>NOMBRE: <span>{client.cli_name} </span> </p>
+                    <p>APELLIDOS: <span> {client.cli_lastname}</span></p>
+                    <p>CORREO: <span>{client.cli_email}</span></p>
                 </div>
                 <div className="salereport__listBills">
                     <p>Usted tiene ({bills.length}) boletas de compra</p>

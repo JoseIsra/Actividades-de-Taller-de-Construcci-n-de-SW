@@ -1,12 +1,15 @@
 const express = require('express');
 const morgan = require('morgan');
 const cors = require('cors');
+const model = require('./dbconfig/dbconfig');
 const session = require('express-session');
-const passport = require('passport');
+// const passport = require('passport');
+const SessionStore = require('express-session-sequelize')(session.Store);
 const app = express();
 require('./dbconfig/dbconfig');
-require('./passport/passport')(passport);
-const PORT = 4000;
+
+const PORT = 8080;
+//require('./passport/passport')(passport);
 
 //bodyparser
 
@@ -18,14 +21,24 @@ app.use(cors({
 }));
 app.use(morgan("dev"));
 
+
+const sequelizeSessionStore = new SessionStore({
+    db: model.seque,
+    table:'sessions'
+});
+
+
 app.use(session({
+    key:'asdfasdfnclanspp',
     secret:"the secrete madafaka secret",
-    resave: true,
-    saveUninitialized: true
+    store:sequelizeSessionStore,
+    resave: false,
+    saveUninitialized: false
+
 }));
 
-app.use(passport.initialize());
-app.use(passport.session());
+// app.use(passport.initialize());
+// app.use(passport.session());
 
 //routes
 app.use('/api', require('./routes/api'));

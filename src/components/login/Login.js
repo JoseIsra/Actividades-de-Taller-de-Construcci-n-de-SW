@@ -7,7 +7,7 @@ import { Link, useHistory } from 'react-router-dom';
 import logoHappy from "../../images/logo-happypet.png";
 import * as yup from 'yup';
 import { useDataLayerValue } from '../../DataLayer';
-
+import Cookies from 'js-cookie';
 
 const validationSchema = yup.object({
     cli_email: yup.string().email('no es un correo').required('No completado'),
@@ -20,8 +20,8 @@ const validationSchema = yup.object({
 export const Login = () => {
     const [message, setMessage] = useState(null);
     const [visible , setVisible] = useState(false);
-    const history = useHistory();
     const [,dispatch] = useDataLayerValue();
+    const history = useHistory();
     const onSubmit = async (values, onSubmitProps) => {
         try {
             const response = await api.login(values);
@@ -29,11 +29,12 @@ export const Login = () => {
             if(response.data === 'Datos inválidos'){
                 setMessage(response.data);
             }else{
+                Cookies.set('user',response.data); // guardando cookies 
                 dispatch({
                     type:'SET_USER',
                     client:response.data
                 })
-                    history.push('/mainpage');
+                    history.push('/mainpage');                
             }
         }catch(err){
             console.log(err);

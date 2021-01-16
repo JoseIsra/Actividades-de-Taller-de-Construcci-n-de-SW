@@ -40,24 +40,20 @@ const createClient =(data) =>{
     return http.post('/register', data);
 }
 
-const getUser= ()=>{
-    return http.get('/user');
-}
+
 const sentAppointment=(data)=>{
     return http.post('/appointment',data)
 }
 
-const getBills= ()=>{
-    return http.get('/bills');
+const getBills= (id)=>{
+    return http.get(`/bills/${id}`);
 }
 
 const getBillData= (billNumber)=>{
     return http.get(`/bill/${billNumber}`);
 }
 
-const logOut =()=>{
-    return http.get('/logout');
-}
+
 
 
 export  const api={
@@ -71,7 +67,5 @@ export  const api={
     getBillData,
     createClient,
     sendToBuy,
-    login,
-    getUser,
-    logOut
+    login
 }
