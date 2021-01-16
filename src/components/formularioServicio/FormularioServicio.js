@@ -80,8 +80,8 @@ elemento.textContent=e.target.textContent;
   </button>
   <div className="dropdown-menu" aria-labelledby="dropdownMenu2">
     <button onClick={pasarDatos} className="dropdown-item" type="button" value="1" >Adiestramiento</button>
-    <button onClick={pasarDatos} className="dropdown-item" type="button" value="2">Consulta médica</button>
-    <button onClick={pasarDatos} className="dropdown-item" type="button" value="3">Limpieza y Spa</button>
+    <button onClick={pasarDatos} className="dropdown-item" type="button" value="11">Consulta médica</button>
+    <button onClick={pasarDatos} className="dropdown-item" type="button" value="21">Limpieza y Spa</button>
   </div>
 </div>
 <div className="input-group mb-3">
