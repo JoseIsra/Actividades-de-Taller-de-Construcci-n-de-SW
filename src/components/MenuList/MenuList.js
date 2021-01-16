@@ -4,14 +4,13 @@ import Button from '@material-ui/core/Button';
 import ClickAwayListener from '@material-ui/core/ClickAwayListener';
 import Grow from '@material-ui/core/Grow';
 import {useHistory } from 'react-router-dom';
-import { api } from '../../httprequestconfig/methods';
 import Paper from '@material-ui/core/Paper';
 import Popper from '@material-ui/core/Popper';
 import MenuItem from '@material-ui/core/MenuItem';
 import MenuList from '@material-ui/core/MenuList';
 import { makeStyles } from '@material-ui/core/styles';
 import { useDataLayerValue } from '../../DataLayer';
-
+import  Cookies from 'js-cookie';    
 const useStyles = makeStyles((theme) => ({
     root: {
         display: 'flex',
@@ -22,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function MenuListComposition() {
-    const [{client}] = useDataLayerValue();
+    const [{client},dispatch] = useDataLayerValue();
     const classes = useStyles();
     const [open, setOpen] = React.useState(false);
     const anchorRef = React.useRef(null);
@@ -58,11 +57,13 @@ export default function MenuListComposition() {
     }, [open]);
 
     const closeSession=()=>{
-        api.logOut()
-        .then(response => {
-            history.push('/mainpage');
-            window.location.reload();
+        Cookies.remove('user');
+        dispatch({
+            type:'SET_USER',
+            client:null
         })
+        history.push('/mainpage');
+        window.location.reload();
     }
 
 

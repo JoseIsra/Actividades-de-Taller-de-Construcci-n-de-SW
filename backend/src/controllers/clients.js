@@ -1,4 +1,4 @@
-const passport = require('passport');
+//const passport = require('passport');
 const model = require('../dbconfig/dbconfig');
 const bcrypt = require('bcryptjs');
 const { QueryTypes } = require('sequelize');
@@ -30,29 +30,37 @@ module.exports = {
             console.log(err);
         }
     },
-    logUser: (req, res, next) => {
-        passport.authenticate("local", (err, user, info) => {
-            if (err) throw err;
-            if (!user) res.send("Datos invalidos");
-            else {
-                req.logIn(user, (err) => {
-                    if (err) throw err;
-                    res.send(req.user);
-                    console.log(req.user);
-                });
+    logUser: async (req, res) => {
+        const user = await model.client.findOne({
+            attributes:['idclient','cli_name','cli_password','cli_lastname','cli_email','is_admin'],
+            where:{
+                cli_email:req.body.cli_email
             }
-        })(req, res, next);
-    },
-    getUser: (req, res) => {
-        console.log(req.user);
-        res.send(req.user);
+        }); 
+        if(!user){
+            res.send("Datos inválidos");res.end();
+            return ;
+        }else{
+            bcrypt.compare(req.body.cli_password , user.cli_password, (err, match) => {
+                if(!match){
+                    res.send("Datos inválidos");res.end();
+                    return;
+                }else{
+                    console.log("hay usuario");
+                    console.log(user);
+                    res.send(user);res.end();
+                }
+            })
+        }
     },
     getBills: async (req, res) => {
+        //recibir el id del usuario
+        const {id} = req.params;
         try {
             const bills = await model.sale.findAll({
                 attributes: ['bill_number', 'total', 'date'],
                 where: {
-                    idclient: req.user.idclient
+                    idclient: id
                 }
             })
             const billsJson = JSON.stringify(bills);
@@ -76,22 +84,18 @@ module.exports = {
 
     },
     saveAppointment: async (req, res) => {
-        const { message, telephone, service } = req.body;
+        const {id, message, telephone, service } = req.body;
         try {
             await model.appointment.create({
                 message: message,
                 client_number: telephone,
-                id_client: req.user.idclient,
+                id_client: id,
                 serv_type: service
             });
             res.send("cita guardada exitosamente");
         } catch (err) {
             console.log(err);
         }
-    },
-    logout: (req, res) => {
-        req.logout();
-        res.send("sesion terminada");
     }
 
 

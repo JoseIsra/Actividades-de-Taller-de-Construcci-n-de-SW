@@ -3,11 +3,11 @@ const morgan = require('morgan');
 const cors = require('cors');
 const model = require('./dbconfig/dbconfig');
 const session = require('express-session');
-const passport = require('passport');
+// const passport = require('passport');
 const SessionStore = require('express-session-sequelize')(session.Store);
 const app = express();
 require('./dbconfig/dbconfig');
-require('./passport/passport')(passport);
+//require('./passport/passport')(passport);
 
 //bodyparser
 
@@ -35,8 +35,8 @@ app.use(session({
 
 }));
 
-app.use(passport.initialize());
-app.use(passport.session());
+// app.use(passport.initialize());
+// app.use(passport.session());
 
 //routes
 app.use('/api', require('./routes/api'));

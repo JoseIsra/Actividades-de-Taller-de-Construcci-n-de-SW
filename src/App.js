@@ -1,4 +1,4 @@
-import './App.css';
+
 
 import React from 'react'; 
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
@@ -11,6 +11,7 @@ import { Footer } from './components/footer/Footer';
 import {DetailProduct} from './components/DetailProduct/DetailProduct';
 import  CheckBasket from './components/CheckBasket/CheckBasket';
 import {PrivateRoute} from './components/PrivateRoute';
+import {ProtectedLogin} from './components/ProtectedLogin';
 import { SaleReport } from './components/saleReports/SaleReport';
 import {Dashboard } from './components/Dashboard/Dashboard';
 import {FormularioServicio} from "./components/formularioServicio/FormularioServicio";
@@ -25,16 +26,17 @@ function App() {
       <Router>
         <Switch>
         <Route exact path="/" component ={Home} /> 
-        <Route exact path="/login" component ={Login} />
+      <ProtectedLogin exact path="/login">
+        <Login />
+      </ProtectedLogin>
+        
+
         <Route exact path="/register" component ={Register} />
         
         <Route exact path="/dashboard" component={Dashboard} />
       
         <Route exact path="/service" component={FormularioServicio}/>
-
-        <PrivateRoute exact path="/mainpage/reports" >
-          <SaleReport />
-          </PrivateRoute>
+        <Route exact path="/mainpage/reports" component={SaleReport}/>
     
           <>
           <HeaderProductos />  

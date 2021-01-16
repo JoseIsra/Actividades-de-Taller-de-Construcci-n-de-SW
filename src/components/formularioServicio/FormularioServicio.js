@@ -11,11 +11,12 @@ var servicio="Seleccione el servicio";
 
 export const FormularioServicio=()=>{
   const [{client}] = useDataLayerValue();
-  const {user} = useUser();
+  // const {user} = useUser();
   const [show, setShow] = useState(false);
   const [modal, setModal] = useState(null);
   const history = useHistory();
   const [bodyConsult, setBodyConsult] = useState({
+    id: (client? client.idclient:''),
     message:'',
     telephone:'',
     service:''
@@ -72,7 +73,7 @@ elemento.textContent=e.target.textContent;
 <div className="formularioServicio">
     <span className="formularioServicio_title"><h1>HappyPet - Servicios</h1></span>
     <span className="formularioServicio_welcome">
-        <p>Bienvenido {user.name} al módulo de gestión de servicios, envíanos tu consulta</p>
+        <p>Bienvenido {client? client.cli_name: ''} al módulo de gestión de servicios, envíanos tu consulta</p>
     </span>
     <div className="dropdown dropdown_Servicio">
   <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

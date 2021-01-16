@@ -8,11 +8,12 @@ import './SubTotal.css';
 
 
 function SubTotal() {
-const [{basket}, dispatch] = useDataLayerValue();
+const [{basket,client}, dispatch] = useDataLayerValue();
 
 
 const buyProducts = (total)=>{
         let data={
+            id:client.idclient,
             basket,
             total
         }

@@ -8,20 +8,24 @@ import { Link  } from "react-router-dom";
 import { Badge } from '@material-ui/core';
 import { useDataLayerValue } from '../../DataLayer';
 import MenuListComposition from '../MenuList/MenuList';
-
+import Cookies from 'js-cookie';    
 export const HeaderProductos=()=>{
     const [{basket, client},dispatch] = useDataLayerValue();
     
+    const readCookie=()=>{
+        let data = Cookies.get('user');
+        if(data !== undefined){
+            data=JSON.parse(data);
+            dispatch({
+                type:'SET_USER',
+                client:data
+            })
+        }
+    }
 
-    // useEffect(()=>{
-    //     api.getUser()
-    //     .then(response => {
-    //         dispatch({
-    //             type:'SET_USER',
-    //             client:response.data
-    //         })
-    //     }).catch(err => console.log(err)) 
-    // }, []);
+    useEffect(()=>{ 
+            readCookie();
+    }, []);
 
 
 
