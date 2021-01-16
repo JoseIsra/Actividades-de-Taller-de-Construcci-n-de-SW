@@ -21,7 +21,7 @@ export const Login = () => {
     const [message, setMessage] = useState(null);
     const [visible , setVisible] = useState(false);
     const history = useHistory();
-
+    const [,dispatch] = useDataLayerValue();
     const onSubmit = async (values, onSubmitProps) => {
         try {
             const response = await api.login(values);
@@ -29,6 +29,10 @@ export const Login = () => {
             if(response.data === 'Datos inválidos'){
                 setMessage(response.data);
             }else{
+                dispatch({
+                    type:'SET_USER',
+                    client:response.data
+                })
                     history.push('/mainpage');
             }
         }catch(err){

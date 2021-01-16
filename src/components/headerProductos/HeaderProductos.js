@@ -13,15 +13,15 @@ export const HeaderProductos=()=>{
     const [{basket, client},dispatch] = useDataLayerValue();
     
 
-    useEffect(()=>{
-        api.getUser()
-        .then(response => {
-            dispatch({
-                type:'SET_USER',
-                client:response.data
-            })
-        }).catch(err => console.log(err)) 
-    }, []);
+    // useEffect(()=>{
+    //     api.getUser()
+    //     .then(response => {
+    //         dispatch({
+    //             type:'SET_USER',
+    //             client:response.data
+    //         })
+    //     }).catch(err => console.log(err)) 
+    // }, []);
 
 
 
